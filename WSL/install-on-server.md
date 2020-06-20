@@ -41,13 +41,13 @@ Stellen Sie sicher, dass die optionale Komponente „Virtual Machine Platform“
 dism.exe /online /enable-feature /featurename:VirtualMachinePlatform /all /norestart
 ```
 
-## <a name="download-a-linux-distribution"></a>Herunterladen einer Linux-Verteilung
+## <a name="download-a-linux-distribution"></a>Herunterladen einer Linux-Distribution
 
 Befolgen Sie [diese Anweisungen](install-manual.md), um Ihre bevorzugte Linux-Distribution herunterzuladen.
 
-## <a name="extract-and-install-a-linux-distribution"></a>Extrahieren und Installieren einer Linux-Verteilung
+## <a name="extract-and-install-a-linux-distribution"></a>Extrahieren und Installieren einer Linux-Distribution
 
-Nachdem Sie nun eine Linux-Verteilung heruntergeladen haben, um ihren Inhalt zu extrahieren und manuell zu installieren, führen Sie die folgenden Schritte aus:
+Nachdem Sie nun eine Linux-Distribution heruntergeladen haben, um ihren Inhalt zu extrahieren und manuell zu installieren, führen Sie die folgenden Schritte aus:
 
 1. Extrahieren Sie den Inhalt des `<distro>.appx`-Pakets mithilfe von PowerShell:
 
@@ -56,20 +56,20 @@ Nachdem Sie nun eine Linux-Verteilung heruntergeladen haben, um ihren Inhalt zu 
     Expand-Archive .\Ubuntu.zip .\Ubuntu
     ```
 
-2. Führen Sie die Startanwendung der Verteilung im Zielordner aus. Die Startanwendung heißt normalerweise `<distro>.exe` (z. B. `ubuntu.exe`).
+2. Führen Sie die Startanwendung der Distribution im Zielordner aus. Die Startanwendung heißt normalerweise `<distro>.exe` (z. B. `ubuntu.exe`).
 
     ![Aufgeklappte Ubuntu-Distribution unter Windows Server](media/server-appx-expand.png)
 
 > [!CAUTION]
 > **Installation failed with error 0x8007007e** (Installationsfehler mit Fehlercode 0x8007007e): Sie erhalten diesen Fehler, wenn das System WSL nicht unterstützt. Stellen Sie sicher, dass Sie Windows-Build 16215 oder höher aus führen. [Überprüfen Sie Ihren Build](troubleshooting.md#check-your-build-number). [Vergewissern Sie sich auch, dass die WSL aktiviert ist](troubleshooting.md#confirm-wsl-is-enabled) und Ihr Computer neu gestartet wurde, nachdem das Feature aktiviert wurde.  
 
-3. Fügen Sie der Windows-Umgebungsvariablen PATH den Pfad der Verteilung hinzu (in diesem Beispiel `C:\Users\Administrator\Ubuntu`), mithilfe von PowerShell:
+3. Fügen Sie der Windows-Umgebungsvariablen PATH den Pfad der Distribution hinzu (in diesem Beispiel `C:\Users\Administrator\Ubuntu`), mithilfe von PowerShell:
 
 ```powershell
 $userenv = [System.Environment]::GetEnvironmentVariable("Path", "User")
 [System.Environment]::SetEnvironmentVariable("PATH", $userenv + ";C:\Users\Administrator\Ubuntu", "User")
 ```
 
-Sie können Ihre Verteilung nun über einen beliebigen Pfad starten, indem Sie `<distro>.exe`eingeben. Beispiel: `ubuntu.exe`.
+Sie können Ihre Distribution nun über einen beliebigen Pfad starten, indem Sie `<distro>.exe`eingeben. Beispiel: `ubuntu.exe`.
 
-Nachdem der Installation müssen Sie [Ihre neue Verteilungsinstanz initialisieren](initialize-distro.md), bevor Sie sie verwenden.
+Nachdem der Installation müssen Sie [Ihre neue Distributionsinstanz initialisieren](initialize-distro.md), bevor Sie sie verwenden.

@@ -202,9 +202,9 @@ In einigen Fällen ermöglicht das Deaktivieren der Firewall den Zugriff. In ein
 ## <a name="how-do-i-access-a-port-from-wsl-in-windows"></a>Wie greife ich aus WSL unter Windows auf einen Port zu?
 WSL nutzt die IP-Adresse von Windows, da es unter Windows ausgeführt wird. Daher können Sie auf alle Ports auf localhost zugreifen. Wenn Sie z.B. Webinhalte an Port 1234 verwenden, können Sie https://localhost:1234 in Ihren Windows-Browser eingeben.
 
-## <a name="how-can-i-back-up-my-wsl-distros-or-move-them-from-one-drive-to-another"></a>Wie kann ich meine WSL-Verteilungen sichern oder von einem Laufwerk auf ein anderes verschieben?
+## <a name="how-can-i-back-up-my-wsl-distros-or-move-them-from-one-drive-to-another"></a>Wie kann ich meine WSL-Distributionen sichern oder von einem Laufwerk auf ein anderes verschieben?
 
-Die beste Möglichkeit zum Sichern oder Verschieben Ihrer Verteilungen sind die in Windows Version 1809 und höher verfügbaren Export/Import-Befehle. Sie können die gesamte Distribution mithilfe des Befehls `wsl --export` in einen Tarball exportieren. Sie können diese Verteilung dann mit dem Befehl `wsl --import`, in dem ein neuer Speicherort für den Import angegeben werden kann, wieder in WSL importieren, wodurch Sie Zustände Ihrer WSL-Verteilungen sichern und speichern (oder verschieben) können. 
+Die beste Möglichkeit zum Sichern oder Verschieben Ihrer Distributionen sind die in Windows Version 1809 und höher verfügbaren Export/Import-Befehle. Sie können die gesamte Distribution mithilfe des Befehls `wsl --export` in einen Tarball exportieren. Sie können diese Distribution dann mit dem Befehl `wsl --import`, in dem ein neuer Speicherort für den Import angegeben werden kann, wieder in WSL importieren, wodurch Sie Zustände Ihrer WSL-Distributionen sichern und speichern (oder verschieben) können. 
 
 Beachten Sie, dass herkömmliche Sicherungsdienste, die Dateien in ihren Appdata-Ordnern sichern (z.B. die Windows-Sicherung), Ihre Linux-Dateien nicht beschädigen.
 

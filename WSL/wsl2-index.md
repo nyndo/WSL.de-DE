@@ -14,7 +14,7 @@ ms.locfileid: "84153097"
 ---
 # <a name="whats-new-in-wsl-2"></a>Neues in WSL 2
 
-WSL 2 ist eine neue Version der Architektur in WSL, die zu einer geänderten Interaktion von Linux-Verteilungen mit Windows führt. Die Hauptziele von WSL 2 sind eine gesteigerte Leistung des Dateisystems und das Hinzufügen vollständiger Kompatibilität von Systemaufrufen. Jede Linux-Verteilung kann als WSL 1- oder WSL 2-Verteilung ausgeführt werden, und der Wechsel ist jederzeit möglich. WSL 2 ist eine wichtige Überarbeitung der zugrunde liegenden Architektur und nutzt Virtualisierungstechnologie und einen Linux-Kernel, um die neuen Features zu ermöglichen.
+WSL 2 ist eine neue Version der Architektur in WSL, die zu einer geänderten Interaktion von Linux-Distributionen mit Windows führt. Die Hauptziele von WSL 2 sind eine gesteigerte Leistung des Dateisystems und das Hinzufügen vollständiger Kompatibilität von Systemaufrufen. Jede Linux-Distribution kann als WSL 1- oder WSL 2-Distribution ausgeführt werden, und der Wechsel ist jederzeit möglich. WSL 2 ist eine wichtige Überarbeitung der zugrunde liegenden Architektur und nutzt Virtualisierungstechnologie und einen Linux-Kernel, um die neuen Features zu ermöglichen.
 
 WSL 2 ist nur in Windows 10, Version 2004, Build 19041 oder höher verfügbar. Möglicherweise müssen Sie [Ihre Windows-Version aktualisieren](ms-settings:windowsupdate).
 

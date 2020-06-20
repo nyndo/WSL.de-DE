@@ -25,7 +25,7 @@ ms.locfileid: "83270488"
 * [Installieren von WSL1](install-win10.md)
 * [Aktualisieren auf WSL2](install-win10.md#update-to-wsl-2)
 * [Installieren von Linux unter Windows Server](install-on-server.md)
-* [Erstellen eines Benutzerkontos und Kennworts für Ihre neue Linux-Verteilung](user-support.md)
+* [Erstellen eines Benutzerkontos und Kennworts für Ihre neue Linux-Distribution](user-support.md)
 
 ## <a name="team-blogs"></a>Teamblogs
 
