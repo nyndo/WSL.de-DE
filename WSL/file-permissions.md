@@ -6,12 +6,12 @@ ms.date: 01/14/2020
 ms.topic: article
 ms.assetid: 7afaeacf-435a-4e58-bff0-a9f0d75b8a51
 ms.localizationpriority: high
-ms.openlocfilehash: 66cded36fb7182a54a05e7794250808665bd4cf1
-ms.sourcegitcommit: 3fb40fd65b34a5eb26b213a0df6a3b2746b7a9b4
+ms.openlocfilehash: 81d4cfa1ae57cdd077ba8cbd614111881724718a
+ms.sourcegitcommit: f1b049a1276782d4f2754f46a8d2025b598a0784
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/12/2020
-ms.locfileid: "83235849"
+ms.lasthandoff: 06/24/2020
+ms.locfileid: "85336073"
 ---
 # <a name="file-permissions-for-wsl"></a>Dateiberechtigungen für WSL
 
@@ -108,4 +108,4 @@ Alle Dateien, die im Linux-Stammdateisystem erstellt oder geändert bzw. auf die
 
 Sie können Ihre Dateiberechtigungen innerhalb Ihrer Windows-Laufwerke mithilfe der Einbindungsoptionen in „WSL.conf“ konfigurieren. Mit den Einbindungsoptionen können Sie `umask`-, `dmask`- und `fmask`-Berechtigungsmasken festlegen. Die `umask` wird auf alle Dateien angewendet, die `dmask` wird nur auf Verzeichnisse angewendet, und die `fmask` wird nur auf Dateien angewendet. Diese Berechtigungsmasken werden dann durch eine logische ODER-Operation festgelegt, wenn sie auf Dateien angewendet werden. Beispiel: Wenn Sie über einen `umask`-Wert von `023` und einen `fmask`-Wert von `022` verfügen, wird die resultierende Berechtigungsmaske für Dateien auf `023` festgelegt.
 
-Anweisungen zur Vorgehensweise finden Sie im Artikel [Konfigurieren von Starteinstellungen mit „wslconf“](./wsl-config.md#configure-launch-settings-with-wslconf).
+Anweisungen zur Vorgehensweise finden Sie im Artikel [Konfigurieren von Starteinstellungen mit „wslconf“ für Verteilungen](./wsl-config.md#configure-per-distro-launch-settings-with-wslconf).
