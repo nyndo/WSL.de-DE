@@ -97,7 +97,7 @@ WSL 2 verwendet eine schlanke Hilfsprogramm-VM auf einem echten Linux-Kernel mit
 
 ### <a name="accessing-linux-networking-apps-from-windows-localhost"></a>Zugreifen auf Linux-Netzwerk-Apps aus Windows (localhost)
 
-Wenn Sie in Ihrer Linux-Verteilung eine Netzwerk-App (z. B. eine App, die auf einer NodeJS- oder SQL Server-Instanz ausgeführt wird) entwickeln, können Sie auf diese über eine Windows-App (z. B. Ihren Edge- oder Chrome-Internetbrowser) unter Verwendung von `localhost` zugreifen (genau wie Sie dies normalerweise tun würden).
+Wenn Sie in Ihrer Linux-Verteilung eine Netzwerk-App (z. B. eine App, die auf einer NodeJS- oder SQL Server-Instanz ausgeführt wird) entwickeln, können Sie auf diese über eine Windows-App (z. B. Ihren Microsoft Edge- oder Chrome-Internetbrowser) unter Verwendung von `localhost` zugreifen (genau wie Sie dies normalerweise tun würden).
 
 Wenn Sie jedoch eine ältere Version von Windows ausführen (Build 18945 oder älter), müssen Sie die IP-Adresse der Linux-Host-VM abrufen (oder [auf die neueste Windows-Version aktualisieren](ms-settings:windowsupdate)).
 
