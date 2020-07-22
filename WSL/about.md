@@ -35,7 +35,7 @@ WSL 2 ist eine neue Version der Windows-Subsystem für Linux-Architektur, die e
 
 Diese neue Architektur führt zu einer Änderung der Interaktion dieser Linux-Binärdateien mit Windows und der Hardware Ihres Computers, bietet aber die gleiche Benutzererfahrung wie WSL 1 (die aktuelle, allgemein verfügbar Version).
 
-Einzelne Linux-Verteilungen können mit der WSL 1- oder der WSL 2-Architektur ausgeführt werden. Für jede Verteilung kann jederzeit ein Upgrade oder Downgrade ausgeführt werden, und Sie können WSL 1- und WSL 2-Verteilungen parallel verwenden. WSL 2 weist eine völlig neue Architektur auf, die von der Ausführung eines echten Linux-Kernels profitiert.
+Einzelne Linux-Distributionen können mit der WSL 1- oder der WSL 2-Architektur ausgeführt werden. Für jede Distribution kann jederzeit ein Upgrade oder Downgrade ausgeführt werden, und Sie können WSL 1- und WSL 2-Distributionen parallel verwenden. WSL 2 weist eine völlig neue Architektur auf, die von der Ausführung eines echten Linux-Kernels profitiert.
 
 ## <a name="next-steps"></a>Nächste Schritte
 
@@ -43,7 +43,7 @@ Einzelne Linux-Verteilungen können mit der WSL 1- oder der WSL 2-Architektur au
 
 * [Vergleich zwischen WSL 2 und WSL 1](./compare-versions.md)
 
-* [Erstellen eines Benutzerkontos und Kennworts für Ihre neue Linux-Verteilung](./user-support.md)
+* [Erstellen eines Benutzerkontos und Kennworts für Ihre neue Linux-Distribution](./user-support.md)
 
 * [Häufig gestellte Fragen (FAQ)](./faq.md)
 
@@ -61,6 +61,6 @@ Einzelne Linux-Verteilungen können mit der WSL 1- oder der WSL 2-Architektur au
 
 * [Verweisen auf WSL-Befehle](./reference.md)
 
-* [Erstellen von benutzerdefinierten Verteilungen](./build-custom-distro.md)
+* [Erstellen von benutzerdefinierten Distributionen](./build-custom-distro.md)
 
 * [Lesen Sie die Anmerkungen zu dieser Version von WSL.](./release-notes.md)

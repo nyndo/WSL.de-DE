@@ -68,4 +68,4 @@ Add-AppxPackage .\app_name.appx
 
 Wenn Sie Windows Server verwenden, finden Sie die Installationsanweisungen auf der [Windows Server](install-on-server.md)-Dokumentationsseite.
 
-Sobald Ihre Verteilung installiert wurde, folgen Sie den normalen Anweisungen, um [auf WSL 2 zu aktualisieren](./install-win10.md#update-to-wsl-2) oder [ein neues Benutzerkonto und Kennwort zu erstellen](./user-support.md).
+Sobald Ihre Distribution installiert wurde, folgen Sie den normalen Anweisungen, um [auf WSL 2 zu aktualisieren](./install-win10.md#update-to-wsl-2) oder [ein neues Benutzerkonto und Kennwort zu erstellen](./user-support.md).

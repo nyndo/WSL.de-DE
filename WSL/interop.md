@@ -41,13 +41,13 @@ Auf diese Weise aufgerufene Binärdateien:
 
 Der auf `wsl` (oder `wsl.exe`) folgende Linux-Befehl wird wie ein beliebiger Befehl verarbeitet, der in WSL ausgeführt wird.  Dinge wie sudo, Piping und Dateiumleitung funktionieren.
 
-Beispiel für die Verwendung von sudo zum Aktualisieren Ihrer Linux-Standardverteilung:
+Beispiel für die Verwendung von sudo zum Aktualisieren Ihrer Linux-StandardDistribution:
 
 ```powershell
 C:\temp> wsl sudo apt-get update
 ```
 
-Nachdem Sie diesen Befehl ausgeführt haben, wird der Benutzername Ihrer Linux-Standardverteilung angezeigt, und Sie werden zur Eingabe Ihres Kennworts aufgefordert. Nachdem Sie Ihr Kennwort ordnungsgemäß eingegeben haben, werden von Ihrer Verteilung die Updates heruntergeladen.
+Nachdem Sie diesen Befehl ausgeführt haben, wird der Benutzername Ihrer Linux-StandardDistribution angezeigt, und Sie werden zur Eingabe Ihres Kennworts aufgefordert. Nachdem Sie Ihr Kennwort ordnungsgemäß eingegeben haben, werden von Ihrer Distribution die Updates heruntergeladen.
 
 ## <a name="mixing-linux-and-windows-commands"></a>Kombinieren von Linux- und Windows-Befehlen
 
@@ -100,13 +100,13 @@ Anwendungen, die auf diese Weise ausgeführt werden, besitzen die folgenden Eige
 
 Ausführbare Windows-Dateien, die in WSL ausgeführt werden, werden ähnlich wie native ausführbare Linux-Dateien verarbeitet. Piping, Umleitungen und sogar Hintergrundverarbeitung funktionieren wie erwartet.
 
-Um das Windows-Tool `ipconfig.exe` auszuführen, das Linux-Tool `grep` zum Filtern der „IPv4“-Ergebnisse und das Linux-Tool `cut` zum Entfernen der Spaltenfelder zu verwenden,geben Sie aus einer Linux-Verteilung (z. B. Ubuntu) Folgendes ein:
+Um das Windows-Tool `ipconfig.exe` auszuführen, das Linux-Tool `grep` zum Filtern der „IPv4“-Ergebnisse und das Linux-Tool `cut` zum Entfernen der Spaltenfelder zu verwenden,geben Sie aus einer Linux-Distribution (z. B. Ubuntu) Folgendes ein:
 
 ```bash
 ipconfig.exe | grep IPv4 | cut -d: -f2
 ```
 
-Sehen wir uns ein Beispiel für das Kombinieren von Windows- und Linux-Befehlen an. Öffnen Sie Ihre Linux-Verteilung (d. h. Ubuntu) und erstellen Sie eine Textdatei: `touch foo.txt`. Verwenden Sie nun den Linux-Befehl `ls -la`, um die direkten Dateien und deren Erstellungsdetails aufzulisten, sowie das Windows PowerShell-Tool `findstr.exe`, um die Ergebnisse zu filtern, sodass nur Ihre `foo.txt`-Datei in den Ergebnissen angezeigt wird:
+Sehen wir uns ein Beispiel für das Kombinieren von Windows- und Linux-Befehlen an. Öffnen Sie Ihre Linux-Distribution (d. h. Ubuntu) und erstellen Sie eine Textdatei: `touch foo.txt`. Verwenden Sie nun den Linux-Befehl `ls -la`, um die direkten Dateien und deren Erstellungsdetails aufzulisten, sowie das Windows PowerShell-Tool `findstr.exe`, um die Ergebnisse zu filtern, sodass nur Ihre `foo.txt`-Datei in den Ergebnissen angezeigt wird:
 
 ```bash
 ls -la | findstr.exe foo.txt
@@ -140,7 +140,7 @@ notepad.exe C:\\temp\\foo.txt
 
 ## <a name="share-environment-variables-between-windows-and-wsl"></a>Freigeben von Umgebungsvariablen zwischen Windows und WSL
 
-WSL und Windows verwenden `WSLENV`, eine spezielle Umgebungsvariable, die entwickelt wurde, um Windows- und Linux-Verteilungen, die unter WSL ausgeführt werden, zu verbinden.
+WSL und Windows verwenden `WSLENV`, eine spezielle Umgebungsvariable, die entwickelt wurde, um Windows- und Linux-Distributionen, die unter WSL ausgeführt werden, zu verbinden.
 
 Eigenschaften einer `WSLENV`-Variablen:
 
@@ -215,7 +215,7 @@ Oder:
 C:\temp> bash -c "ls -la \"/mnt/c/Program Files\""
 ```
 
-Wenn Sie ein Windows-Tool aus einer WSL-Verteilung in einer früheren Version von Windows 10 aufrufen, müssen Sie den Verzeichnispfad angeben. Geben Sie z. B. in der WSL-Befehlszeile Folgendes ein:
+Wenn Sie ein Windows-Tool aus einer WSL-Distribution in einer früheren Version von Windows 10 aufrufen, müssen Sie den Verzeichnispfad angeben. Geben Sie z. B. in der WSL-Befehlszeile Folgendes ein:
 
 ```bash
 /mnt/c/Windows/System32/notepad.exe

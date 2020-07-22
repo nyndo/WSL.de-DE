@@ -94,11 +94,11 @@ Die in den Metadaten angegebenen UID und GID werden als Benutzerbesitzer und Gru
 
 ### <a name="accessing-linux-files-from-windows-using-wsl"></a>Zugreifen auf Linux-Dateien von Windows aus mithilfe von `\\wsl$`
 
-Wenn Sie über `\\wsl$` auf Linux-Dateien zugreifen, wird der Standardbenutzer der WSL-Verteilung verwendet. Daher hat jede Windows-App, die auf Linux-Dateien zugreift, dieselben Berechtigungen wie der Standardbenutzer.
+Wenn Sie über `\\wsl$` auf Linux-Dateien zugreifen, wird der Standardbenutzer der WSL-Distribution verwendet. Daher hat jede Windows-App, die auf Linux-Dateien zugreift, dieselben Berechtigungen wie der Standardbenutzer.
 
 #### <a name="creating-a-new-file"></a>Erstellen einer neuen Datei
 
-Beim Erstellen einer neuen Datei in einer WSL-Verteilung von Windows wird die Standard-Umask angewendet. Die Standard-Umask ist `022`, d. h., es werden alle Berechtigungen mit Ausnahme von Schreibberechtigungen für Gruppen und andere zugelassen. 
+Beim Erstellen einer neuen Datei in einer WSL-Distribution von Windows wird die Standard-Umask angewendet. Die Standard-Umask ist `022`, d. h., es werden alle Berechtigungen mit Ausnahme von Schreibberechtigungen für Gruppen und andere zugelassen. 
 
 ### <a name="accessing-files-in-the-linux-root-file-system-from-linux"></a>Zugreifen auf Dateien im Linux-Stammdateisystem aus Linux
 

@@ -18,7 +18,7 @@ Git ist das am häufigsten verwendete Versionskontrollsystem. Mit git können Si
 
 ## <a name="git-can-be-installed-on-windows-and-on-wsl"></a>Git kann unter Windows und auf WSL installiert werden.
 
-Ein wichtiger Aspekt: Wenn Sie WSL aktivieren und eine Linux-Distribution installieren, installieren Sie ein neues Dateisystem, das von Windows NTFS C:\ getrennt ist. Laufwerk auf Ihrem Computer. Unter Linux werden Laufwerke nicht als Buchstaben angegeben. Ihnen werden Einstellungspunkte zugewiesen. Der Stamm des Dateisystems `/` ist der Bereitstellungs Punkt der Stamm Partition (oder des Ordners) im Fall von WSL. Nicht alles unter `/` ist dasselbe Laufwerk. Auf meinem Laptop habe ich beispielsweise zwei Versionen von Ubuntu (20,04 und 18,04) sowie Debian installiert. Wenn Sie diese Verteilungen öffnen, wählen Sie das Stammverzeichnis mit dem Befehl aus `cd ~` , und geben Sie dann den Befehl ein `explorer.exe .` . der Windows-Datei-Explorer wird geöffnet und zeigt den Verzeichnispfad für die Verteilung an.
+Ein wichtiger Aspekt: Wenn Sie WSL aktivieren und eine Linux-Distribution installieren, installieren Sie ein neues Dateisystem, das von Windows NTFS C:\ getrennt ist. Laufwerk auf Ihrem Computer. Unter Linux werden Laufwerke nicht als Buchstaben angegeben. Ihnen werden Einstellungspunkte zugewiesen. Der Stamm des Dateisystems `/` ist der Bereitstellungs Punkt der Stamm Partition (oder des Ordners) im Fall von WSL. Nicht alles unter `/` ist dasselbe Laufwerk. Auf meinem Laptop habe ich beispielsweise zwei Versionen von Ubuntu (20,04 und 18,04) sowie Debian installiert. Wenn Sie diese Distributionen öffnen, wählen Sie das Stammverzeichnis mit dem Befehl aus `cd ~` , und geben Sie dann den Befehl ein `explorer.exe .` . der Windows-Datei-Explorer wird geöffnet und zeigt den Verzeichnispfad für die Distribution an.
 
 | Linux-Distribution | Windows-Pfad für den Zugriff auf den Basisordner |
 | ----------- | ----------- |
@@ -28,7 +28,7 @@ Ein wichtiger Aspekt: Wenn Sie WSL aktivieren und eine Linux-Distribution instal
 | Windows PowerShell | `C:\Users\username` |
 
 > [!TIP]
-> Wenn Sie von der WSL-Verteilungs Befehlszeile aus auf das Windows-Datei Verzeichnis zugreifen möchten, erfolgt der Zugriff auf `C:\Users\username` das Verzeichnis mithilfe von `/mnt/c/Users/username` , da die Linux-Distribution Ihr Windows-Dateisystem als ein bereitgestelltes Laufwerk ansieht.
+> Wenn Sie von der WSL-Distributions Befehlszeile aus auf das Windows-Datei Verzeichnis zugreifen möchten, erfolgt der Zugriff auf `C:\Users\username` das Verzeichnis mithilfe von `/mnt/c/Users/username` , da die Linux-Distribution Ihr Windows-Dateisystem als ein bereitgestelltes Laufwerk ansieht.
 
 Sie müssen git auf jedem Dateisystem installieren, mit dem Sie es verwenden möchten.
 

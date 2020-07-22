@@ -17,7 +17,7 @@ Im folgenden Leitfaden werden die Schritte beschrieben, die ausgeführt werden m
 
 ## <a name="enable-the-windows-subsystem-for-linux-optional-feature"></a>Aktivieren des optionalen Features „Windows-Subsystem für Linux“
 
-Bevor Sie eine Linux-Verteilung installieren können, müssen Sie das optionale Feature „Windows-Subsystem für Linux“ unter Windows 10 aktivieren:
+Bevor Sie eine Linux-Distribution installieren können, müssen Sie das optionale Feature „Windows-Subsystem für Linux“ unter Windows 10 aktivieren:
 
 1. Öffnen Sie PowerShell als Administrator, und geben Sie dieses Skript ein:
 
@@ -29,7 +29,7 @@ Bevor Sie eine Linux-Verteilung installieren können, müssen Sie das optionale 
 
 ## <a name="install-a-linux-distribution"></a>Installieren einer Linux-Distribution
 
-Es gibt drei Möglichkeiten, Ihre bevorzugte(n) Linux-Verteilung(en) herunterzuladen und zu installieren:
+Es gibt drei Möglichkeiten, Ihre bevorzugte(n) Linux-Distribution(en) herunterzuladen und zu installieren:
 
 - Herunterladen und Installieren aus dem Microsoft Store (siehe unten)
 - [Herunterladen und manuelles Installieren über die Befehlszeile](install-manual.md)
@@ -37,7 +37,7 @@ Es gibt drei Möglichkeiten, Ihre bevorzugte(n) Linux-Verteilung(en) herunterzul
 
 ### <a name="install-from-the-microsoft-store"></a>Herunterladen aus dem Microsoft Store
 
-Linux-Verteilungen können über den Microsoft Store auf Windows 10 (Build 16215+) installiert werden.
+Linux-Distributionen können über den Microsoft Store auf Windows 10 (Build 16215+) installiert werden.
 
 > [!NOTE]
 > Führen Sie diese Schritte aus, um [die Nummer Ihres Windows 10-Builds zu überprüfen](troubleshooting.md#check-your-build-number).
@@ -61,18 +61,18 @@ Linux-Verteilungen können über den Microsoft Store auf Windows 10 (Build 16215
     - [Pengwin Enterprise](https://www.microsoft.com/store/apps/9N8LP0X93VCP)
     - [Alpine WSL](https://www.microsoft.com/store/apps/9p804crf0395)
 
-1. Wählen Sie „Get“ aus, und klicken Sie nach dem Herunterladen der Verteilung auf „Starten“.
+1. Wählen Sie „Get“ aus, und klicken Sie nach dem Herunterladen der Distribution auf „Starten“.
 
     ![Ansicht der Linux-Distributionen im Microsoft Store](media/UbuntuStore.png)
 
 ## <a name="complete-initialization-of-your-distro"></a>Vervollständigen der Initialisierung Ihrer Distribution
 
-Nachdem Sie Ihre Linux-Verteilung gestartet haben, befolgen Sie die Anweisungen auf dem Bildschirm, um Ihre Verteilung zu initialisieren.
+Nachdem Sie Ihre Linux-Distribution gestartet haben, befolgen Sie die Anweisungen auf dem Bildschirm, um Ihre Distribution zu initialisieren.
 
 > [!NOTE]
-> Starten Sie die Verteilung für Windows Server mithilfe der ausführbaren Datei `<distro>.exe` im Installationsordner.
+> Starten Sie die Distribution für Windows Server mithilfe der ausführbaren Datei `<distro>.exe` im Installationsordner.
 
-Wenn eine neu installierte Verteilung zum ersten Mal ausgeführt wird, wird ein Konsolenfenster geöffnet, und Sie werden aufgefordert, bis zum Abschluss der Installation wenige Minuten zu warten. In dieser letzten Phase der Installation werden die Dateien der Distribution dekomprimiert und auf Ihrem PC gespeichert. Sie sind dann einsatzbereit. Dies kann je nach Leistung der Speichergeräte Ihres PCs etwa eine Minute oder ggf. auch länger dauern. Diese erste Installationsphase ist nur erforderlich, wenn eine „saubere“ Distribution installiert wird. Alle zukünftigen Starts sollten weniger als eine Sekunde in Anspruch nehmen.
+Wenn eine neu installierte Distribution zum ersten Mal ausgeführt wird, wird ein Konsolenfenster geöffnet, und Sie werden aufgefordert, bis zum Abschluss der Installation wenige Minuten zu warten. In dieser letzten Phase der Installation werden die Dateien der Distribution dekomprimiert und auf Ihrem PC gespeichert. Sie sind dann einsatzbereit. Dies kann je nach Leistung der Speichergeräte Ihres PCs etwa eine Minute oder ggf. auch länger dauern. Diese erste Installationsphase ist nur erforderlich, wenn eine „saubere“ Distribution installiert wird. Alle zukünftigen Starts sollten weniger als eine Sekunde in Anspruch nehmen.
 
 ## <a name="set-up-a-new-linux-user-account"></a>Einrichten eines neuen Linux-Benutzerkontos
 
@@ -80,19 +80,19 @@ Nach Abschluss der Installation werden Sie aufgefordert, ein neues Benutzerkonto
 
 ![Entpacken von Ubuntu in der Windows-Konsole](media/UbuntuInstall.png)
 
-Dieses Benutzerkonto gilt für den normalen Benutzer ohne Administratorrechte, als der Sie beim Starten einer Verteilung standardmäßig angemeldet werden. Sie können einen beliebigen Benutzernamen und ein gewünschtes Kennwort auswählen. Beides hat keinen Einfluss auf Ihren Windows-Benutzernamen.
+Dieses Benutzerkonto gilt für den normalen Benutzer ohne Administratorrechte, als der Sie beim Starten einer Distribution standardmäßig angemeldet werden. Sie können einen beliebigen Benutzernamen und ein gewünschtes Kennwort auswählen. Beides hat keinen Einfluss auf Ihren Windows-Benutzernamen.
 
 Wenn Sie eine neue Distributionsinstanz öffnen, werden Sie nicht zur Eingabe Ihres Kennworts aufgefordert. Wenn Sie jedoch **einen Prozess mit `sudo` heraufstufen, müssen Sie Ihr Kennwort eingeben**. Stellen Sie also sicher, dass Sie ein Kennwort auswählen, das Sie sich leicht merken können. Weitere Informationen finden Sie auf der Seite [Benutzersupport](user-support.md).
 
 ## <a name="update--upgrade-packages"></a>Update- und Upgradepakete
 
-Die meisten Verteilungen werden mit einem leeren oder minimalen Paketkatalog ausgeliefert. Es wird dringend empfohlen, den Paketkatalog regelmäßig zu aktualisieren und ein Upgrade der installierten Pakete mit dem bevorzugten Paket-Manager Ihrer Verteilung auszuführen. Für Debian/Ubuntu verwenden Sie apt:
+Die meisten Distributionen werden mit einem leeren oder minimalen Paketkatalog ausgeliefert. Es wird dringend empfohlen, den Paketkatalog regelmäßig zu aktualisieren und ein Upgrade der installierten Pakete mit dem bevorzugten Paket-Manager Ihrer Distribution auszuführen. Für Debian/Ubuntu verwenden Sie apt:
 
 ```bash
 sudo apt update && sudo apt upgrade
 ```
 
-Windows führt für Ihre Linux-Verteilung(en) nicht automatisch eine Aktualisierung oder ein Upgrade aus. Dies ist eine Aufgabe, die die meisten Linux-Benutzer lieber selbst in die Hand nehmen.
+Windows führt für Ihre Linux-Distribution(en) nicht automatisch eine Aktualisierung oder ein Upgrade aus. Dies ist eine Aufgabe, die die meisten Linux-Benutzer lieber selbst in die Hand nehmen.
 
 Viel Spaß bei der Verwendung Ihrer neuen Linux-Distribution unter WSL!
 

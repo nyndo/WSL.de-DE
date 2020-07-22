@@ -16,7 +16,7 @@ ms.locfileid: "86157936"
 
 ## <a name="install-the-windows-subsystem-for-linux"></a>Installieren des Windows-Subsystems für Linux
 
-Bevor Sie eine Linux-Verteilung unter Windows installieren können, müssen Sie das optionale Feature „Windows-Subsystem für Linux“ aktivieren.
+Bevor Sie eine Linux-Distribution unter Windows installieren können, müssen Sie das optionale Feature „Windows-Subsystem für Linux“ aktivieren.
 
 Öffnen Sie PowerShell als Administrator, und führen Sie Folgendes aus:
 
@@ -24,7 +24,7 @@ Bevor Sie eine Linux-Verteilung unter Windows installieren können, müssen Sie 
 dism.exe /online /enable-feature /featurename:Microsoft-Windows-Subsystem-Linux /all /norestart
 ```
 
-Um nur WSL 1 zu installieren, sollten Sie nun den Computer neu starten und mit dem [Installieren der Linux-Verteilung Ihrer Wahl](./install-win10.md#install-your-linux-distribution-of-choice) fortfahren. Andernfalls warten Sie auf den Neustart, und fahren Sie mit dem Update auf WSL 2 fort. Erfahren Sie mehr über den [Vergleich zwischen WSL 2 und WSL 1](./compare-versions.md).
+Um nur WSL 1 zu installieren, sollten Sie nun den Computer neu starten und mit dem [Installieren der Linux-Distribution Ihrer Wahl](./install-win10.md#install-your-linux-distribution-of-choice) fortfahren. Andernfalls warten Sie auf den Neustart, und fahren Sie mit dem Update auf WSL 2 fort. Erfahren Sie mehr über den [Vergleich zwischen WSL 2 und WSL 1](./compare-versions.md).
 
 ## <a name="update-to-wsl-2"></a>Aktualisieren auf WSL 2
 
@@ -48,7 +48,7 @@ dism.exe /online /enable-feature /featurename:VirtualMachinePlatform /all /nores
 
 ### <a name="set-wsl-2-as-your-default-version"></a>Festlegen von WSL 2 als Standardversion
 
-Führen Sie bei der Installation einer neuen Linux-Verteilung den folgenden Befehl in PowerShell aus, um WSL 2 als Standardversion festzulegen:
+Führen Sie bei der Installation einer neuen Linux-Distribution den folgenden Befehl in PowerShell aus, um WSL 2 als Standardversion festzulegen:
 
 ```powershell
 wsl --set-default-version 2
@@ -61,11 +61,11 @@ Diese Meldung wird möglicherweise nach dem Ausführen des folgenden Befehls ang
 >
 > Wenn `wsl --set-default-version` als ungültiger Befehl angezeigt wird, geben Sie `wsl --help` ein. Wenn die `--set-default-version` nicht aufgeführt ist, bedeutet dies, dass Ihr Betriebssystem sie nicht unterstützt und Sie auf Version 2004, Build 19041 oder höher, aktualisieren müssen.
 
-## <a name="install-your-linux-distribution-of-choice"></a>Installieren der Linux-Verteilung Ihrer Wahl
+## <a name="install-your-linux-distribution-of-choice"></a>Installieren der Linux-Distribution Ihrer Wahl
 
-1. Öffnen Sie den [Microsoft Store](https://aka.ms/wslstore), und wählen Sie Ihre bevorzugte Linux-Verteilung aus.
+1. Öffnen Sie den [Microsoft Store](https://aka.ms/wslstore), und wählen Sie Ihre bevorzugte Linux-Distribution aus.
 
-    ![Ansicht der Linux-Verteilungen im Microsoft Store](media/store.png)
+    ![Ansicht der Linux-Distributionen im Microsoft Store](media/store.png)
 
     Über die folgenden Links wird die Seite des Microsoft Store für jede Distribution geöffnet:
 
@@ -82,33 +82,33 @@ Diese Meldung wird möglicherweise nach dem Ausführen des folgenden Befehls ang
     - [Pengwin Enterprise](https://www.microsoft.com/store/apps/9N8LP0X93VCP)
     - [Alpine WSL](https://www.microsoft.com/store/apps/9p804crf0395)
 
-2. Wählen Sie auf der Seite der Verteilung die Option „Get“ (Abrufen) aus.
+2. Wählen Sie auf der Seite der Distribution die Option „Get“ (Abrufen) aus.
 
-    ![Linux-Verteilungen im Microsoft Store](media/UbuntuStore.png)
+    ![Linux-Distributionen im Microsoft Store](media/UbuntuStore.png)
 
-## <a name="set-up-a-new-distribution"></a>Einrichten einer neuen Verteilung
+## <a name="set-up-a-new-distribution"></a>Einrichten einer neuen Distribution
 
-Wenn Sie eine neu installierte Linux-Verteilung zum ersten Mal starten, wird ein Konsolenfenster geöffnet, und Sie werden aufgefordert, ein oder zwei Minuten zu warten, bis die Dateien dekomprimiert und auf dem PC gespeichert wurden. Alle zukünftigen Starts sollten weniger als eine Sekunde in Anspruch nehmen.
+Wenn Sie eine neu installierte Linux-Distribution zum ersten Mal starten, wird ein Konsolenfenster geöffnet, und Sie werden aufgefordert, ein oder zwei Minuten zu warten, bis die Dateien dekomprimiert und auf dem PC gespeichert wurden. Alle zukünftigen Starts sollten weniger als eine Sekunde in Anspruch nehmen.
 
-Anschließend müssen Sie [ein Benutzerkonto und Kennwort für Ihre neue Linux-Verteilung erstellen](./user-support.md).
+Anschließend müssen Sie [ein Benutzerkonto und Kennwort für Ihre neue Linux-Distribution erstellen](./user-support.md).
 
 ![Entpacken von Ubuntu in der Windows-Konsole](media/UbuntuInstall.png)
 
-## <a name="set-your-distribution-version-to-wsl-1-or-wsl-2"></a>Festlegen der Verteilungsversion auf WSL 1 oder WSL 2
+## <a name="set-your-distribution-version-to-wsl-1-or-wsl-2"></a>Festlegen der Distributionsversion auf WSL 1 oder WSL 2
 
-Sie können die den einzelnen installierten Linux-Verteilungen zugewiesenen WSL-Version überprüfen, indem Sie die PowerShell-Befehlszeile öffnen und den folgenden Befehl (nur verfügbar in [Windows Build 19041 oder höher](ms-settings:windowsupdate)) eingeben: `wsl -l -v`
+Sie können die den einzelnen installierten Linux-Distributionen zugewiesenen WSL-Version überprüfen, indem Sie die PowerShell-Befehlszeile öffnen und den folgenden Befehl (nur verfügbar in [Windows Build 19041 oder höher](ms-settings:windowsupdate)) eingeben: `wsl -l -v`
 
 ```powershell
 wsl --list --verbose
 ```
 
-Um eine Verteilung so einzurichten, dass sie von einer der beiden WSL-Versionen unterstützt wird, führen Sie Folgendes aus:
+Um eine Distribution so einzurichten, dass sie von einer der beiden WSL-Versionen unterstützt wird, führen Sie Folgendes aus:
 
 ```powershell
 wsl --set-version <distribution name> <versionNumber>
 ```
 
-Ersetzen Sie hierbei `<distribution name>` durch den tatsächlichen Namen Ihrer Verteilung und `<versionNumber>` durch die Ziffer „1“ oder „2“. Sie können jederzeit zu WSL 1 zurückwechseln, indem sie denselben Befehl wie oben ausführen, aber die 2 durch eine 1 ersetzen.
+Ersetzen Sie hierbei `<distribution name>` durch den tatsächlichen Namen Ihrer Distribution und `<versionNumber>` durch die Ziffer „1“ oder „2“. Sie können jederzeit zu WSL 1 zurückwechseln, indem sie denselben Befehl wie oben ausführen, aber die 2 durch eine 1 ersetzen.
 
 Wenn Sie WSL 2 als Ihre Standardarchitektur festlegen möchten, ist dies über diesen Befehl möglich:
 
@@ -116,14 +116,14 @@ Wenn Sie WSL 2 als Ihre Standardarchitektur festlegen möchten, ist dies über d
 wsl --set-default-version 2
 ```
 
-Dadurch wird die Version jeder neu installierten Verteilung auf WSL 2 festgelegt.
+Dadurch wird die Version jeder neu installierten Distribution auf WSL 2 festgelegt.
 
 ## <a name="troubleshooting-installation"></a>Problembehandlung bei der Installation
 
 Nachfolgend werden einige Fehler und vorgeschlagene Korrekturen beschrieben. Weitere allgemeine Fehler und zugehörige Lösungen finden Sie auf der [Seite für die WSL-Problembehandlung](troubleshooting.md).
 
 - **Installation failed with error 0x80070003 (Installationsfehler mit Fehlercode 0x80070003)**
-  - Das Windows-Subsystem für Linux wird nur auf dem Systemlaufwerk ausgeführt (in der Regel ist dies Ihr Laufwerk `C:`). Stellen Sie sicher, dass die Verteilungen auf dem Systemlaufwerk gespeichert sind:  
+  - Das Windows-Subsystem für Linux wird nur auf dem Systemlaufwerk ausgeführt (in der Regel ist dies Ihr Laufwerk `C:`). Stellen Sie sicher, dass die Distributionen auf dem Systemlaufwerk gespeichert sind:  
   - Öffnen Sie **Einstellungen** -> **Speicher** -> **Weitere Speichereinstellungen: Ändern Sie den Speicherort für neue Inhalte**
     ![Abbildung der Systemeinstellungen für die Installation von Apps auf dem Laufwerk C:](media/AppStorage.png)
 

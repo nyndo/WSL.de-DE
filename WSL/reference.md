@@ -18,27 +18,27 @@ Die beste Möglichkeit, mit dem Windows-Subsystem für Linux zu interagieren, is
 
 ## <a name="set-wsl-2-as-your-default-version"></a>Festlegen von WSL 2 als Standardversion
 
-Führen Sie bei der Installation einer neuen Linux-Verteilung den folgenden Befehl in PowerShell aus, um WSL 2 als Standardversion festzulegen:
+Führen Sie bei der Installation einer neuen Linux-Distribution den folgenden Befehl in PowerShell aus, um WSL 2 als Standardversion festzulegen:
 
 ```powershell
 wsl --set-default-version 2
 ```
 
-## <a name="set-your-distribution-version-to-wsl-1-or-wsl-2"></a>Festlegen der Verteilungsversion auf WSL 1 oder WSL 2
+## <a name="set-your-distribution-version-to-wsl-1-or-wsl-2"></a>Festlegen der Distributionsversion auf WSL 1 oder WSL 2
 
-Sie können die den einzelnen installierten Linux-Verteilungen zugewiesenen WSL-Version überprüfen, indem Sie die PowerShell-Befehlszeile öffnen und den folgenden Befehl (nur verfügbar in [Windows Build 19041 oder höher](ms-settings:windowsupdate)) eingeben: `wsl -l -v`
+Sie können die den einzelnen installierten Linux-Distributionen zugewiesenen WSL-Version überprüfen, indem Sie die PowerShell-Befehlszeile öffnen und den folgenden Befehl (nur verfügbar in [Windows Build 19041 oder höher](ms-settings:windowsupdate)) eingeben: `wsl -l -v`
 
 ```bash
 wsl --list --verbose
 ```
 
-Um eine Verteilung so einzurichten, dass sie von einer der beiden WSL-Versionen unterstützt wird, führen Sie Folgendes aus:
+Um eine Distribution so einzurichten, dass sie von einer der beiden WSL-Versionen unterstützt wird, führen Sie Folgendes aus:
 
 ```bash
 wsl --set-version <distribution name> <versionNumber>
 ```
 
-Ersetzen Sie hierbei `<distribution name>` durch den tatsächlichen Namen Ihrer Verteilung und `<versionNumber>` durch die Ziffer „1“ oder „2“. Sie können jederzeit zu WSL 1 zurückwechseln, indem sie denselben Befehl wie oben ausführen, aber die 2 durch eine 1 ersetzen.
+Ersetzen Sie hierbei `<distribution name>` durch den tatsächlichen Namen Ihrer Distribution und `<versionNumber>` durch die Ziffer „1“ oder „2“. Sie können jederzeit zu WSL 1 zurückwechseln, indem sie denselben Befehl wie oben ausführen, aber die 2 durch eine 1 ersetzen.
 
 Wenn Sie WSL 2 als Ihre Standardarchitektur festlegen möchten, ist dies über diesen Befehl möglich:
 
@@ -46,7 +46,7 @@ Wenn Sie WSL 2 als Ihre Standardarchitektur festlegen möchten, ist dies über d
 wsl --set-default-version 2
 ```
 
-Dadurch wird die Version jeder neu installierten Verteilung auf WSL 2 festgelegt.
+Dadurch wird die Version jeder neu installierten Distribution auf WSL 2 festgelegt.
 
 ## `wsl.exe`
 
@@ -111,7 +111,7 @@ Die oben genannten Befehle akzeptieren außerdem die folgenden Optionen:
 
 * **--unregister \<Distribution>**
   
-  Hebt die Registrierung der Verteilung auf.
+  Hebt die Registrierung der Distribution auf.
 
 * **--help**: Zeigt Syntaxinformationen an.
 
@@ -133,17 +133,17 @@ Syntax: `wslconfig [Argument] [Options...]`
   
 Optionen:
 
-* **/all** Listet optional alle Verteilungen auf, einschließlich Verteilungen, die zurzeit installiert oder deinstalliert werden.
+* **/all** Listet optional alle Distributionen auf, einschließlich Distributionen, die zurzeit installiert oder deinstalliert werden.
 
-* **/running** Listet nur Verteilungen auf, die zurzeit ausgeführt werden.
+* **/running** Listet nur Distributionen auf, die zurzeit ausgeführt werden.
 
-* **/s, /setdefault \<Distro>** Legt die Verteilung als Standard fest.
+* **/s, /setdefault \<Distro>** Legt die Distribution als Standard fest.
 
-* **/t, /terminate \<Distro>** Beendet die Verteilung.
+* **/t, /terminate \<Distro>** Beendet die Distribution.
 
-* **/u, /unregister \<Distro>** Hebt die Registrierung der Verteilung auf.
+* **/u, /unregister \<Distro>** Hebt die Registrierung der Distribution auf.
 
-* **/upgrade \<Distro>** Führt ein Upgrade der Verteilung auf das WslFs-Dateisystemformat durch.
+* **/upgrade \<Distro>** Führt ein Upgrade der Distribution auf das WslFs-Dateisystemformat durch.
 
 ### `bash.exe`
 

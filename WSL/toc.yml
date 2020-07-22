@@ -36,7 +36,7 @@
       href: file-permissions.md
     - name: Einrichten von WSL für Ihr Unternehmen
       href: enterprise.md
-    - name: Erstellen einer benutzerdefinierten Verteilung
+    - name: Erstellen einer benutzerdefinierten Distribution
       href: build-custom-distro.md
     - name: Befehlszeilenreferenz
       href: reference.md

@@ -1,7 +1,7 @@
 ---
 title: Windows-Subsystem für Linux für Unternehmen
 description: Ressourcen und Anweisungen zur optimalen Verwendung des Windows-Subsystems für Linux in einer Unternehmensumgebung.
-keywords: BashOnWindows, Bash, WSL, Windows, Windows-Subsystem für Linux, Windows-Subsystem, Ubuntu, Debian, Suse, Windows 10, Unternehmen, Bereitstellung, offline, Paket, Store, Verteilung, Installation, installieren
+keywords: BashOnWindows, Bash, WSL, Windows, Windows-Subsystem für Linux, Windows-Subsystem, Ubuntu, Debian, Suse, Windows 10, Unternehmen, Bereitstellung, offline, Paket, Store, Distribution, Installation, installieren
 ms.date: 05/15/2020
 ms.topic: article
 ms.localizationpriority: high
@@ -19,13 +19,13 @@ Der Microsoft Store für Unternehmen bietet verschiedene Unternehmenslösungen, 
 Als Unternehmen, das nur sein System für die Bereitstellung von WSL einrichten möchte, führen Sie die folgenden Schritte aus:
 
 * [Registrieren für Microsoft Store für Unternehmen und erste Schritte](https://docs.microsoft.com/microsoft-store/sign-up-microsoft-store-for-business-overview).
-* [Verwalten Sie Ihre Produkte und Dienste (einschließlich der Benutzer, die auf die Apps in Ihrem privaten Store zugreifen können)](https://docs.microsoft.com/microsoft-store/manage-apps-microsoft-store-for-business-overview). Hier können Sie Ihrem Store WSL-Verteilungen hinzufügen und steuern, wer diese installieren kann.
-* [Verwenden einer Verteilungsmethode Ihrer Wahl, um die Software in Ihrem Unternehmen bereitzustellen](https://docs.microsoft.com/microsoft-store/distribute-apps-to-your-employees-microsoft-store-for-business)
+* [Verwalten Sie Ihre Produkte und Dienste (einschließlich der Benutzer, die auf die Apps in Ihrem privaten Store zugreifen können)](https://docs.microsoft.com/microsoft-store/manage-apps-microsoft-store-for-business-overview). Hier können Sie Ihrem Store WSL-Distributionen hinzufügen und steuern, wer diese installieren kann.
+* [Verwenden einer Distributionsmethode Ihrer Wahl, um die Software in Ihrem Unternehmen bereitzustellen](https://docs.microsoft.com/microsoft-store/distribute-apps-to-your-employees-microsoft-store-for-business)
 * Informieren Sie die Mitarbeiter Ihres Unternehmens, dass sie diesen Dokumentationslink zum Installieren von WSL verwenden können: [Installieren des Windows-Subsystems für Linux](./install-win10.md)
 
-## <a name="how-to-distribute-a-linux-distribution-on-windows-offline"></a>Offlineverteilen einer Linux-Verteilung unter Windows
+## <a name="how-to-distribute-a-linux-distribution-on-windows-offline"></a>Offlineverteilen einer Linux-Distribution unter Windows
 
-Wenn die Computer in Ihrem Unternehmen keinen Zugriff auf den Microsoft Store oder den Microsoft Store für Unternehmen haben, können Sie das Installationsprogramm einer Linux-Verteilung mit einer Offline Lizenz herunterladen, indem Sie die folgenden Schritte ausführen.
+Wenn die Computer in Ihrem Unternehmen keinen Zugriff auf den Microsoft Store oder den Microsoft Store für Unternehmen haben, können Sie das Installationsprogramm einer Linux-Distribution mit einer Offline Lizenz herunterladen, indem Sie die folgenden Schritte ausführen.
 
 ### <a name="set-up-an-azure-active-directory-account"></a>Einrichten eines Azure Active Directory-Kontos
 
@@ -47,11 +47,11 @@ Die Anweisungen zum Registrieren eines Kontos finden Sie hier: https://docs.micr
 
     ![Microsoft Store für Unternehmen – Startseite](media/offlineinstallscreens/1-screen.png)
 
-4. Suchen Sie nach der gewünschten Verteilung, und wählen Sie sie aus.
+4. Suchen Sie nach der gewünschten Distribution, und wählen Sie sie aus.
 
     ![Microsoft Store für Unternehmen – Startseite mit aktiver Suche](media/offlineinstallscreens/3-screen.png)
 
-5. Wählen Sie im Dropdownmenü „Lizenztyp“ eine Offlinelizenz und dann „App abrufen“ aus. (Einige Linux-Verteilungen bieten möglicherweise keine Offlinelizenzen.)
+5. Wählen Sie im Dropdownmenü „Lizenztyp“ eine Offlinelizenz und dann „App abrufen“ aus. (Einige Linux-Distributionen bieten möglicherweise keine Offlinelizenzen.)
 
     ![Microsoft Store für Unternehmen – Ubuntu-Produktseite](media/offlineinstallscreens/4-screen.png)
 

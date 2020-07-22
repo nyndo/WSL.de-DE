@@ -47,16 +47,16 @@ Wenn Sie z. B. die WSL-Projektdateien speichern:
 * Verwenden Sie das Stammverzeichnis des Linux-Dateisystems: `\\wsl$\Ubuntu-18.04\home\<user name>\Project`
 * Verwenden Sie nicht das Stammverzeichnis des Windows-Dateisystems: `C:\Users\<user name>\Project`
 
-Projektdateien, mit denen Sie mit einer WSL-Verteilung (z. B. Ubuntu) arbeiten, müssen sich im Linux-Stammdateisystem befinden, um von dem schnelleren Dateisystemzugriff zu profitieren.
+Projektdateien, mit denen Sie mit einer WSL-Distribution (z. B. Ubuntu) arbeiten, müssen sich im Linux-Stammdateisystem befinden, um von dem schnelleren Dateisystemzugriff zu profitieren.
 
-Sie können mit Windows-Apps und -Tools wie dem Datei-Explorer auf Ihr Linux-Stammdateisystem zugreifen. Öffnen Sie eine Linux-Verteilung (z. B. Ubuntu), und stellen Sie sicher, dass Sie sich im Basisverzeichnis von Linux befinden, indem Sie den Befehl `cd ~` eingeben. Öffnen Sie dann das Linux-Dateisystem im Datei-Explorer, indem Sie Folgendes eingeben *(den Punkt am Ende nicht vergessen)* : `explorer.exe .`
+Sie können mit Windows-Apps und -Tools wie dem Datei-Explorer auf Ihr Linux-Stammdateisystem zugreifen. Öffnen Sie eine Linux-Distribution (z. B. Ubuntu), und stellen Sie sicher, dass Sie sich im Basisverzeichnis von Linux befinden, indem Sie den Befehl `cd ~` eingeben. Öffnen Sie dann das Linux-Dateisystem im Datei-Explorer, indem Sie Folgendes eingeben *(den Punkt am Ende nicht vergessen)* : `explorer.exe .`
 
 ## <a name="exceptions-for-using-wsl-1-rather-than-wsl-2"></a>Ausnahmen zur Verwendung von WSL 1 anstelle von WSL 2
 
 Es wird empfohlen, WSL 2 zu verwenden, da es eine schnellere Leistung und 100%ige Kompatibilität von Systemaufrufen bietet. Es gibt jedoch einige spezielle Szenarien, in denen Sie möglicherweise WSL 1 verwenden möchten. Erwägen Sie in folgenden Fällen die Verwendung von WSL 1:
 
 * Ihre Projektdateien müssen im Windows-Dateisystem gespeichert werden.
-  * Wenn Sie Ihre WSL Linux-Verteilung verwenden, um auf Projektdateien im Windows-Dateisystem zuzugreifen, und diese Dateien nicht im Linux-Dateisystem gespeichert werden können, erzielen Sie mithilfe von WSL 1 eine schnellere Leistung über die Betriebssystemdateien.
+  * Wenn Sie Ihre WSL Linux-Distribution verwenden, um auf Projektdateien im Windows-Dateisystem zuzugreifen, und diese Dateien nicht im Linux-Dateisystem gespeichert werden können, erzielen Sie mithilfe von WSL 1 eine schnellere Leistung über die Betriebssystemdateien.
 * Ein Projekt, das die Kreuzkompilierung mithilfe von Windows- und Linux-Tools für dieselben Dateien erfordert.
   * Die Dateileistung über Windows- und Linux-Betriebssysteme hinweg ist in WSL 1 schneller als in WSL 2. Wenn Sie also Windows-Anwendungen für den Zugriff auf Linux-Dateien verwenden, erzielen Sie derzeit eine schnellere Leistung mit WSL 1.
 
@@ -101,9 +101,9 @@ Wenn Sie in Ihrer Linux-Verteilung eine Netzwerk-App (z. B. eine App, die auf e
 
 Wenn Sie jedoch eine ältere Version von Windows ausführen (Build 18945 oder älter), müssen Sie die IP-Adresse der Linux-Host-VM abrufen (oder [auf die neueste Windows-Version aktualisieren](ms-settings:windowsupdate)).
 
-So ermitteln Sie die IP-Adresse des virtuellen Computers, der Ihre Linux-Verteilung unterstützt:
+So ermitteln Sie die IP-Adresse des virtuellen Computers, der Ihre Linux-Distribution unterstützt:
 
-* Führen Sie in ihrer WSL-Verteilung (z. B. Ubuntu) den folgenden Befehl aus: `ip addr`
+* Führen Sie in ihrer WSL-Distribution (z. B. Ubuntu) den folgenden Befehl aus: `ip addr`
 * Suchen und kopieren Sie die Adresse unter dem `inet`-Wert der `eth0`-Schnittstelle.
 * Wenn Sie das grep-Tool installiert haben, finden Sie es leichter, indem Sie die Ausgabe mit dem Befehl `ip addr | grep eth0` filtern.
 * Stellen Sie mithilfe dieser IP-Adresse eine Verbindung mit Ihrem Linux-Server her.
@@ -114,8 +114,8 @@ Die Abbildung zeigt ein Beispiel dafür – hier wird mithilfe des Microsoft Edg
 
 ### <a name="accessing-windows-networking-apps-from-linux-host-ip"></a>Zugreifen auf Windows-Netzwerk-Apps aus Linux (Host-IP)
 
-Wenn Sie von Ihrer Linux-Verteilung (d. h. Ubuntu) aus, auf eine Netzwerk-App zugreifen möchten, die unter Windows ausgeführt wird (z. B. eine App, die auf einer NodeJS- oder SQL Server-Instanz ausgeführt wird), müssen Sie die IP-Adresse des Hostcomputers verwenden. Obwohl dies kein gängiges Szenario ist, können Sie die folgenden Schritte ausführen, damit es funktioniert.
-    - Rufen Sie die IP-Adresse Ihres Hostcomputers ab, indem Sie den folgenden Befehl aus Ihrer Linux-Verteilung heraus ausführen: `cat /etc/resolv.conf`
+Wenn Sie von Ihrer Linux-Distribution (d. h. Ubuntu) aus, auf eine Netzwerk-App zugreifen möchten, die unter Windows ausgeführt wird (z. B. eine App, die auf einer NodeJS- oder SQL Server-Instanz ausgeführt wird), müssen Sie die IP-Adresse des Hostcomputers verwenden. Obwohl dies kein gängiges Szenario ist, können Sie die folgenden Schritte ausführen, damit es funktioniert.
+    - Rufen Sie die IP-Adresse Ihres Hostcomputers ab, indem Sie den folgenden Befehl aus Ihrer Linux-Distribution heraus ausführen: `cat /etc/resolv.conf`
     - Kopieren Sie die IP-Adresse nach dem Begriff: `nameserver`.
     - Stellen Sie mithilfe der kopierten IP-Adresse eine Verbindung zu jedem beliebigen Windows-Server her.
 
@@ -131,28 +131,28 @@ Wenn Sie Remote-IP-Adressen verwenden, um Verbindungen mit Ihren Anwendungen her
 
 Sie müssen z. B. möglicherweise Ihre Anwendung an `0.0.0.0` statt an `127.0.0.1` binden. In dem Beispiel einer Python-App, die Flask verwendet, kann das mithilfe dieses Befehls erfolgen: `app.run(host='0.0.0.0')`. Beachten Sie bei diesen Änderungen die Sicherheit, da Verbindungen aus Ihrem LAN zugelassen werden.
 
-#### <a name="accessing-a-wsl-2-distribution-from-your-local-area-network-lan"></a>Zugreifen auf eine WSL 2-Verteilung aus Ihrem LAN (Local Area Network)
+#### <a name="accessing-a-wsl-2-distribution-from-your-local-area-network-lan"></a>Zugreifen auf eine WSL 2-Distribution aus Ihrem LAN (Local Area Network)
 
-Wenn Sie eine WSL 1-Verteilung verwenden und Ihr Computer so eingerichtet wurde, dass auf ihn über Ihr LAN zugegriffen wird, kann auf Anwendungen, die in WSL ausgeführt werden, in Ihrem LAN ebenfalls zugegriffen werden.
+Wenn Sie eine WSL 1-Distribution verwenden und Ihr Computer so eingerichtet wurde, dass auf ihn über Ihr LAN zugegriffen wird, kann auf Anwendungen, die in WSL ausgeführt werden, in Ihrem LAN ebenfalls zugegriffen werden.
 
 Dies ist nicht der Standardfall in WSL 2. WSL 2 verfügt über einen virtualisierten Ethernet-Adapter mit einer eigenen eindeutigen IP-Adresse. Um diesen Workflow zu aktivieren, müssen Sie aktuell die gleichen Schritte wie bei einem gewöhnlichen virtuellen Computer durchlaufen. (Wir untersuchen Möglichkeiten, dieses Verhalten zu verbessern.)
 
 #### <a name="ipv6-access"></a>IPv6-Zugriff
 
-WSL 2-Verteilungen können aktuell keine reinen IPv6-Adressen erreichen. Wir arbeiten daran, diese Funktion hinzuzufügen.
+WSL 2-Distributionen können aktuell keine reinen IPv6-Adressen erreichen. Wir arbeiten daran, diese Funktion hinzuzufügen.
 
 ## <a name="expanding-the-size-of-your-wsl-2-virtual-hardware-disk"></a>Erweitern der Größe Ihrer virtuellen WSL 2-Festplatte (VHD)
 
 WSL 2 verwendet eine virtuelle Festplatte (VHD) zum Speichern Ihrer Linux-Dateien. Wenn die maximale Größe erreicht ist, müssen Sie sie möglicherweise erweitern.
 
-Die WSL 2-VHD verwendet das Ext4-Dateisystem. Diese VHD wird automatisch an Ihre Speicheranforderungen angepasst, und verfügt über eine anfängliche maximale Größe von 256 GB. Wenn Ihre Verteilung über die Größe von 256 GB anwächst, werden Ihnen Fehler angezeigt, die besagen, dass kein Speicherplatz mehr zur Verfügung steht. Sie können diesen Fehler beheben, indem Sie die Größe der VHD heraufsetzen.
+Die WSL 2-VHD verwendet das Ext4-Dateisystem. Diese VHD wird automatisch an Ihre Speicheranforderungen angepasst, und verfügt über eine anfängliche maximale Größe von 256 GB. Wenn Ihre Distribution über die Größe von 256 GB anwächst, werden Ihnen Fehler angezeigt, die besagen, dass kein Speicherplatz mehr zur Verfügung steht. Sie können diesen Fehler beheben, indem Sie die Größe der VHD heraufsetzen.
 
 So erweitern Sie die maximale VHD-Größe auf über 256 GB:
 
 1. Beenden Sie alle WSL-Instanzen mit dem Befehl `wsl --shutdown`.
 
-2. Suchen Sie das Installationspaket Ihrer Verteilung mit dem Namen „PackageFamilyName“.
-    * Geben Sie in PowerShell Folgendes ein (wobei „distro“ für den Namen Ihrer Verteilung steht):
+2. Suchen Sie das Installationspaket Ihrer Distribution mit dem Namen „PackageFamilyName“.
+    * Geben Sie in PowerShell Folgendes ein (wobei „distro“ für den Namen Ihrer Distribution steht):
     * `Get-AppxPackage -Name "*<distro>*" | Select PackageFamilyName`
 
 3. Suchen Sie den `fullpath` der VHD-Datei, die von Ihrer WSL 2-Installation verwendet wird, dies ist Ihr `pathToVHD`:
@@ -164,9 +164,9 @@ So erweitern Sie die maximale VHD-Größe auf über 256 GB:
       * `Select vdisk file="<pathToVHD>"`
       * `expand vdisk maximum="<sizeInMegaBytes>"`
 
-5. Starten Sie Ihre WSL-Verteilung (z. B. Ubuntu).
+5. Starten Sie Ihre WSL-Distribution (z. B. Ubuntu).
 
-6. Machen Sie WSL darauf aufmerksam, dass die Größe des Dateisystems durch Ausführen dieser Befehle über die Befehlszeile der Linux-Verteilung erweitert werden kann:
+6. Machen Sie WSL darauf aufmerksam, dass die Größe des Dateisystems durch Ausführen dieser Befehle über die Befehlszeile der Linux-Distribution erweitert werden kann:
     * `sudo mount -t devtmpfs none /dev`
     * `mount | grep ext4`
     * Kopieren Sie den Namen dieses Eintrags, der diese Form hat: `/dev/sdXX` (wobei X für ein beliebiges anderes Zeichen steht).
@@ -174,4 +174,4 @@ So erweitern Sie die maximale VHD-Größe auf über 256 GB:
     * Verwenden Sie den Wert, den Sie zuvor kopiert haben. Möglicherweise müssen Sie auch „resize2fs“ installieren: `apt install resize2fs`
 
 > [!NOTE]
-> Im Allgemeinen sollten Sie die WSL-bezogenen Dateien, die sich in Ihrem AppData-Ordner befinden, nicht mithilfe von Windows-Tools oder-Editoren ändern, verschieben oder darauf zugreifen. Dies könnte zu einer Beschädigung Ihrer Linux-Verteilung führen.
+> Im Allgemeinen sollten Sie die WSL-bezogenen Dateien, die sich in Ihrem AppData-Ordner befinden, nicht mithilfe von Windows-Tools oder-Editoren ändern, verschieben oder darauf zugreifen. Dies könnte zu einer Beschädigung Ihrer Linux-Distribution führen.

@@ -92,7 +92,7 @@ Informationen zur Installation von git finden Sie unter [Einrichten von git für
 
 ## <a name="install-windows-terminal-optional"></a>Installieren von Windows-Terminal (optional)
 
-Das neue Windows-Terminal ermöglicht mehrere Registerkarten (schnelles Umschalten zwischen Eingabeaufforderung, PowerShell oder mehreren Linux-Verteilungen), benutzerdefinierte Tastenbindungen (erstellen Sie eigene Tastenkombinationen zum Öffnen oder Schließen von Registerkarten, kopieren und Einfügen usw.), Emojis-☺ und benutzerdefinierte Designs (Farbschemas, Schriftarten und Größen, Hintergrundbild/weich/Transparenz). Weitere Informationen finden Sie in der [Windows-Terminal](https://docs.microsoft.com/windows/terminal)Dokumentation.
+Das neue Windows-Terminal ermöglicht mehrere Registerkarten (schnelles Umschalten zwischen Eingabeaufforderung, PowerShell oder mehreren Linux-Distributionen), benutzerdefinierte Tastenbindungen (erstellen Sie eigene Tastenkombinationen zum Öffnen oder Schließen von Registerkarten, kopieren und Einfügen usw.), Emojis-☺ und benutzerdefinierte Designs (Farbschemas, Schriftarten und Größen, Hintergrundbild/weich/Transparenz). Weitere Informationen finden Sie in der [Windows-Terminal](https://docs.microsoft.com/windows/terminal)Dokumentation.
 
 1. Get [Windows-Terminal in der Microsoft Store](https://www.microsoft.com/store/apps/9n0dx20hk701): durch die Installation über den Store werden Updates automatisch verarbeitet.
 

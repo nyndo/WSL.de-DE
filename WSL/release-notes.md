@@ -305,7 +305,7 @@ Allgemeine Windows-Informationen zu Build 18277 finden Sie im [Windows-Blog](htt
 Allgemeine Windows-Informationen zu Build 18272 finden Sie im [Windows-Blog](https://blogs.windows.com/windowsexperience/2018/10/31/announcing-windows-10-insider-preview-build-18272/).
 
 ### <a name="wsl"></a>WSL
-* **WARNUNG:** In diesem Build liegt ein Problem vor, durch das WSL nicht funktionsfähig wird. Wenn Sie versuchen, die Verteilung zu starten, wird der Fehler „Schnittstelle nicht unterstützt“ angezeigt. Das Problem wurde behoben und ist im Insider Fast-Build der nächsten Woche nicht mehr enthalten. Wenn Sie diesen Build installiert haben, können Sie ein Rollback auf den vorherigen Windows-Build durchführen, indem Sie unter „Einstellungen > Update und Sicherheit > Wiederherstellung“ die Option „Zur vorherigen Version von Windows 10 zurückkehren“ auswählen.
+* **WARNUNG:** In diesem Build liegt ein Problem vor, durch das WSL nicht funktionsfähig wird. Wenn Sie versuchen, die Distribution zu starten, wird der Fehler „Schnittstelle nicht unterstützt“ angezeigt. Das Problem wurde behoben und ist im Insider Fast-Build der nächsten Woche nicht mehr enthalten. Wenn Sie diesen Build installiert haben, können Sie ein Rollback auf den vorherigen Windows-Build durchführen, indem Sie unter „Einstellungen > Update und Sicherheit > Wiederherstellung“ die Option „Zur vorherigen Version von Windows 10 zurückkehren“ auswählen.
 
 ## <a name="build-18267"></a>Build 18267
 Allgemeine Windows-Informationen zu Build 18267 finden Sie im [Windows-Blog](https://blogs.windows.com/windowsexperience/2018/10/24/announcing-windows-10-insider-preview-build-18267/).
