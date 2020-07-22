@@ -4,12 +4,12 @@ description: Beschreibt die Windows-Interoperabilität mit Linux-Distributionen,
 ms.date: 05/12/2020
 ms.topic: article
 ms.localizationpriority: high
-ms.openlocfilehash: b1c7a64a86cf088159d1abee3b341328151428f6
-ms.sourcegitcommit: 1b6191351bbf9e95f3c28fc67abe4bf1bcfd3336
+ms.openlocfilehash: d78cc53aa40f896c20e40a5ef00570a97ccac258
+ms.sourcegitcommit: 386d47a1c53a85b91f5a2b0f1f99ce2c46b20a77
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/13/2020
-ms.locfileid: "83270844"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "86093262"
 ---
 # <a name="windows-interoperability-with-linux"></a>Windows-Interoperabilität mit Linux
 
@@ -147,9 +147,11 @@ Eigenschaften einer `WSLENV`-Variablen:
 * Die Variable ist freigegeben, und sie ist sowohl in Windows- als auch in WSL-Umgebungen vorhanden.
 * Es handelt sich um eine Liste von Umgebungsvariablen, die von Windows und WSL gemeinsam genutzt werden können.
 * Sie kann Umgebungsvariablen so formatieren, dass sie in Windows und WSL gut funktionieren.
+* Sie kann den Flow zwischen WSL und Win32 unterstützen.
 
 > [!NOTE]
 > Vor 17063 war `PATH` die einzige Windows-Umgebungsvariable, auf die WSL zugreifen konnte (sodass Sie ausführbare Win32-Dateien unter WSL starten konnten). Ab 17063 wird `WSLENV` unterstützt.
+> WSLENV unterscheidet zwischen Groß-/Kleinschreibung.
 
 ## <a name="wslenv-flags"></a>WSLENV-Flags
 
@@ -163,6 +165,8 @@ In `WSLENV` sind vier Flags verfügbar, die beeinflussen, wie die Umgebungsvaria
 * `/w`: Gibt an, dass diese Umgebungsvariable nur beim Ausführen von Win32 aus WSL einbezogen werden soll.
 
 Diese Flags können nach Bedarf kombiniert werden.
+
+[Hier finden Sie weitere Informationen über WSLENV](https://devblogs.microsoft.com/commandline/share-environment-vars-between-wsl-and-windows/), einschließlich FAQs und Beispiele für das Festlegen des Werts von WSLENV auf eine Verkettung anderer vordefinierter Umgebungsvariablen, jeweils mit einem Schrägstrich als Suffix, gefolgt von Flags, um Spezifizieren, wie der Wert übersetzt werden soll, und für die Übergabe von Variablen mit einem Skript. Dieser Artikel enthält auch ein Beispiel für das Einrichten einer Entwicklungsumgebung mit der [Programmiersprache „Go“](https://golang.org/), die für die gemeinsame Nutzung eines GOPATH zwischen WSL und Win32 konfiguriert ist.
 
 ## <a name="disable-interoperability"></a>Deaktivieren der Interoperabilität
 

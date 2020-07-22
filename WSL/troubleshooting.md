@@ -5,12 +5,12 @@ keywords: BashOnWindows, bash, wsl, windows, windowssubsystem, ubuntu
 ms.date: 01/20/2020
 ms.topic: article
 ms.localizationpriority: high
-ms.openlocfilehash: 9028f1e89e92da94d82b16603b3af60876a4cb86
-ms.sourcegitcommit: 39d3a2f0f4184eaec8d8fec740aff800e8ea9ac7
+ms.openlocfilehash: cc8f032a99fb087b7ef614dd3a3574cb8ee3f2da
+ms.sourcegitcommit: ba52d673c123fe8ae61e872a33e218cfc30a1f82
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/24/2020
-ms.locfileid: "79318144"
+ms.lasthandoff: 07/07/2020
+ms.locfileid: "86033066"
 ---
 # <a name="troubleshooting-windows-subsystem-for-linux"></a>Problembehandlung des Windows-Subsystems für Linux
 
@@ -39,6 +39,41 @@ Um einen Beitrag zur WSL-Dokumentation zu leisten, senden Sie ein Pull Request i
 Wenn sich Ihr Problem auf den Windows-Terminal, die Windows-Konsole oder die Befehlszeilenschnittstelle bezieht, verwenden Sie schließlich das Windows-Terminal-Repository: https://github.com/microsoft/terminal
 
 ## <a name="common-issues"></a>Allgemeine Probleme
+
+### <a name="cannot-access-wsl-files-from-windows"></a>Kein Zugriff auf WSL-Dateien von Windows aus möglich
+Ein 9p-Protokolldateiserver stellt den Dienst auf der Linux-Seite bereit, um Windows den Zugriff auf das Linux-Dateisystem zu ermöglichen. Wenn Sie nicht über `\\wsl$` unter Windows auf WSL zugreifen können, kann dies daran liegen, dass 9P nicht ordnungsgemäß gestartet wurde.
+
+Um dies zu überprüfen, können Sie die Startprotokolle mit `dmesg |grep 9p` überprüfen. Dadurch werden Fehler angezeigt. Eine erfolgreiche Ausgabe sieht wie folgt aus: 
+
+```
+[    0.363323] 9p: Installing v9fs 9p2000 file system support
+[    0.363336] FS-Cache: Netfs '9p' registered for caching
+[    0.398989] 9pnet: Installing 9P2000 support
+```
+
+Weitere Informationen zu diesem Problem finden Sie in [diesem GitHub-Thread](https://github.com/microsoft/wsl/issues/5307).
+
+### <a name="cant-start-wsl-2-distro-and-only-see-wsl-2-in-output"></a>WSL 2-Verteilung kann nicht gestartet werden, und in der Ausgabe wird nur "WSL 2" angezeigt.
+Wenn Ihre Anzeigesprache nicht Englisch ist, sehen Sie möglicherweise eine abgeschnittene Version eines Fehlertexts.
+
+```powershell
+C:\Users\me>wsl
+WSL 2
+```
+
+Um dieses Problem zu beheben, navigieren Sie zu `https://aka.ms/wsl2kernel`, und installieren Sie den Kernel manuell, indem Sie die Anweisungen auf der doc-Seite befolgen. 
+
+### <a name="please-enable-the-virtual-machine-platform-windows-feature-and-ensure-virtualization-is-enabled-in-the-bios"></a>Aktivieren Sie das Windows-Feature "Virtual Machine Platform", und stellen Sie sicher, dass Virtualisierung im BIOS aktiviert ist.
+
+1. Klicken Sie auf [Systemanforderungen von Hyper-V](https://docs.microsoft.com/windows-server/virtualization/hyper-v/system-requirements-for-hyper-v-on-windows#:~:text=on%20Windows%20Server.-,General%20requirements,the%20processor%20must%20have%20SLAT.).
+2. Wenn es sich bei dem Computer um einen virtuellen Computer handelt, aktivieren Sie die [geschachtelte Virtualisierung](https://docs.microsoft.com/windows/wsl/wsl2-faq#can-i-run-wsl-2-in-a-virtual-machine) manuell. Starten Sie PowerShell als Administrator, und führen Sie folgende Schritte aus: 
+
+```powershell
+Set-VMProcessor -VMName <VMName> -ExposeVirtualizationExtensions $true
+```
+
+3. Befolgen Sie die Richtlinien des Herstellers Ihres PCs, um zu erfahren, wie Sie die Virtualisierung aktivieren. Dadurch müssen Sie möglicherweise den System-BIOS verwenden, um sicherzustellen, dass diese Features auf Ihrer CPU aktiviert sind. 
+4. Starten Sie den Computer neu, nachdem Sie die optionale `Virtual Machine Platform`-Komponente aktiviert haben. 
 
 ### <a name="bash-loses-network-connectivity-once-connected-to-a-vpn"></a>Bash verliert nach dem Herstellen einer Verbindung mit einem VPN die Netzwerkkonnektivität
 

@@ -6,14 +6,30 @@ author: benhillis
 ms.date: 05/15/2020
 ms.topic: article
 ms.localizationpriority: high
-ms.openlocfilehash: 3df4d4b4e0c542a3e87306c01a14b7073eb5e677
-ms.sourcegitcommit: 3fb40fd65b34a5eb26b213a0df6a3b2746b7a9b4
+ms.openlocfilehash: 2fcf24719f037a29bab7652fc75ac82cc0b6176a
+ms.sourcegitcommit: 031a74801e03a90aed4b34c4fd5bfe964fc30994
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/12/2020
-ms.locfileid: "83235946"
+ms.lasthandoff: 06/17/2020
+ms.locfileid: "84942594"
 ---
 # <a name="release-notes-for-windows-subsystem-for-linux"></a>Anmerkungen zu dieser Version des Windows-Subsystems für Linux
+
+## <a name="build-20150"></a>Build 20150
+Allgemeine Windows-Informationen zu Build 20150 finden Sie im [Windows-Blog](https://blogs.windows.com/windowsexperience/2020/06/17/announcing-windows-10-insider-preview-build-20150/).
+
+* Informationen zu WSL2 GPU Compute finden Sie im [Windows-Blog](https://blogs.windows.com/windowsexperience/2020/06/17/announcing-windows-10-insider-preview-build-20150/).
+* Führen Sie die Befehlszeilenoption „wsl.exe --install“ zum einfachen Einrichten von WSL ein.
+* Führen Sie die Befehlszeilenoption „wsl.exe --update“ zum Verwalten von Updates für den WSL2-Kernel ein. 
+* Legen Sie WSL2 als Standard fest.
+* Erhöhen Sie das Timeout für das kontrollierte Beenden der WSL2-VM.
+* Korrigieren Sie die virtio-9p-Racebedingung beim Zuordnen des Gerätespeichers.
+* Führen Sie keinen 9p-Server mit erhöhten Rechten aus, wenn UAC deaktiviert ist.
+
+## <a name="build-19640"></a>Build 19640
+Allgemeine Windows-Informationen zu Build 19640 finden Sie im [Windows-Blog](https://blogs.windows.com/windowsexperience/2020/06/03/announcing-windows-10-insider-preview-build-19640/).
+
+* [WSL2] Stabilitätsverbesserungen für virtio-9p (drvfs).
 
 ## <a name="build-19555"></a>Build 19555
 Allgemeine Windows-Informationen zu Build 19555 finden Sie im [Windows-Blog](https://blogs.windows.com/windowsexperience/2020/01/30/announcing-windows-10-insider-preview-build-19555/).

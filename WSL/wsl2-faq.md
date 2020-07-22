@@ -7,12 +7,12 @@ ms.topic: article
 ms.assetid: 7afaeacf-435a-4e58-bff0-a9f0d75b8a51
 ms.custom: seodec18
 ms.localizationpriority: high
-ms.openlocfilehash: 35edad06775e75eef6d81d018355d8f28d772deb
-ms.sourcegitcommit: 3fb40fd65b34a5eb26b213a0df6a3b2746b7a9b4
+ms.openlocfilehash: 89b8a29f0c2d24a3c97d9661db3d83963629f34f
+ms.sourcegitcommit: cb8a61e7de08b1c18622fc78bc5dfa38786e921a
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/12/2020
-ms.locfileid: "83235894"
+ms.lasthandoff: 06/10/2020
+ms.locfileid: "84663113"
 ---
 # <a name="wsl-2-faqs"></a>Häufig gestellte Fragen (FAQs) zu WSL 2
 
@@ -32,7 +32,7 @@ Es ist zurzeit nicht geplant, WSL 1 als veraltet zu kennzeichnen. Sie können W
 
 Einige Anwendungen von Drittanbietern funktionieren nicht, wenn Hyper-V verwendet wird, was bedeutet, dass sie nicht ausgeführt werden können, wenn WSL 2 aktiviert ist (z. B. VMware und VirtualBox). Vor kurzem wurden jedoch von VirtualBox und VMware Versionen veröffentlicht, die Hyper-V und WSL2 unterstützen. Hier finden Sie weitere Informationen zu [VirtualBox-Änderungen][1] und [VMware-Änderungen][4].
 
-Wir untersuchen Möglichkeiten, dieses Problem zu beheben. Beispielsweise machen wir eine Reihe von APIs mit der Bezeichnung [Hypervisor-Plattform][2] verfügbar, die von Drittanbietern von Virtualisierungslösungen verwendet werden können, um ihre Software mit Hyper-V kompatibel zu machen. Dadurch können Anwendungen die Hyper-V-Architektur für ihre Emulation verwenden, wie etwa [den Google Android Emulator][3] und VirtualBox 6 und höher, die jetzt beide mit Hyper-V kompatibel sind.
+Wir arbeiten kontinuierlich an Lösungen zur Unterstützung der Integration von Hyper-V in Drittanbieterlösungen. Beispielsweise machen wir eine Reihe von APIs mit der Bezeichnung [Hypervisor-Plattform][2] verfügbar, die von Drittanbietern von Virtualisierungslösungen verwendet werden können, um ihre Software mit Hyper-V kompatibel zu machen. Dadurch können Anwendungen die Hyper-V-Architektur für ihre Emulation verwenden, wie etwa [den Google Android Emulator][3] und VirtualBox 6 und höher, die jetzt beide mit Hyper-V kompatibel sind.
 
 ## <a name="can-i-access-the-gpu-in-wsl-2-are-there-plans-to-increase-hardware-support"></a>Kann ich in WSL 2 auf die GPU zugreifen? Gibt es Pläne, die Hardwareunterstützung auszuweiten?
 

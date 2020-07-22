@@ -1,20 +1,17 @@
 ---
-title: Installieren des Windows-Subsystems für Linux (WSL) unter Windows 10
-description: Installationsanweisungen für das Windows-Subsystem für Linux unter Windows 10.
-keywords: BashOnWindows, bash, wsl, windows, windows subsystem for linux, windowssubsystem, ubuntu, debian, suse, windows 10, install
+title: Archivierte WSL-Anweisungen
 ms.date: 07/23/2018
 ms.topic: article
 ms.assetid: 7afaeacf-435a-4e58-bff0-a9f0d75b8a51
-ms.custom: seodec18
-ms.localizationpriority: high
-ms.openlocfilehash: 6ed12ba9d63d3f4038b67489035e13113a372928
-ms.sourcegitcommit: 9f12e168b80775cd967f22f97376e51043c3667e
-ms.translationtype: HT
+ROBOTS: NOINDEX
+ms.openlocfilehash: 1de614dccbbb8d0ef1b9ac070f6ec90281339858
+ms.sourcegitcommit: 16ffb1a096a4a7fbb77c58f92258051930cc82da
+ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/02/2020
-ms.locfileid: "84301201"
+ms.lasthandoff: 07/09/2020
+ms.locfileid: "86157956"
 ---
-# <a name="install-windows-subsystem-for-linux"></a>Installieren des Windows-Subsystems für Linux
+# <a name="archived-instructions"></a>Archivierte Anweisungen
 
 Im folgenden Leitfaden werden die Schritte beschrieben, die ausgeführt werden müssen, um das Windows-Subsystem für Linux (WSL) auf einem Computer mit Windows 10 zu installieren.
 

@@ -5,12 +5,12 @@ keywords: BashOnWindows, Bash, WSL, Windows, Windows-Subsystem, GNU, Linux, Ubun
 ms.date: 05/12/2020
 ms.topic: article
 ms.localizationpriority: high
-ms.openlocfilehash: aa656d2e5a301d3f5519065246ba99941e74f642
-ms.sourcegitcommit: 53e6a01cbb989dc1aeaba465af4730afe71beb40
+ms.openlocfilehash: 8354e9c35d1e97f38c4cf6aa53a861c2c5e290be
+ms.sourcegitcommit: 386d47a1c53a85b91f5a2b0f1f99ce2c46b20a77
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/01/2020
-ms.locfileid: "84256685"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "86093281"
 ---
 # <a name="comparing-wsl-2-and-wsl-1"></a>Vergleich zwischen WSL 2 und WSL 1
 
@@ -25,10 +25,10 @@ Feature | WSL 1 | WSL 2
  Integration zwischen Windows und Linux| ✅|✅
  Schnelle Startzeiten| ✅ | ✅
  Geringer Ressourcenbedarf| ✅ |✅
+ Wird mit aktuellen Versionen von VMWare und VirtualBox ausgeführt| ✅ | ✅
  Verwaltete VM| ❌ | ✅
  Vollständiger Linux-Kernel| ❌ |✅
  Vollständige Kompatibilität von Systemaufrufen| ❌ | ✅
- Wird mit aktuellen Versionen von VM-Ware und VirtualBox ausgeführt| ✅ | ❌
  Leistung über Betriebssystem-Dateisysteme hinweg| ✅ | ❌
 
 Sie verwenden bereits WSL 1 und möchten ein Upgrade auf WSL 2 ausführen? Befolgen Sie die Anweisungen für das [Upgrade auf WSL 2](./install-win10.md#update-to-wsl-2).
@@ -36,7 +36,7 @@ Sie verwenden bereits WSL 1 und möchten ein Upgrade auf WSL 2 ausführen? Befol
 WSL 2 ist nur in Windows 10, Version 2004, Build 19041 oder höher verfügbar. Überprüfen Sie Ihre Windows-Version, indem Sie die **Windows-Logo-Taste+R** auswählen, **winver** eingeben und **OK** auswählen. (Oder geben Sie den Befehl `ver` an der Windows-Eingabeaufforderung ein.) Möglicherweise müssen Sie [auf die neueste Windows-Version aktualisieren](ms-settings:windowsupdate). Für Builds vor 19041 wird WSL überhaupt nicht unterstützt.
 
 > [!NOTE]
-> WSL 2 kann mit [Vorschauversionen von VM-Ware](https://blogs.vmware.com/workstation/2020/01/vmware-workstation-tech-preview-20h1.html) und [VirtualBox 6.x](https://www.virtualbox.org/wiki/Changelog-6.0) verwendet werden.
+> Die WSL 2 verwendet [VMWare 15.5.5+](https://blogs.vmware.com/workstation/2020/05/vmware-workstation-now-supports-hyper-v-mode.html) und [VirtualBox 6+](https://www.virtualbox.org/wiki/Changelog-6.0).
 
 ## <a name="use-the-linux-file-system-for-faster-performance"></a>Verwenden des Linux-Dateisystems für eine schnellere Leistung
 
@@ -97,7 +97,7 @@ WSL 2 verwendet eine schlanke Hilfsprogramm-VM auf einem echten Linux-Kernel mit
 
 ### <a name="accessing-linux-networking-apps-from-windows-localhost"></a>Zugreifen auf Linux-Netzwerk-Apps aus Windows (localhost)
 
-Wenn Sie in Ihrer Linux-Distribution eine Netzwerk-App (z. B. eine App, die auf einer NodeJS- oder SQL Server-Instanz ausgeführt wird) entwickeln, können Sie auf diese über eine Windows-App (z. B. Ihren Edge- oder Chrome-Internetbrowser) unter Verwendung von `localhost` zugreifen (genau wie Sie dies normalerweise tun würden).
+Wenn Sie in Ihrer Linux-Verteilung eine Netzwerk-App (z. B. eine App, die auf einer NodeJS- oder SQL Server-Instanz ausgeführt wird) entwickeln, können Sie auf diese über eine Windows-App (z. B. Ihren Microsoft Edge- oder Chrome-Internetbrowser) unter Verwendung von `localhost` zugreifen (genau wie Sie dies normalerweise tun würden).
 
 Wenn Sie jedoch eine ältere Version von Windows ausführen (Build 18945 oder älter), müssen Sie die IP-Adresse der Linux-Host-VM abrufen (oder [auf die neueste Windows-Version aktualisieren](ms-settings:windowsupdate)).
 

@@ -4,12 +4,12 @@ description: Referenzliste und Konfigurieren mehrerer Linux-Distributionen, die 
 keywords: BashOnWindows, bash, wsl, windows, windows subsystem for linux, windowssubsystem, ubuntu, wsl.conf, wslconfig
 ms.date: 05/12/2020
 ms.topic: article
-ms.openlocfilehash: dc488ab988d8e158b5eff7a486a2fe707dbedfd7
-ms.sourcegitcommit: 90f7caeefe886bf6c0ba2b90c1b56b5f9795ad1b
+ms.openlocfilehash: e97b1030d5891bf8aa1cb656646a4d9e1d480a3d
+ms.sourcegitcommit: f1b049a1276782d4f2754f46a8d2025b598a0784
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84153116"
+ms.lasthandoff: 06/24/2020
+ms.locfileid: "85336083"
 ---
 # <a name="wsl-commands-and-launch-configurations"></a>WSL-Befehle und Start Konfigurationen
 
@@ -317,7 +317,7 @@ Diese Optionen sind in Build 18980 und höher verfügbar.
 
 > **Verfügbar in Windows Build 19041 und höher**
 
-Sie können globale WSL-Optionen konfigurieren, indem Sie eine `.wslconfig` Datei in das Stammverzeichnis Ihres Benutzer Ordners einfügen: `C:\Users\<yourUserName>\.wslconfig` . 
+Sie können globale WSL-Optionen konfigurieren, indem Sie eine `.wslconfig` Datei in das Stammverzeichnis Ihres Benutzer Ordners einfügen: `C:\Users\<yourUserName>\.wslconfig` . Viele dieser Dateien beziehen sich auf WSL 2. Beachten Sie, dass Sie möglicherweise ausführen müssen `wsl --shutdown` , um die WSL 2-VM herunterzufahren, und dann die WSL-Instanz neu starten, damit diese Änderungen wirksam werden.
 
 Im folgenden finden Sie eine wslconfig-Beispieldatei:
 
@@ -340,7 +340,7 @@ Diese Einstellungen wirken sich auf die VM aus, die jede WSL 2-Distribution unte
 |:----|:----|:----|:----|
 | kernel | Zeichenfolge | Der von Microsoft bereitgestellte Posteingang | Ein absoluter Windows-Pfad zu einem benutzerdefinierten Linux-Kernel. |
 | memory | size | 80% ihres gesamten Arbeitsspeichers unter Windows | Wie viel Arbeitsspeicher für die WSL 2-VM zugewiesen werden soll. |
-| Prozessoren | Zahl | Die gleiche Anzahl von Prozessoren unter Windows | Gibt an, wie viele Prozessoren der WSL 2-VM zugewiesen werden sollen. |
+| Prozessoren | number | Die gleiche Anzahl von Prozessoren unter Windows | Gibt an, wie viele Prozessoren der WSL 2-VM zugewiesen werden sollen. |
 | localhostforwarding | boolean | `true` | Boolescher Wert, der angibt, ob an den Platzhalter oder localhost in der WSL 2-VM gebundene Ports über localhost: Port vom Host aus verbunden werden sollen. |
 | kernelcommandline | Zeichenfolge | Leer | Zusätzliche Kernel-Befehlszeilenargumente. |
 | swap | size | 25% der Arbeitsspeicher Größe unter Windows auf das nächste GB aufgerundet | Wie viel Auslagerungs Bereich zum virtuellen WSL 2-Computer hinzugefügt werden soll, 0 für keine Auslagerungs Datei. |

@@ -5,12 +5,12 @@ keywords: WSL, Windows-Subsystem für Linux, manuelle Installation, manuell inst
 ms.date: 05/28/2020
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 621b2619d6c62e0b6c4e53f7791fc587c1c8f878
-ms.sourcegitcommit: 09f5eb0f6062642e5c86deb1f34307ce3429163a
+ms.openlocfilehash: d948ce9d304314bdd15b98136b8a99ca35723139
+ms.sourcegitcommit: e67eb4aedff57a304188ca3360aba25605f8bdb1
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/29/2020
-ms.locfileid: "84211716"
+ms.lasthandoff: 06/12/2020
+ms.locfileid: "84746276"
 ---
 # <a name="manually-download-windows-subsystem-for-linux-distro-packages"></a>Manuelles Herunterladen von Distributionspaketen des Windows-Subsystems für Linux
 
@@ -23,6 +23,8 @@ Wie können Sie in diesen Fällen, wenn das eigentliche WSL verfügbar ist, Linu
 ## <a name="downloading-distros"></a>Herunterladen von Distributionen
 
 Wenn die Microsoft Store-App nicht verfügbar ist, können Sie Linux-Distributionen manuell herunterladen und installieren, indem Sie auf die folgenden Links klicken:
+* [Ubuntu 20.04](https://aka.ms/wslubuntu2004)
+* [Ubuntu 20.04 ARM](https://aka.ms/wslubuntu2004arm)
 * [Ubuntu 18.04](https://aka.ms/wsl-ubuntu-1804)
 * [Ubuntu 18.04 ARM](https://aka.ms/wsl-ubuntu-1804-arm)
 * [Ubuntu 16.04](https://aka.ms/wsl-ubuntu-1604)

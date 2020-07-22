@@ -5,12 +5,12 @@ keywords: BashOnWindows, Bash, WSL, Windows, Windows-Subsystem für Linux, Windo
 ms.date: 05/12/2020
 ms.topic: article
 ms.localizationpriority: high
-ms.openlocfilehash: 3914e8d3be84f922424cba1000ea45ea8ce22cd8
-ms.sourcegitcommit: 09f5eb0f6062642e5c86deb1f34307ce3429163a
+ms.openlocfilehash: 222afa3ee2a4e8948cd0159d794fc7a4375e7ba7
+ms.sourcegitcommit: 16ffb1a096a4a7fbb77c58f92258051930cc82da
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/29/2020
-ms.locfileid: "84211726"
+ms.lasthandoff: 07/09/2020
+ms.locfileid: "86157936"
 ---
 # <a name="windows-subsystem-for-linux-installation-guide-for-windows-10"></a>Windows-Subsystem für Linux: Installationsleitfaden für Windows 10
 
@@ -54,8 +54,12 @@ Führen Sie bei der Installation einer neuen Linux-Distribution den folgenden Be
 wsl --set-default-version 2
 ```
 
+Diese Meldung wird möglicherweise nach dem Ausführen des folgenden Befehls angezeigt: `WSL 2 requires an update to its kernel component. For information please visit https://aka.ms/wsl2kernel`. Befolgen Sie den Link ([https://aka.ms/wsl2kernel](https://aka.ms/wsl2kernel)), und installieren Sie die MSI von dieser Seite in unserer Dokumentation, um einen Linux-Kernel auf Ihrem Computer zu installieren, der von WSL 2 verwendet werden kann. Sobald Sie den Kernel installiert haben, führen Sie den Befehl erneut aus. Er sollte nun erfolgreich abgeschlossen werden, ohne dass die Meldung angezeigt wird. 
+
 > [!NOTE]
-> Die Aktualisierung von WSL 1 auf WSL 2 kann je nach Umfang Ihrer ZielDistribution mehrere Minuten dauern.
+> Die Aktualisierung von WSL 1 auf WSL 2 kann je nach Umfang Ihrer Zielverteilung mehrere Minuten dauern. Wenn Sie eine ältere (Legacy) Installation der WSL 1 von Windows 10 Anniversary Update oder Creators Update aus ausführen, kann ein Updatefehler auftreten. Befolgen Sie diese Anweisungen, um [alle Legacyverteilungen zu deinstallieren und zu entfernen](https://docs.microsoft.com/windows/wsl/install-legacy#uninstallingremoving-the-legacy-distro). 
+>
+> Wenn `wsl --set-default-version` als ungültiger Befehl angezeigt wird, geben Sie `wsl --help` ein. Wenn die `--set-default-version` nicht aufgeführt ist, bedeutet dies, dass Ihr Betriebssystem sie nicht unterstützt und Sie auf Version 2004, Build 19041 oder höher, aktualisieren müssen.
 
 ## <a name="install-your-linux-distribution-of-choice"></a>Installieren der Linux-Distribution Ihrer Wahl
 
@@ -134,7 +138,7 @@ Nachfolgend werden einige Fehler und vorgeschlagene Korrekturen beschrieben. Wei
   - Stellen Sie sicher, dass das Windows-Subsystem für Linux aktiviert wurde und Sie Windows-Build 19041 oder höher verwenden. Führen Sie zum Aktivieren von WSL in einer PowerShell-Eingabeaufforderung mit Administratorberechtigungen diesen Befehl aus: `Enable-WindowsOptionalFeature -Online -FeatureName Microsoft-Windows-Subsystem-Linux`. Die vollständigen Anweisungen zur WSL-Installation finden Sie [hier](./install-win10.md).
 
 - **Der angeforderte Vorgang konnte aufgrund einer Einschränkung des virtuellen Dateisystems nicht abgeschlossen werden. Dateien für virtuelle Festplatten müssen unkomprimiert und unverschlüsselt sein und dürfen keine geringe Dichte aufweisen.**
-  - Bitte prüfen Sie den [WSL Github-Thread #4103](https://github.com/microsoft/WSL/issues/4103), der diesem Thema gewidmet ist, auf aktualisierte Informationen.
+  - Prüfen Sie den [WSL GitHub-Thread #4103](https://github.com/microsoft/WSL/issues/4103), der diesem Thema gewidmet ist, auf aktualisierte Informationen.
 
 - **Der Ausdruck 'wsl' wurde nicht als Name eines Cmdlets, einer Funktion, einer Skriptdatei oder eines ausführbaren Programms erkannt.**
-  - Vergewissern Sie sich, dass die [optionale Komponente Windows-Subsystem für Linux installiert ist](./install-win10.md#enable-the-virtual-machine-platform-optional-component). Außerdem wird dieser Fehler angezeigt, wenn Sie ein Arm64-Gerät verwenden und diesen Befehl aus PowerShell ausführen. Führen Sie stattdessen `wsl.exe` in [PowerShell Core](https://docs.microsoft.com/powershell/scripting/install/installing-powershell-core-on-windows?view=powershell-6) oder einer Eingabeaufforderung aus.
+  - Vergewissern Sie sich, dass die [optionale Komponente Windows-Subsystem für Linux installiert ist](./install-win10.md#enable-the-virtual-machine-platform-optional-component). Außerdem wird dieser Fehler angezeigt, wenn Sie ein ARM64-Gerät verwenden und diesen Befehl aus PowerShell ausführen. Führen Sie stattdessen `wsl.exe` in [PowerShell Core](https://docs.microsoft.com/powershell/scripting/install/installing-powershell-core-on-windows?view=powershell-6) oder einer Eingabeaufforderung aus.
