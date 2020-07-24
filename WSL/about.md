@@ -1,17 +1,17 @@
 ---
-title: Übersicht über das Windows-Subsystem für Linux
+title: Informationen zum Windows-Subsystem für Linux
 description: Informieren Sie sich über das Windows-Subsystem für Linux, die verschiedenen Versionen und die Art und Weise, wie Sie sie verwenden können.
 keywords: BashOnWindows, bash, wsl, windows, windowssubsystem, gnu, linux
 ms.date: 05/12/2020
 ms.topic: article
 ms.assetid: 3cefe0db-7616-4848-a2b6-9296746a178b
-ms.localizationpriority: high
-ms.openlocfilehash: 75da6389beec4af7ac684ec7ee2ef31431e14071
-ms.sourcegitcommit: f1b049a1276782d4f2754f46a8d2025b598a0784
+ROBOTS: NOINDEX
+ms.openlocfilehash: ddc242360adf67e3c5b6cd14d35fb6c869b83b2d
+ms.sourcegitcommit: 97cc93f8e26391c09a31a4ab42c4b5e9d98d1c32
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/24/2020
-ms.locfileid: "85336063"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86948624"
 ---
 # <a name="what-is-the-windows-subsystem-for-linux"></a>Was ist das Windows-Subsystem für Linux?
 
@@ -35,7 +35,7 @@ WSL 2 ist eine neue Version der Windows-Subsystem für Linux-Architektur, die e
 
 Diese neue Architektur führt zu einer Änderung der Interaktion dieser Linux-Binärdateien mit Windows und der Hardware Ihres Computers, bietet aber die gleiche Benutzererfahrung wie WSL 1 (die aktuelle, allgemein verfügbar Version).
 
-Einzelne Linux-Distributionen können mit der WSL 1- oder der WSL 2-Architektur ausgeführt werden. Für jede Distribution kann jederzeit ein Upgrade oder Downgrade ausgeführt werden, und Sie können WSL 1- und WSL 2-Distributionen parallel verwenden. WSL 2 weist eine völlig neue Architektur auf, die von der Ausführung eines echten Linux-Kernels profitiert.
+Einzelne Linux-Verteilungen können mit der WSL 1- oder der WSL 2-Architektur ausgeführt werden. Für jede Verteilung kann jederzeit ein Upgrade oder Downgrade ausgeführt werden, und Sie können WSL 1- und WSL 2-Verteilungen parallel verwenden. WSL 2 weist eine völlig neue Architektur auf, die von der Ausführung eines echten Linux-Kernels profitiert.
 
 ## <a name="next-steps"></a>Nächste Schritte
 
@@ -43,7 +43,7 @@ Einzelne Linux-Distributionen können mit der WSL 1- oder der WSL 2-Architektur 
 
 * [Vergleich zwischen WSL 2 und WSL 1](./compare-versions.md)
 
-* [Erstellen eines Benutzerkontos und Kennworts für Ihre neue Linux-Distribution](./user-support.md)
+* [Erstellen eines Benutzerkontos und Kennworts für Ihre neue Linux-Verteilung](./user-support.md)
 
 * [Häufig gestellte Fragen (FAQ)](./faq.md)
 
@@ -61,6 +61,6 @@ Einzelne Linux-Distributionen können mit der WSL 1- oder der WSL 2-Architektur 
 
 * [Verweisen auf WSL-Befehle](./reference.md)
 
-* [Erstellen von benutzerdefinierten Distributionen](./build-custom-distro.md)
+* [Erstellen von benutzerdefinierten Verteilungen](./build-custom-distro.md)
 
 * [Lesen Sie die Anmerkungen zu dieser Version von WSL.](./release-notes.md)

@@ -6,12 +6,12 @@ ms.date: 9/4/2018
 ms.topic: article
 ms.assetid: 129101ed-b88a-43c2-b6a2-cd2c4ff6fee1
 ms.localizationpriority: high
-ms.openlocfilehash: 3c3681b0e0e8317917b4ec7c37c9bb2f0bbe9c95
-ms.sourcegitcommit: e6e888f2b88a2d9c105cee46e5ab5b70aa43dd80
+ms.openlocfilehash: 8e3ebb44c139b5e7b8c25e8e813766b0107426dc
+ms.sourcegitcommit: 97cc93f8e26391c09a31a4ab42c4b5e9d98d1c32
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/13/2020
-ms.locfileid: "83343900"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86948634"
 ---
 # <a name="frequently-asked-questions-about-windows-subsystem-for-linux"></a>Häufig gestellte Fragen zum Windows-Subsystem für Linux
 
@@ -34,6 +34,10 @@ WSL bietet eine Anwendung namens „Bash. exe“, die eine Windows-Konsole mit d
 Sie können über die Linux Bash-Shell auch auf das Dateisystem des lokalen Computers zugreifen. Ihre lokalen Laufwerke werden unter dem Ordner `/mnt` eingebunden. Das Laufwerk `C:` wird beispielsweise unter `/mnt/c` eingebunden:  
 
 ![Screenshot des eingebundenen Laufwerks „C:“](media/ls.png)
+
+## <a name="could-you-describe-a-typical-development-workflow-that-incorporates-wsl"></a>Könnten Sie einen typischen Entwicklungsworkflow beschreiben, der WSL einbezieht?
+
+Die WSL richtet sich an ein Entwicklerpublikum mit der Absicht, als Teil einer inneren Entwicklungsschleife verwendet zu werden. Nehmen wir an, Sam erstellt eine CI/CD-Pipeline (Continuous Integration & Continuous Delivery) und möchte diese zunächst auf einem lokalen Computer (Laptop) testen, bevor er sie in der Cloud bereitstellt. Sam kann WSL (& WSL 2 zur Verbesserung von Geschwindigkeit und Leistung) aktivieren und dann lokal (auf dem Laptop) eine Linux-Ubuntu-Originalinstanz mit den von jeweiligen bevorzugten Bash-Befehlen und Tools verwenden. Sobald die Entwicklungspipeline lokal überprüft wurde, kann Sam diese CI/CD-Pipeline in die Cloud pushen, indem er sie in einen Dockercontainer umwandelt, und den Container in eine Cloudinstanz pushen, wo er auf einer produktionsbereiten Ubuntu-VM ausgeführt wird.
 
 ## <a name="what-is-bash"></a>Was ist Bash?
 
@@ -83,7 +87,7 @@ WSL unterstützt x64- und ARM-CPUs.
 
 Einbindungspunkte für Festplatten auf dem lokalen Computer werden automatisch erstellt und ermöglichen einfachen Zugriff auf das Windows-Dateisystem.
 
-**/mnt/\<Laufwerkbuchstabe>/**
+**/mnt/\<drive letter>/**
 
 Beispielsyntax für den Zugriff auf „C:\“: `cd /mnt/c`
 
@@ -202,9 +206,9 @@ In einigen Fällen ermöglicht das Deaktivieren der Firewall den Zugriff. In ein
 ## <a name="how-do-i-access-a-port-from-wsl-in-windows"></a>Wie greife ich aus WSL unter Windows auf einen Port zu?
 WSL nutzt die IP-Adresse von Windows, da es unter Windows ausgeführt wird. Daher können Sie auf alle Ports auf localhost zugreifen. Wenn Sie z.B. Webinhalte an Port 1234 verwenden, können Sie https://localhost:1234 in Ihren Windows-Browser eingeben.
 
-## <a name="how-can-i-back-up-my-wsl-distros-or-move-them-from-one-drive-to-another"></a>Wie kann ich meine WSL-Distributionen sichern oder von einem Laufwerk auf ein anderes verschieben?
+## <a name="how-can-i-back-up-my-wsl-distros-or-move-them-from-one-drive-to-another"></a>Wie kann ich meine WSL-Verteilungen sichern oder von einem Laufwerk auf ein anderes verschieben?
 
-Die beste Möglichkeit zum Sichern oder Verschieben Ihrer Distributionen sind die in Windows Version 1809 und höher verfügbaren Export/Import-Befehle. Sie können die gesamte Distribution mithilfe des Befehls `wsl --export` in einen Tarball exportieren. Sie können diese Distribution dann mit dem Befehl `wsl --import`, in dem ein neuer Speicherort für den Import angegeben werden kann, wieder in WSL importieren, wodurch Sie Zustände Ihrer WSL-Distributionen sichern und speichern (oder verschieben) können. 
+Die beste Möglichkeit zum Sichern oder Verschieben Ihrer Verteilungen sind die in Windows Version 1809 und höher verfügbaren Export/Import-Befehle. Sie können die gesamte Distribution mithilfe des Befehls `wsl --export` in einen Tarball exportieren. Sie können diese Verteilung dann mit dem Befehl `wsl --import`, in dem ein neuer Speicherort für den Import angegeben werden kann, wieder in WSL importieren, wodurch Sie Zustände Ihrer WSL-Verteilungen sichern und speichern (oder verschieben) können. 
 
 Beachten Sie, dass herkömmliche Sicherungsdienste, die Dateien in ihren Appdata-Ordnern sichern (z.B. die Windows-Sicherung), Ihre Linux-Dateien nicht beschädigen.
 

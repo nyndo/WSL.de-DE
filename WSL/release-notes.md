@@ -6,14 +6,24 @@ author: benhillis
 ms.date: 05/15/2020
 ms.topic: article
 ms.localizationpriority: high
-ms.openlocfilehash: 2fcf24719f037a29bab7652fc75ac82cc0b6176a
-ms.sourcegitcommit: 031a74801e03a90aed4b34c4fd5bfe964fc30994
+ms.openlocfilehash: 1de8f5e287d70c4992e9e6694d8980cbd305957b
+ms.sourcegitcommit: 97cc93f8e26391c09a31a4ab42c4b5e9d98d1c32
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/17/2020
-ms.locfileid: "84942594"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86948684"
 ---
 # <a name="release-notes-for-windows-subsystem-for-linux"></a>Anmerkungen zu dieser Version des Windows-Subsystems für Linux
+
+## <a name="build-20175"></a>Build 20175
+Allgemeine Windows-Informationen zu Build 20175 finden Sie im [Windows-Blog](https://blogs.windows.com/windowsexperience/2020/07/22/announcing-windows-10-insider-preview-build-20175/).
+
+* Passen Sie die Standardspeicherzuweisung der WSL2-VM so an, dass sie 50 % des Hostspeichers oder 8 GB beträgt, je nachdem, welcher Wert kleiner ist [GH 4166].
+* Ändern Sie das \\\\wsl$-Präfix in \\\\wsl, um die URI-Analyse zu unterstützen. Der alte \\\\wsl$-Pfad wird weiterhin unterstützt.
+* Aktivieren Sie die geschachtelte Virtualisierung für WSL2 standardmäßig auf amd64. Sie können dies über „%userprofile%\\.wslconfig ([wsl2] nestedVirtualization=false)“ deaktivieren.
+* Lassen Sie die wsl.exe --update-Anforderung Microsoft Update starten.
+* Unterstützen Sie die Umbenennung über eine schreibgeschützte Datei in DrvFs.
+* Stellen Sie sicher, dass Fehlermeldungen immer in der richtigen Codepage ausgegeben werden.
 
 ## <a name="build-20150"></a>Build 20150
 Allgemeine Windows-Informationen zu Build 20150 finden Sie im [Windows-Blog](https://blogs.windows.com/windowsexperience/2020/06/17/announcing-windows-10-insider-preview-build-20150/).
@@ -305,7 +315,7 @@ Allgemeine Windows-Informationen zu Build 18277 finden Sie im [Windows-Blog](htt
 Allgemeine Windows-Informationen zu Build 18272 finden Sie im [Windows-Blog](https://blogs.windows.com/windowsexperience/2018/10/31/announcing-windows-10-insider-preview-build-18272/).
 
 ### <a name="wsl"></a>WSL
-* **WARNUNG:** In diesem Build liegt ein Problem vor, durch das WSL nicht funktionsfähig wird. Wenn Sie versuchen, die Distribution zu starten, wird der Fehler „Schnittstelle nicht unterstützt“ angezeigt. Das Problem wurde behoben und ist im Insider Fast-Build der nächsten Woche nicht mehr enthalten. Wenn Sie diesen Build installiert haben, können Sie ein Rollback auf den vorherigen Windows-Build durchführen, indem Sie unter „Einstellungen > Update und Sicherheit > Wiederherstellung“ die Option „Zur vorherigen Version von Windows 10 zurückkehren“ auswählen.
+* **WARNUNG:** In diesem Build liegt ein Problem vor, durch das WSL nicht funktionsfähig wird. Wenn Sie versuchen, die Verteilung zu starten, wird der Fehler „Schnittstelle nicht unterstützt“ angezeigt. Das Problem wurde behoben und ist im Insider Fast-Build der nächsten Woche nicht mehr enthalten. Wenn Sie diesen Build installiert haben, können Sie ein Rollback auf den vorherigen Windows-Build durchführen, indem Sie unter „Einstellungen > Update und Sicherheit > Wiederherstellung“ die Option „Zur vorherigen Version von Windows 10 zurückkehren“ auswählen.
 
 ## <a name="build-18267"></a>Build 18267
 Allgemeine Windows-Informationen zu Build 18267 finden Sie im [Windows-Blog](https://blogs.windows.com/windowsexperience/2018/10/24/announcing-windows-10-insider-preview-build-18267/).
@@ -1547,13 +1557,13 @@ Allgemeine Windows-Informationen zu Build 14951 finden Sie im [Windows-Blog](htt
 ### <a name="new-feature-windows--ubuntu-interoperability"></a>Neues Feature: Windows-/Ubuntu-Interoperabilität
 Windows-Binärdateien können jetzt direkt über die WSL-Befehlszeile aufgerufen werden.  Dadurch haben Benutzer die Möglichkeit, mit Ihrer Windows-Umgebung und dem -System auf eine Weise zu interagieren, die bisher nicht möglich war.  Als kurzes Beispiel können Benutzer nun die folgenden Befehle ausführen:
 
-    ```
-    $ export PATH=$PATH:/mnt/c/Windows/System32
-    $ notepad.exe
-    $ ipconfig.exe | grep IPv4 | cut -d: -f2
-    $ ls -la | findstr.exe foo.txt
-    $ cmd.exe /c dir
-    ```
+```bash
+$ export PATH=$PATH:/mnt/c/Windows/System32
+$ notepad.exe
+$ ipconfig.exe | grep IPv4 | cut -d: -f2
+$ ls -la | findstr.exe foo.txt
+$ cmd.exe /c dir
+```
 
 Weitere Informationen finden Sie hier:
 
