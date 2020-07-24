@@ -5,12 +5,12 @@ keywords: WSL, Windows, windowssubsystem, GNU, Linux, bash, vs Code, Remote Exte
 ms.date: 05/28/2020
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 416862201094ba28474918dca8e7d9ce316844cc
-ms.sourcegitcommit: d95bdbc2fea991ba14a4c9ec53ee0ec19d6bbdb4
+ms.openlocfilehash: f5d7bd4f582f504ea3c4bd814454b1dc881ffed2
+ms.sourcegitcommit: 97cc93f8e26391c09a31a4ab42c4b5e9d98d1c32
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/05/2020
-ms.locfileid: "84457782"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86948654"
 ---
 # <a name="get-started-using-visual-studio-code-with-windows-subsystem-for-linux"></a>Beginnen Sie mit der Verwendung von Visual Studio Code mit dem Windows-Subsystem für Linux
 
@@ -34,7 +34,7 @@ Visual Studio Code können Sie zusammen mit der Remote-WSL-Erweiterung WSL als v
 * Installieren Sie das [remoteentwicklungs-Erweiterungspaket](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.vscode-remote-extensionpack). Dieses Erweiterungspaket enthält zusätzlich zu den Remote-SSH-und Remote Container Erweiterungen die Remote-WSL-Erweiterung, mit der Sie einen beliebigen Ordner in einem Container, auf einem Remote Computer oder in WSL öffnen können.
 
 > [!IMPORTANT]
-> Um die Remote-WSL-Erweiterung zu installieren, benötigen Sie die Version [1,35](https://code.visualstudio.com/updates/v1_35) oder höher von vs Code. Es wird nicht empfohlen, WSL in vs Code ohne die Remote-WSL-Erweiterung zu verwenden, da Sie die Unterstützung für automatisches vervollständigen, Debuggen, linting usw. verlieren. Spaß Fakt: Diese WSL-Erweiterung wird in $Home/.vscode-Server/Extensions. installiert.
+> Um die Remote-WSL-Erweiterung zu installieren, benötigen Sie die Version [1,35](https://code.visualstudio.com/updates/v1_35) oder höher von vs Code. Es wird nicht empfohlen, WSL in vs Code ohne die Remote-WSL-Erweiterung zu verwenden, da Sie die Unterstützung für automatisches vervollständigen, Debuggen, linting usw. verlieren. Spaß Fakt: Diese WSL-Erweiterung wird in $Home/.vscode/Extensions installiert (geben Sie den Befehl `ls $HOME\.vscode\extensions\` in PowerShell ein).
 
 ## <a name="update-your-linux-distribution"></a>Aktualisieren Ihrer Linux-Distribution
 
@@ -92,9 +92,9 @@ Informationen zur Installation von git finden Sie unter [Einrichten von git für
 
 ## <a name="install-windows-terminal-optional"></a>Installieren von Windows-Terminal (optional)
 
-Das neue Windows-Terminal ermöglicht mehrere Registerkarten (schnelles Umschalten zwischen Eingabeaufforderung, PowerShell oder mehreren Linux-Distributionen), benutzerdefinierte Tastenbindungen (erstellen Sie eigene Tastenkombinationen zum Öffnen oder Schließen von Registerkarten, kopieren und Einfügen usw.), Emojis-☺ und benutzerdefinierte Designs (Farbschemas, Schriftarten und Größen, Hintergrundbild/weich/Transparenz). Weitere Informationen finden Sie in der [Windows-Terminal](https://docs.microsoft.com/windows/terminal)Dokumentation.
+Das neue Windows-Terminal ermöglicht mehrere Registerkarten (schnelles Umschalten zwischen Eingabeaufforderung, PowerShell oder mehreren Linux-Verteilungen), benutzerdefinierte Tastenbindungen (erstellen Sie eigene Tastenkombinationen zum Öffnen oder Schließen von Registerkarten, kopieren und Einfügen usw.), Emojis-☺ und benutzerdefinierte Designs (Farbschemas, Schriftarten und Größen, Hintergrundbild/weich/Transparenz). Weitere Informationen finden Sie in der [Windows-Terminal](https://docs.microsoft.com/windows/terminal)Dokumentation.
 
-1. Get [Windows-Terminal in der Microsoft Store](https://www.microsoft.com/store/apps/9n0dx20hk701): durch die Installation über den Store werden Updates automatisch verarbeitet.
+1. Hole dir [Windows-Terminal im Microsoft Store](https://www.microsoft.com/store/apps/9n0dx20hk701): Durch die Installation über den Store werden Updates automatisch durchgeführt.
 
 2. Öffne nach der Installation das Windows-Terminal, und wähle **Einstellungen** aus, um dein Terminal mithilfe der Datei `profile.json` anzupassen.
 
