@@ -4,12 +4,12 @@ description: Referenzliste und Konfigurieren mehrerer Linux-Distributionen, die 
 keywords: BashOnWindows, bash, wsl, windows, windows subsystem for linux, windowssubsystem, ubuntu, wsl.conf, wslconfig
 ms.date: 05/12/2020
 ms.topic: article
-ms.openlocfilehash: e97b1030d5891bf8aa1cb656646a4d9e1d480a3d
-ms.sourcegitcommit: f1b049a1276782d4f2754f46a8d2025b598a0784
+ms.openlocfilehash: b8aa740233f3ac9517744212eb7b362a18378822
+ms.sourcegitcommit: 90577817a9321949da2a3971b4c78bb00f6d977f
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/24/2020
-ms.locfileid: "85336083"
+ms.lasthandoff: 08/10/2020
+ms.locfileid: "88039413"
 ---
 # <a name="wsl-commands-and-launch-configurations"></a>WSL-Befehle und Start Konfigurationen
 
@@ -17,7 +17,7 @@ ms.locfileid: "85336083"
 
 Es gibt mehrere Möglichkeiten, eine Linux-Distribution mit WSL auszuführen, nachdem Sie [installiert](install-win10.md)wurde.
 
-1. Öffnen Sie die Linux-Distribution, indem Sie im Windows-Startmenü den Namen der installierten Distributionen eingeben. Beispiel: "Ubuntu".
+1. Öffnen Sie die Linux-Distribution, indem Sie im Windows-Startmenü den Namen der installierten Verteilungen eingeben. Beispiel: "Ubuntu".
 2. Geben Sie an der Windows-Eingabeaufforderung oder in PowerShell den Namen der installierten Distribution ein. Beispiel: `ubuntu`
 3. Geben Sie an der Windows-Eingabeaufforderung oder PowerShell Folgendes ein, um die Standard-Linux-Distribution in der aktuellen Befehlszeile zu öffnen: `wsl.exe` .
 4. Geben Sie an der Windows-Eingabeaufforderung oder PowerShell Folgendes ein, um die Standard-Linux-Distribution in der aktuellen Befehlszeile zu öffnen: `wsl [command]` .
@@ -116,7 +116,7 @@ PS C:\Users\sarah>
 
 ## <a name="managing-multiple-linux-distributions"></a>Verwalten mehrerer Linux-Distributionen
 
-In Windows 10, Version 1903 [und](ms-settings:windowsupdate)höher, können Sie verwenden, `wsl.exe` um die Distributionen im Windows-Subsystem für Linux (WSL) zu verwalten, einschließlich der Auflistung verfügbarer Distributionen, der Festlegung einer StandardDistribution und der Deinstallieren von Distributionen.
+In Windows 10, Version 1903 [und](ms-settings:windowsupdate)höher, können Sie verwenden, `wsl.exe` um die Verteilungen im Windows-Subsystem für Linux (WSL) zu verwalten, einschließlich der Auflistung verfügbarer Verteilungen, der Festlegung einer Standardverteilung und der Deinstallieren von Verteilungen.
 
 Jede Linux-Distribution verwaltet unabhängig ihre eigenen Konfigurationen. Führen Sie `[distro.exe] /?` aus, um distributionsspezifische Befehle anzuzeigen.  Beispiel: `ubuntu /?`.
 
@@ -125,9 +125,9 @@ Jede Linux-Distribution verwaltet unabhängig ihre eigenen Konfigurationen. Füh
 `wsl -l` , `wsl --list`  
 Listet verfügbare Linux-Distributionen für WSL auf.  Wenn eine Distribution aufgeführt wird, ist sie installiert und einsatzbereit.
 
-`wsl --list --all`Listet alle Distributionen auf, einschließlich derjenigen, die derzeit nicht verwendbar sind.  Sie werden möglicherweise gerade installiert, deinstalliert oder sind beschädigt.  
+`wsl --list --all`Listet alle Verteilungen auf, einschließlich derjenigen, die derzeit nicht verwendbar sind.  Sie werden möglicherweise gerade installiert, deinstalliert oder sind beschädigt.  
 
-`wsl --list --running`Listet alle Distributionen auf, die zurzeit ausgeführt werden.
+`wsl --list --running`Listet alle Verteilungen auf, die zurzeit ausgeführt werden.
 
 ## <a name="set-a-default-distribution"></a>Festlegen einer Standarddistribution
 
@@ -146,7 +146,7 @@ Obwohl Linux-Distributionen über den Microsoft Store installiert werden können
 
 Durch das Aufheben der Registrierung können Distributionen auch erneut installiert werden.
 
-> **Vorsicht:** Nachdem die Registrierung aufgehoben wurde, gehen alle Daten, Einstellungen und Software, die dieser Distribution zugeordnet sind, dauerhaft verloren.  Bei der erneuten Installation aus dem Store wird eine saubere Kopie der Distribution installiert.
+> **Vorsicht:** Nachdem die Registrierung aufgehoben wurde, gehen alle Daten, Einstellungen und Software, die dieser Verteilung zugeordnet sind, dauerhaft verloren.  Bei der erneuten Installation aus dem Store wird eine saubere Kopie der Distribution installiert.
 
 `wsl --unregister <DistributionName>`  
 Hebt die Registrierung der Distribution bei WSL auf, damit Sie erneut installiert oder bereinigt werden kann.
@@ -165,12 +165,12 @@ Führen Sie WSL als der angegebene Benutzer aus. Beachten Sie, dass der Benutzer
 
 `<DistributionName> config --default-user <Username>`
 
-Ändern Sie den Standardbenutzer für Ihre Distributions Anmeldung. Der Benutzer muss bereits innerhalb der Distribution vorhanden sein, damit er der Standardbenutzer wird. 
+Ändern Sie den Standardbenutzer für Ihre Verteilungs Anmeldung. Der Benutzer muss bereits innerhalb der Verteilung vorhanden sein, damit er der Standardbenutzer wird. 
 
 Beispiel: `ubuntu config --default-user johndoe` würde den Standardbenutzer für die Ubuntu-Distribution in den Benutzer "JohnDoe" ändern.
 
 > [!NOTE]
-> Wenn Sie Probleme haben, den Namen der Distribution herauszufinden, finden Sie weitere Informationen unter [Auflisten von Distributionen](https://docs.microsoft.com/windows/wsl/wsl-config#list-distributions) für den Befehl zum Auflisten des offiziellen Namens der installierten Distributionen. 
+> Wenn Sie Probleme haben, den Namen der Verteilung herauszufinden, finden Sie weitere Informationen unter [Auflisten von Verteilungen](https://docs.microsoft.com/windows/wsl/wsl-config#list-distributions) für den Befehl zum Auflisten des offiziellen Namens der installierten Verteilungen. 
 
 ## <a name="run-a-specific-distribution"></a>Ausführen als eine bestimmte Distribution
 
@@ -198,7 +198,7 @@ Usage:
     /u, /unregister <DistributionName> - Unregisters a distribution.
 ```
 
-Zum Auflisten von Distributionen verwenden Sie Folgendes:
+Zum Auflisten von Verteilungen verwenden Sie Folgendes:
 
 `wslconfig /list`  
 Listet verfügbare Linux-Distributionen für WSL auf.  Wenn eine Distribution aufgeführt wird, ist sie installiert und einsatzbereit.
@@ -206,14 +206,14 @@ Listet verfügbare Linux-Distributionen für WSL auf.  Wenn eine Distribution au
 `wslconfig /list /all`  
 Listet alle Distributionen auf, einschließlich derjenigen, die zurzeit nicht verwendbar sind.  Sie werden möglicherweise gerade installiert, deinstalliert oder sind beschädigt.  
 
-So legen Sie eine StandardDistribution fest, die ausgeführt wird, wenn Sie `wsl` in einer Befehlszeile ausführen:
+So legen Sie eine Standardverteilung fest, die ausgeführt wird, wenn Sie `wsl` in einer Befehlszeile ausführen:
 
-`wslconfig /setdefault <DistributionName>`Legt die StandardDistribution auf fest `<DistributionName>` .
+`wslconfig /setdefault <DistributionName>`Legt die Standardverteilung auf fest `<DistributionName>` .
 
 **Beispiel: (mithilfe von PowerShell)**  
 `wslconfig /setdefault Ubuntu` würde die Standarddistribution auf Ubuntu festlegen.  Wenn jetzt `wsl npm init` ausgeführt wird, wird Ubuntu ausgeführt.  Wenn `wsl` ausgeführt wird, wird eine Ubuntu-Sitzung geöffnet.
 
-So heben Sie die Registrierung und die erneute Installation einer Distribution auf:
+So heben Sie die Registrierung und die erneute Installation einer Verteilung auf:
 
 `wslconfig /unregister <DistributionName>`  
 Hebt die Registrierung der Distribution bei WSL auf, damit Sie erneut installiert oder bereinigt werden kann.
@@ -232,7 +232,7 @@ Zurzeit umfasst dies Optionen für die automatische Einbindung und Netzwerkkonfi
 
 `wsl.conf` befindet sich in jeder Linux-Distribution in `/etc/wsl.conf`. Wenn die Datei nicht vorhanden ist, können Sie sie selbst erstellen. WSL erkennt das Vorhandensein der Datei und liest ihren Inhalt. Wenn die Datei fehlt oder falsch formatiert ist (d.h. falsche Markupformatierung), wird WSL weiterhin normal gestartet.
 
-Im folgenden finden Sie eine Beispiel `wsl.conf` Datei, die Sie Ihren Distributionen hinzufügen können:
+Im folgenden finden Sie eine Beispiel `wsl.conf` Datei, die Sie Ihren Verteilungen hinzufügen können:
 
 ```console
 # Enable extra metadata options by default
@@ -339,12 +339,14 @@ Diese Einstellungen wirken sich auf die VM aus, die jede WSL 2-Distribution unte
 | Schlüssel | value | default | notes|
 |:----|:----|:----|:----|
 | kernel | Zeichenfolge | Der von Microsoft bereitgestellte Posteingang | Ein absoluter Windows-Pfad zu einem benutzerdefinierten Linux-Kernel. |
-| memory | size | 80% ihres gesamten Arbeitsspeichers unter Windows | Wie viel Arbeitsspeicher für die WSL 2-VM zugewiesen werden soll. |
+| Arbeitsspeicher | size | 80% ihres gesamten Arbeitsspeichers unter Windows * | Wie viel Arbeitsspeicher für die WSL 2-VM zugewiesen werden soll. |
 | Prozessoren | number | Die gleiche Anzahl von Prozessoren unter Windows | Gibt an, wie viele Prozessoren der WSL 2-VM zugewiesen werden sollen. |
 | localhostforwarding | boolean | `true` | Boolescher Wert, der angibt, ob an den Platzhalter oder localhost in der WSL 2-VM gebundene Ports über localhost: Port vom Host aus verbunden werden sollen. |
 | kernelcommandline | Zeichenfolge | Leer | Zusätzliche Kernel-Befehlszeilenargumente. |
 | swap | size | 25% der Arbeitsspeicher Größe unter Windows auf das nächste GB aufgerundet | Wie viel Auslagerungs Bereich zum virtuellen WSL 2-Computer hinzugefügt werden soll, 0 für keine Auslagerungs Datei. |
 | Auslagerungs Datei | Zeichenfolge | %UserProfile%\appdata\local\temp\tauap.vhdx | Ein absoluter Windows-Pfad zu der virtuellen Auslagerungs-Festplatte. |
+
+* Hinweis: dieser Wert gilt für Windows Build 19041 und unterscheidet sich möglicherweise in Windows-Builds im Insider-Programm.
 
 Einträge mit dem `path` Wert müssen Windows-Pfade mit Escapezeichen mit Escapezeichen sein, z. b.:`C:\\Temp\\myCustomKernel`
 
