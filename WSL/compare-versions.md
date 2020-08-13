@@ -5,12 +5,12 @@ keywords: BashOnWindows, Bash, WSL, Windows, Windows-Subsystem, GNU, Linux, Ubun
 ms.date: 07/22/2020
 ms.topic: article
 ms.localizationpriority: high
-ms.openlocfilehash: ea2c92030a895076be17ad2b99fe34719f84a47f
-ms.sourcegitcommit: b494c8a76f867d69fa7fff4878c4e38140eaeb8a
+ms.openlocfilehash: f64eff318ead5b74356a1b7db435952d4d4e669b
+ms.sourcegitcommit: 90577817a9321949da2a3971b4c78bb00f6d977f
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87235464"
+ms.lasthandoff: 08/10/2020
+ms.locfileid: "88039423"
 ---
 # <a name="comparing-wsl-1-and-wsl-2"></a>Vergleich zwischen WSL 1 und WSL 2
 
@@ -136,6 +136,11 @@ Sie müssen z. B. möglicherweise Ihre Anwendung an `0.0.0.0` statt an `127.0.0
 Wenn Sie eine WSL 1-Verteilung verwenden und Ihr Computer so eingerichtet wurde, dass auf ihn über Ihr LAN zugegriffen wird, kann auf Anwendungen, die in WSL ausgeführt werden, in Ihrem LAN ebenfalls zugegriffen werden.
 
 Dies ist nicht der Standardfall in WSL 2. WSL 2 verfügt über einen virtualisierten Ethernet-Adapter mit einer eigenen eindeutigen IP-Adresse. Um diesen Workflow zu aktivieren, müssen Sie aktuell die gleichen Schritte wie bei einem gewöhnlichen virtuellen Computer durchlaufen. (Wir untersuchen Möglichkeiten, dieses Verhalten zu verbessern.)
+
+Hier ist ein PowerShell-Beispielbefehl zum Hinzufügen eines Portproxys, der Port 4000 auf dem Host überwacht und ihn mit Port 4000 mit der IP-Adresse 192.168.101.100 zum WSL 2-Computer verbindet.
+```powershell
+netsh interface portproxy add v4tov4 listenport=4000 listenaddress=0.0.0.0 connectport=4000 connectaddress=192.168.101.100
+```
 
 #### <a name="ipv6-access"></a>IPv6-Zugriff
 

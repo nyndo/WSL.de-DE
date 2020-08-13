@@ -6,14 +6,23 @@ author: benhillis
 ms.date: 05/15/2020
 ms.topic: article
 ms.localizationpriority: high
-ms.openlocfilehash: 1de8f5e287d70c4992e9e6694d8980cbd305957b
-ms.sourcegitcommit: 97cc93f8e26391c09a31a4ab42c4b5e9d98d1c32
+ms.openlocfilehash: 751f7dd73abeefe7be0406c17b95158ee21b9199
+ms.sourcegitcommit: b79bf1d5f158f09e858184a6dfd096e212c1a231
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86948684"
+ms.lasthandoff: 08/12/2020
+ms.locfileid: "88161042"
 ---
 # <a name="release-notes-for-windows-subsystem-for-linux"></a>Anmerkungen zu dieser Version des Windows-Subsystems für Linux
+
+## <a name="build-20190"></a>Build 20190
+Allgemeine Windows-Informationen zu Build 20190 finden Sie im [Windows-Blog](https://blogs.windows.com/windowsexperience/2020/08/12/announcing-windows-10-insider-preview-build-20190/).
+
+* Fehler behoben, der den Start von WSL1-Instanzen verhinderte [GH 5633]
+* Hängenbleiben beim Umleiten der Windows-Prozessausgabe behoben [GH 5648]
+* Option „%userprofile%\\.wslconfig“ zur Steuerung des VM-Leerlauftimeouts (wsl2.vmIdleTimeout=<Zeit_in_ms>) hinzugefügt
+* Unterstützung für das Starten von App-Ausführungsaliasen von WSL
+* Unterstützung für die Installation des WSL2-Kernels und der Verteilungen zu „wsl.exe --install“ hinzugefügt
 
 ## <a name="build-20175"></a>Build 20175
 Allgemeine Windows-Informationen zu Build 20175 finden Sie im [Windows-Blog](https://blogs.windows.com/windowsexperience/2020/07/22/announcing-windows-10-insider-preview-build-20175/).
