@@ -5,12 +5,12 @@ keywords: BashOnWindows, bash, wsl, windows, windowssubsystem, ubuntu
 ms.date: 01/20/2020
 ms.topic: article
 ms.localizationpriority: high
-ms.openlocfilehash: cc8f032a99fb087b7ef614dd3a3574cb8ee3f2da
-ms.sourcegitcommit: ba52d673c123fe8ae61e872a33e218cfc30a1f82
+ms.openlocfilehash: 84aecf4f6111cca47ece3c2421be659fb5a27771
+ms.sourcegitcommit: a5534257c236cefeebe86e6b3fc4be0be8fac24e
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/07/2020
-ms.locfileid: "86033066"
+ms.lasthandoff: 08/21/2020
+ms.locfileid: "88714847"
 ---
 # <a name="troubleshooting-windows-subsystem-for-linux"></a>Problembehandlung des Windows-Subsystems für Linux
 
@@ -39,6 +39,22 @@ Um einen Beitrag zur WSL-Dokumentation zu leisten, senden Sie ein Pull Request i
 Wenn sich Ihr Problem auf den Windows-Terminal, die Windows-Konsole oder die Befehlszeilenschnittstelle bezieht, verwenden Sie schließlich das Windows-Terminal-Repository: https://github.com/microsoft/terminal
 
 ## <a name="common-issues"></a>Allgemeine Probleme
+
+### <a name="error-0x1bc-when-wsl---set-default-version-2"></a>„Fehler: 0x1bc wenn `wsl --set-default-version 2`
+Dies kann vorkommen, wenn die Einstellung „Anzeigesprache“ oder „Systemgebietsschema“ nicht auf Englisch festgelegt ist.
+```
+wsl --set-default-version 2
+Error: 0x1bc
+For information on key differences with WSL 2 please visit https://aka.ms/wsl2
+```
+
+Der tatsächliche Fehler für `0x1bc` lautet:
+```
+WSL 2 requires an update to its kernel component. For information please visit https://aka.ms/wsl2kernel
+```
+
+Weitere Informationen finden Sie im Problem [5749](https://github.com/microsoft/WSL/issues/5749).
+
 
 ### <a name="cannot-access-wsl-files-from-windows"></a>Kein Zugriff auf WSL-Dateien von Windows aus möglich
 Ein 9p-Protokolldateiserver stellt den Dienst auf der Linux-Seite bereit, um Windows den Zugriff auf das Linux-Dateisystem zu ermöglichen. Wenn Sie nicht über `\\wsl$` unter Windows auf WSL zugreifen können, kann dies daran liegen, dass 9P nicht ordnungsgemäß gestartet wurde.

@@ -1,16 +1,16 @@
 ---
 title: 'Windows-Subsystem für Linux: Befehlsreferenz'
-description: Liste der Befehle, mit denen das Windows-Subsystem für Linux verwaltet wird
+description: Zeigen Sie eine Liste von Befehlen an, die das Windows-Subsystem für Linux verwalten, z. B. Argumente für die Ausführung von Linux-Befehlen.
 keywords: BashOnWindows, bash, wsl, windows, windows subsystem for linux, windowssubsystem, ubuntu
 ms.date: 07/31/2017
 ms.topic: article
 ms.localizationpriority: high
-ms.openlocfilehash: 72b78a73bf68b28dd14b4826943a0c81ea04bbad
-ms.sourcegitcommit: 1b6191351bbf9e95f3c28fc67abe4bf1bcfd3336
+ms.openlocfilehash: fc5c9e06c597092a3790ba7f9eb06054a33450c1
+ms.sourcegitcommit: fb79750bd71d6ebaed5203b3de71ba85a67227b1
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/13/2020
-ms.locfileid: "83270874"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88866130"
 ---
 # <a name="command-reference-for-windows-subsystem-for-linux"></a>Befehlsreferenz für das Windows-Subsystem für Linux
 
@@ -18,27 +18,27 @@ Die beste Möglichkeit, mit dem Windows-Subsystem für Linux zu interagieren, is
 
 ## <a name="set-wsl-2-as-your-default-version"></a>Festlegen von WSL 2 als Standardversion
 
-Führen Sie bei der Installation einer neuen Linux-Distribution den folgenden Befehl in PowerShell aus, um WSL 2 als Standardversion festzulegen:
+Führen Sie bei der Installation einer neuen Linux-Verteilung den folgenden Befehl in PowerShell aus, um WSL 2 als Standardversion festzulegen:
 
 ```powershell
 wsl --set-default-version 2
 ```
 
-## <a name="set-your-distribution-version-to-wsl-1-or-wsl-2"></a>Festlegen der Distributionsversion auf WSL 1 oder WSL 2
+## <a name="set-your-distribution-version-to-wsl-1-or-wsl-2"></a>Festlegen der Verteilungsversion auf WSL 1 oder WSL 2
 
-Sie können die den einzelnen installierten Linux-Distributionen zugewiesenen WSL-Version überprüfen, indem Sie die PowerShell-Befehlszeile öffnen und den folgenden Befehl (nur verfügbar in [Windows Build 19041 oder höher](ms-settings:windowsupdate)) eingeben: `wsl -l -v`
+Sie können die den einzelnen installierten Linux-Verteilungen zugewiesenen WSL-Version überprüfen, indem Sie die PowerShell-Befehlszeile öffnen und den folgenden Befehl (nur verfügbar in [Windows Build 19041 oder höher](ms-settings:windowsupdate)) eingeben: `wsl -l -v`
 
 ```bash
 wsl --list --verbose
 ```
 
-Um eine Distribution so einzurichten, dass sie von einer der beiden WSL-Versionen unterstützt wird, führen Sie Folgendes aus:
+Um eine Verteilung so einzurichten, dass sie von einer der beiden WSL-Versionen unterstützt wird, führen Sie Folgendes aus:
 
 ```bash
 wsl --set-version <distribution name> <versionNumber>
 ```
 
-Ersetzen Sie hierbei `<distribution name>` durch den tatsächlichen Namen Ihrer Distribution und `<versionNumber>` durch die Ziffer „1“ oder „2“. Sie können jederzeit zu WSL 1 zurückwechseln, indem sie denselben Befehl wie oben ausführen, aber die 2 durch eine 1 ersetzen.
+Ersetzen Sie hierbei `<distribution name>` durch den tatsächlichen Namen Ihrer Verteilung und `<versionNumber>` durch die Ziffer „1“ oder „2“. Sie können jederzeit zu WSL 1 zurückwechseln, indem sie denselben Befehl wie oben ausführen, aber die 2 durch eine 1 ersetzen.
 
 Wenn Sie WSL 2 als Ihre Standardarchitektur festlegen möchten, ist dies über diesen Befehl möglich:
 
@@ -46,7 +46,7 @@ Wenn Sie WSL 2 als Ihre Standardarchitektur festlegen möchten, ist dies über d
 wsl --set-default-version 2
 ```
 
-Dadurch wird die Version jeder neu installierten Distribution auf WSL 2 festgelegt.
+Dadurch wird die Version jeder neu installierten Verteilung auf WSL 2 festgelegt.
 
 ## `wsl.exe`
 
@@ -60,7 +60,7 @@ Syntax: `wsl [Argument] [Options...] [CommandLine]`
 
   Wenn keine Befehlszeile angegeben wird, startet „wsl.exe“ die Standardshell.
 
-* **--exec, -e \<BefehlsZeile>**
+* **--exec, -e \<CommandLine>**
   
   Führt den angegebenen Befehl ohne Verwendung der Linux-Standardshell aus.
 
@@ -70,21 +70,21 @@ Syntax: `wsl [Argument] [Options...] [CommandLine]`
 
 Die oben genannten Befehle akzeptieren außerdem die folgenden Optionen:
 
-* **--distribution, -d \<Distribution>**
+* **--distribution, -d \<Distro>**
 
   Führt die angegebene Distribution aus.
 
-* **--user, -u \<BenutzerName>**
+* **--user, -u \<UserName>**
 
   Ausführung als der angegebene Benutzer.
 
 ### <a name="arguments-for-managing-windows-subsystem-for-linux"></a>Argumente für die Verwaltung des Windows-Subsystems für Linux
 
-* **--export \<Distribution> \<DateiName>**
+* **--export \<Distro> \<FileName>**
   
   Exportiert die Distribution in eine TAR-Datei. Der Dateiname kann „-“ für Standardausgabe sein.
 
-* **--import \<Distribution> \<InstallationsOrt> \<DateiName>**
+* **--import \<Distro> \<InstallLocation> \<FileName>**
   
   Importiert die angegebene TAR-Datei als neue Distribution. Der Dateiname kann „-“ für Standardeingabe sein.
 
@@ -101,17 +101,17 @@ Die oben genannten Befehle akzeptieren außerdem die folgenden Optionen:
 
     Listet nur Distributionen auf, die zurzeit ausgeführt werden.
 
-* **--set-default, -s \<Distribution>**
+* **--set-default, -s \<Distro>**
   
   Legt die Distribution als Standard fest.
 
-* **--terminate, -t \<Distribution>**
+* **--terminate, -t \<Distro>**
   
   Beendet die angegebene Distribution.
 
-* **--unregister \<Distribution>**
+* **--unregister \<Distro>**
   
-  Hebt die Registrierung der Distribution auf.
+  Hebt die Registrierung der Verteilung auf.
 
 * **--help**: Zeigt Syntaxinformationen an.
 
@@ -133,17 +133,17 @@ Syntax: `wslconfig [Argument] [Options...]`
   
 Optionen:
 
-* **/all** Listet optional alle Distributionen auf, einschließlich Distributionen, die zurzeit installiert oder deinstalliert werden.
+* **/all** Listet optional alle Verteilungen auf, einschließlich Verteilungen, die zurzeit installiert oder deinstalliert werden.
 
-* **/running** Listet nur Distributionen auf, die zurzeit ausgeführt werden.
+* **/running** Listet nur Verteilungen auf, die zurzeit ausgeführt werden.
 
-* **/s, /setdefault \<Distro>** Legt die Distribution als Standard fest.
+* **/s, /setdefault \<Distro>** : Legtdie Distribution als Standard fest.
 
-* **/t, /terminate \<Distro>** Beendet die Distribution.
+* **/t, /terminate \<Distro>** : Beendet die Distribution.
 
-* **/u, /unregister \<Distro>** Hebt die Registrierung der Distribution auf.
+* **/u, /unregister \<Distro>** : Hebt die Registrierung der Distribution auf.
 
-* **/upgrade \<Distro>** Führt ein Upgrade der Distribution auf das WslFs-Dateisystemformat durch.
+* **/upgrade \<Distro>** : Führt ein Upgrade der Distribution auf das WslFs-Dateisystemformat durch.
 
 ### `bash.exe`
 
@@ -159,7 +159,7 @@ Syntax: `bash [Options...]`
   
   `bash ~` startet die Bash-Shell im Basisverzeichnis des Benutzers.  Vergleichbar mit der Ausführung von `cd ~`.
 
-* **-c "\<Befehl>"**
+* **-c "\<command>"**
   
   Führt den Befehl aus, gibt die Ausgabe aus, und kehrt zur Windows-Eingabeaufforderung zurück.
 

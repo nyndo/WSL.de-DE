@@ -1,17 +1,17 @@
 ---
 title: Anmerkungen zu dieser Version des Windows-Subsystems für Linux
-description: Anmerkungen zu dieser Version des Windows-Subsystems für Linux  Wöchentlich aktualisiert.
+description: Anmerkungen zu dieser Version des Windows-Subsystems für Linux. Diese Versionsanmerkungen enthalten behobene Probleme und werden wöchentlich aktualisiert.
 keywords: Versionshinweise, WSL, Windows, Windows Subsystem für Linux, Windows-Subsystem, Ubuntu
 author: benhillis
 ms.date: 05/15/2020
 ms.topic: article
 ms.localizationpriority: high
-ms.openlocfilehash: 751f7dd73abeefe7be0406c17b95158ee21b9199
-ms.sourcegitcommit: b79bf1d5f158f09e858184a6dfd096e212c1a231
+ms.openlocfilehash: 57d06a8666f8003b187f043bd18655a9287d8a63
+ms.sourcegitcommit: fb79750bd71d6ebaed5203b3de71ba85a67227b1
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/12/2020
-ms.locfileid: "88161042"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88866103"
 ---
 # <a name="release-notes-for-windows-subsystem-for-linux"></a>Anmerkungen zu dieser Version des Windows-Subsystems für Linux
 
