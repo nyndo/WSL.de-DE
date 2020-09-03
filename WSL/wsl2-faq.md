@@ -7,12 +7,12 @@ ms.topic: article
 ms.assetid: 7afaeacf-435a-4e58-bff0-a9f0d75b8a51
 ms.custom: seodec18
 ms.localizationpriority: high
-ms.openlocfilehash: 1a55ace547b27c949794db3a6c8f7e2eb7c4a52c
-ms.sourcegitcommit: fb79750bd71d6ebaed5203b3de71ba85a67227b1
+ms.openlocfilehash: a021dc3c6c3c2a14fea631f2733d2b846c6fe3ad
+ms.sourcegitcommit: 910845e9b3f980b2c5b9b4968331a706720603c6
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/26/2020
-ms.locfileid: "88866003"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "89058485"
 ---
 # <a name="wsl-2-faqs"></a>Häufig gestellte Fragen (FAQs) zu WSL 2
 
@@ -20,7 +20,7 @@ Unten finden Sie eine Liste mit häufig gestellten Fragen zum Windows-Subsystem�
 
 ## <a name="does-wsl-2-use-hyper-v-will-it-be-available-on-windows-10-home"></a>Verwendet WSL 2 Hyper-V? Soll es unter Windows 10 Home verfügbar sein?
 
-WSL 2 wird für alle SKUs erhältlich sein, für die WSL aktuell verfügbar ist, einschließlich Windows 10 Home.
+WSL 2 ist für alle SKUs erhältlich, für die WSL aktuell verfügbar ist, einschließlich Windows 10 Home.
 
 In der neuesten Version von WSL wurde Virtualisierung auf der Grundlage der Hyper-V-Architektur ermöglicht. Diese Architektur steht in Form der optionalen Komponente ‚Virtual Machine Platform‘ zur Verfügung. Diese optionale Komponente soll für alle SKUs verfügbar sein. Weitere Details dazu stehen Ihnen in Kürze zur Verfügung, wenn wir uns der Veröffentlichung von WSL 2 nähern.
 
@@ -36,11 +36,11 @@ Wir arbeiten kontinuierlich an Lösungen zur Unterstützung der Integration von 
 
 ## <a name="can-i-access-the-gpu-in-wsl-2-are-there-plans-to-increase-hardware-support"></a>Kann ich in WSL 2 auf die GPU zugreifen? Gibt es Pläne, die Hardwareunterstützung auszuweiten?
 
-In den anfänglichen Versionen von WSL 2 wird die Hardwareunterstützung eingeschränkt sein, d. h. Sie können nicht auf die GPU, serielle oder USB-Geräte zugreifen. Eine bessere Unterstützung von Geräten steht jedoch weit oben in unseren Nachholbedarfslisten, da sich dadurch viele weitere Anwendungsfälle für Entwickler ergeben, die mit diesen Geräten interagieren möchten. Bis dies erreicht ist, können Sie jederzeit WSL 1 verwenden, das den Zugriff auf serielle Ports ermöglicht. Bitte folgen Sie diesem Blog und den Mitgliedern des WSL-Teams auf Twitter, um bei den neuesten Features in Insider Builds auf dem Laufenden zu bleiben, und ergreifen Sie die Initiative, um uns Feedback zu den Geräten zu geben, mit denen Sie gerne interagieren möchten.
+Wir haben Unterstützung für den Zugriff auf die GPU innerhalb der WSL 2-Verteilungen veröffentlicht. Das bedeutet, dass Sie WSL jetzt leichter für Machine Learning-, KI- und Data Science-Szenarien mit großen Datasets verwenden können. Ein Tutorial für [die ersten Schritte mit GPU-Unterstützung finden Sie hier](./tutorials/gpu-compute). Ab sofort umfasst WSL 2 keine serielle Unterstützung oder Unterstützung für USB-Geräte. Wir untersuchen derzeit, wie sich diese Features am besten hinzufügen lassen.
 
 ## <a name="will-wsl-2-be-able-to-use-networking-applications"></a>Kann WSL 2 Netzwerkanwendungen verwenden?
 
-Ja, in der Regel funktionieren Netzwerkanwendungen schneller und besser, da wir vollständige Kompatibilität der Systemaufrufe realisiert haben. Die neue Architektur verwendet jedoch virtualisierte Netzwerkkomponenten. Dies bedeutet, dass sich die anfänglichen Vorschaubuilds von WSL 2 eher ähnlich wie ein virtueller Computer verhalten, beispielsweise: WSL 2 weist eine andere IP-Adresse als der Hostcomputer auf. Wir arbeiten engagiert daran, dass sich WSL 2 genauso anfühlt wie WSL 1, und dazu gehören auch Verbesserungen unseres Netzwerkkonzepts. Wir rechnen damit, Verbesserungen schnellstmöglich hinzuzufügen, etwa den Zugriff auf alle Netzwerk-Apps aus Linux oder Windows mithilfe von „localhost“. Wir veröffentlichen weitere Details über unser Netzwerkkonzept und Verbesserungen, wenn wir uns der Veröffentlichung von WSL 2 nähern.
+Ja, in der Regel funktionieren Netzwerkanwendungen schneller und besser, da wir vollständige Kompatibilität der Systemaufrufe realisiert haben. Die neue Architektur verwendet jedoch virtualisierte Netzwerkkomponenten. Dies bedeutet, dass sich die anfänglichen Vorschaubuilds von WSL 2 eher ähnlich wie ein virtueller Computer verhalten, beispielsweise: WSL 2 weist eine andere IP-Adresse als der Hostcomputer auf. Wir arbeiten engagiert daran, dass sich WSL 2 genauso anfühlt wie WSL 1, und dazu gehören auch Verbesserungen unseres Netzwerkkonzepts. 
 
 ## <a name="can-i-run-wsl-2-in-a-virtual-machine"></a>Kann ich WSL 2 auf einem virtuellen Computer ausführen?
 
