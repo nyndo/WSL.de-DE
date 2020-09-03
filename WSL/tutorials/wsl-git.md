@@ -5,12 +5,12 @@ keywords: WSL, Windows, windowssubsystem, GNU, Linux, bash, git, GitHub, Version
 ms.date: 06/04/2020
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 550355ea77c97d68130c8d85e9aef2a6b49ffe63
-ms.sourcegitcommit: eaceda3589b9bd777e0fead5ef33bb16060a55d2
+ms.openlocfilehash: c48234be5c3867d771363aaa5e630d8ebe378364
+ms.sourcegitcommit: 6ff046993e9f196cdfa04f5f91130e0e4ff1e7fa
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84978243"
+ms.lasthandoff: 09/03/2020
+ms.locfileid: "89427217"
 ---
 # <a name="get-started-using-git-on-windows-subsystem-for-linux"></a>Einstieg in die Verwendung von git unter Windows-Subsystem für Linux
 
@@ -18,17 +18,17 @@ Git ist das am häufigsten verwendete Versionskontrollsystem. Mit git können Si
 
 ## <a name="git-can-be-installed-on-windows-and-on-wsl"></a>Git kann unter Windows und auf WSL installiert werden.
 
-Ein wichtiger Aspekt: Wenn Sie WSL aktivieren und eine Linux-Distribution installieren, installieren Sie ein neues Dateisystem, das von Windows NTFS C:\ getrennt ist. Laufwerk auf Ihrem Computer. Unter Linux werden Laufwerke nicht als Buchstaben angegeben. Ihnen werden Einstellungspunkte zugewiesen. Der Stamm des Dateisystems `/` ist der Bereitstellungs Punkt der Stamm Partition (oder des Ordners) im Fall von WSL. Nicht alles unter `/` ist dasselbe Laufwerk. Auf meinem Laptop habe ich beispielsweise zwei Versionen von Ubuntu (20,04 und 18,04) sowie Debian installiert. Wenn Sie diese Distributionen öffnen, wählen Sie das Stammverzeichnis mit dem Befehl aus `cd ~` , und geben Sie dann den Befehl ein `explorer.exe .` . der Windows-Datei-Explorer wird geöffnet und zeigt den Verzeichnispfad für die Distribution an.
+Ein wichtiger Aspekt: Wenn Sie WSL aktivieren und eine Linux-Distribution installieren, installieren Sie ein neues Dateisystem, das von Windows NTFS C:\ getrennt ist. Laufwerk auf Ihrem Computer. Unter Linux werden Laufwerke nicht als Buchstaben angegeben. Ihnen werden Einstellungspunkte zugewiesen. Der Stamm des Dateisystems `/` ist der Bereitstellungs Punkt der Stamm Partition (oder des Ordners) im Fall von WSL. Nicht alles unter `/` ist dasselbe Laufwerk. Auf meinem Laptop habe ich beispielsweise zwei Versionen von Ubuntu (20,04 und 18,04) sowie Debian installiert. Wenn Sie diese Verteilungen öffnen, wählen Sie das Stammverzeichnis mit dem Befehl aus `cd ~` , und geben Sie dann den Befehl ein `explorer.exe .` . der Windows-Datei-Explorer wird geöffnet und zeigt den Verzeichnispfad für die Verteilung an.
 
 | Linux-Distribution | Windows-Pfad für den Zugriff auf den Basisordner |
 | ----------- | ----------- |
-| Ubuntu 20.04 | `\\wsl$\Ubuntu-20.04\home\username` |
+| Ubuntu 20.04 | `\\wsl$\Ubuntu-20.04\home\username` |
 | Ubuntu 18.04 | `\\wsl$\Ubuntu-18.04\home\username` |
 | Debian | `\\wsl$\Debian\home\username` |
 | Windows PowerShell | `C:\Users\username` |
 
 > [!TIP]
-> Wenn Sie von der WSL-Distributions Befehlszeile aus auf das Windows-Datei Verzeichnis zugreifen möchten, erfolgt der Zugriff auf `C:\Users\username` das Verzeichnis mithilfe von `/mnt/c/Users/username` , da die Linux-Distribution Ihr Windows-Dateisystem als ein bereitgestelltes Laufwerk ansieht.
+> Wenn Sie von der WSL-Verteilungs Befehlszeile aus auf das Windows-Datei Verzeichnis zugreifen möchten, erfolgt der Zugriff auf `C:\Users\username` das Verzeichnis mithilfe von `/mnt/c/Users/username` , da die Linux-Distribution Ihr Windows-Dateisystem als ein bereitgestelltes Laufwerk ansieht.
 
 Sie müssen git auf jedem Dateisystem installieren, mit dem Sie es verwenden möchten.
 
@@ -54,13 +54,13 @@ sudo apt-get install git
 Öffnen Sie zum Einrichten der git-Konfigurationsdatei eine Befehlszeile für die Distribution, in der Sie arbeiten, und legen Sie Ihren Namen mit diesem Befehl fest (ersetzen Sie "Your Name" durch ihren git-Benutzernamen):
 
 ```bash
- `git config --global user.name "Your Name"`
+git config --global user.name "Your Name"
 ```
 
 Legen Sie Ihre e-Mail mit diesem Befehl fest (ersetzen youremail@domain.com Sie "" durch die e-Mail, die Sie in Ihrem git-Konto verwenden):
 
 ```bash
-`git config --global user.email "youremail@domain.com"`
+git config --global user.email "youremail@domain.com"
 ```
 
 > [!TIP]
