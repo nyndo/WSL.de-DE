@@ -24,6 +24,8 @@
       href: tutorials/wsl-git.md
     - name: Erste Schritte mit Datenbanken
       href: tutorials/wsl-database.md
+    - name: Erste Schritte mit Docker-Remotecontainern
+      href: tutorials/wsl-containers.md
     - name: Einrichten der GPU-Beschleunigung (NVIDIA CUDA/directml)
       href: tutorials/gpu-compute.md
 - name: Anleitungen
