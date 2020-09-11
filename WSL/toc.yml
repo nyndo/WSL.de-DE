@@ -40,6 +40,8 @@
       href: enterprise.md
     - name: Erstellen einer benutzerdefinierten Verteilung
       href: build-custom-distro.md
+    - name: Bereitstellen eines Datenträgers in WSL 2 (Vorschau)
+      href: wsl2-mount-disk.md
     - name: Befehlszeilenreferenz
       href: reference.md
 - name: Häufig gestellte Fragen
