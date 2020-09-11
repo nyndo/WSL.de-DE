@@ -5,12 +5,12 @@ keywords: BashOnWindows, Bash, WSL, Windows, Windows-Subsystem für Linux, Windo
 ms.date: 05/12/2020
 ms.topic: article
 ms.localizationpriority: high
-ms.openlocfilehash: 14e1697d1f2ac7a1efa17368be830a5c22973bc6
-ms.sourcegitcommit: 910845e9b3f980b2c5b9b4968331a706720603c6
+ms.openlocfilehash: 50b434e288ba90173875cf5e7cd5fe9e6c3d8a16
+ms.sourcegitcommit: 498592fa4b09015be3ee9a8913e5e3cf755de24b
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89058495"
+ms.lasthandoff: 09/08/2020
+ms.locfileid: "89559290"
 ---
 # <a name="windows-subsystem-for-linux-installation-guide-for-windows-10"></a>Windows-Subsystem für Linux: Installationsleitfaden für Windows 10
 
@@ -31,6 +31,7 @@ Um nur WSL 1 zu installieren, sollten Sie nun den Computer neu starten und mit d
 Um ein Update auf WSL 2 durchführen zu können, müssen die folgenden Kriterien erfüllt sein:
 
 - Ausführen von Windows 10, [aktualisiert auf Version 1903 oder höher](ms-settings:windowsupdate), **Build 18362** oder höher, für x64-Systeme.
+   - Wenn Sie Windows 10, Version 1903 oder 1909, verwenden, stellen Sie sicher, dass die Buildnummer Ihrer Nebenversion 1049 oder höher ist. Ausführliche Informationen zur Problembehandlung finden Sie [hier](https://docs.microsoft.com/windows/wsl/troubleshooting#im-on-windows-10-version-1903-and-i-still-do-not-see-options-for-wsl-2).
 - Ausführen von Windows 10, aktualisiert auf Version 2004 oder höher, **Build 19041**, für ARM64-Systeme.
 - Beachten Sie, dass Sie unter Windows 10, Version 1903 oder 1909, sicherstellen müssen, dass Sie über den richtigen Backport verfügen. Anweisungen finden Sie [hier](https://devblogs.microsoft.com/commandline/wsl-2-support-is-coming-to-windows-10-versions-1903-and-1909/#how-do-i-get-it). 
 
@@ -141,7 +142,7 @@ Nachfolgend werden einige Fehler und vorgeschlagene Korrekturen beschrieben. Wei
 
 - **Der angeforderte Vorgang konnte aufgrund einer Einschränkung des virtuellen Dateisystems nicht abgeschlossen werden. Dateien für virtuelle Festplatten müssen unkomprimiert und unverschlüsselt sein und dürfen keine geringe Dichte aufweisen.**
   - Zum Deaktivieren von „Inhalte komprimieren“ (sowie „Inhalte verschlüsseln“, falls aktiviert), öffnen Sie den Profilordner Ihrer Linux-Verteilung. Er sollte sich in einem Ordner auf Ihrem Windows-Dateisystem befinden, der etwa folgendermaßen heißt: `USERPROFILE%\AppData\Local\Packages\CanonicalGroupLimited...`.
-  - In diesem Linux-Verteilungsprofil sollte ein Ordner "LocalState" vorhanden sein. Klicken Sie mit der rechten Maustaste auf diesen Ordner, um ein Menü mit Optionen anzuzeigen. Wählen Sie „Eigenschaften“ > „Erweitert“ aus, und stellen Sie dann sicher, dass die Kontrollkästchen „Inhalt komprimieren, um Speicherplatz zu sparen“ und „Inhalt verschlüsseln, um Daten zu schützen“ nicht aktiviert (nicht ausgewählt) sind. Wenn Sie gefragt werden, ob Sie diese Einstellung nur auf den aktuellen Ordner oder auf alle Unterordner und Dateien anwenden möchten, wählen Sie „Nur dieser Ordner“ aus, da Sie nur das Komprimierungsflag löschen. Danach sollte der Befehl `wsl –set-version` funktionieren.
+  - In diesem Linux-Verteilungsprofil sollte ein Ordner "LocalState" vorhanden sein. Klicken Sie mit der rechten Maustaste auf diesen Ordner, um ein Menü mit Optionen anzuzeigen. Wählen Sie „Eigenschaften“ > „Erweitert“ aus, und stellen Sie dann sicher, dass die Kontrollkästchen „Inhalt komprimieren, um Speicherplatz zu sparen“ und „Inhalt verschlüsseln, um Daten zu schützen“ nicht aktiviert (nicht ausgewählt) sind. Wenn Sie gefragt werden, ob Sie diese Einstellung nur auf den aktuellen Ordner oder auf alle Unterordner und Dateien anwenden möchten, wählen Sie „Nur dieser Ordner“ aus, da Sie nur das Komprimierungsflag löschen. Danach sollte der Befehl `wsl --set-version` funktionieren.
 
 ![Screenshot der Eigenschafteneinstellungen der WSL-Verteilung](media/troubleshooting-virtualdisk-compress.png)
 

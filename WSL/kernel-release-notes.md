@@ -5,19 +5,19 @@ keywords: Versionshinweise, WSL, Windows, Windows Subsystem für Linux, Windows-
 ms.date: 06/09/2020
 ms.topic: article
 ms.localizationpriority: high
-ms.openlocfilehash: ffec37d179005eb7015a8f9af8de0ac185710bec
-ms.sourcegitcommit: fb79750bd71d6ebaed5203b3de71ba85a67227b1
+ms.openlocfilehash: 32b65bcde3df01b25f0361493a172e754e78e101
+ms.sourcegitcommit: 43d4056eefe0c71ecd9a0fbd5a7a58dd18fa9829
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/26/2020
-ms.locfileid: "88866119"
+ms.lasthandoff: 09/09/2020
+ms.locfileid: "89615542"
 ---
 # <a name="release-notes-for-windows-subsystem-for-linux-kernel"></a>Anmerkungen zu dieser Version des Windows-Subsystems für den Linux-Kernel
 
 Wir haben Unterstützung für WSL 2-Verteilungen hinzugefügt, [, die einen vollständigen Linux-Kernel verwenden](https://devblogs.microsoft.com/commandline/shipping-a-linux-kernel-with-windows/). Der Linux-Kernel ist Open Source, und der Quellcode ist im [WSL2-Linux-Kernel](https://github.com/microsoft/WSL2-Linux-Kernel)-Repository verfügbar. Dieser Linux-Kernel wird Ihrem Computer über Microsoft Update bereitgestellt und folgt einem separaten Veröffentlichungszeitplan für das Windows-Subsystem für Linux, das als Teil des Windows-Images bereitgestellt wird.
 
 ## <a name="419128-microsoft-standard"></a>4.19.128-microsoft-standard
-*Veröffentlichungsdatum*: Vorabversion
+*Veröffentlichungsdatum*: Vorabversion, über manuelle Installation verfügbar
 
 [Offizieller Link zum GitHub-Release](https://github.com/microsoft/WSL2-Linux-Kernel/releases/tag/4.19.128-microsoft-standard).
 
