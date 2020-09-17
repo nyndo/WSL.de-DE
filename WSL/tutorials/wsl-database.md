@@ -5,12 +5,12 @@ keywords: WSL, Windows, windowssubsystem, MySQL MongoDB, PostgreSQL, SQLite, Mic
 ms.date: 07/07/2020
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 8ffd40ef21e8fb8ece529157852ba5d8bb676076
-ms.sourcegitcommit: 16ffb1a096a4a7fbb77c58f92258051930cc82da
+ms.openlocfilehash: 561af482e245892156a02fe287b95867ef80ded1
+ms.sourcegitcommit: ba3399a5ffeffd23551315acd04ea6848d30693b
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/09/2020
-ms.locfileid: "86160221"
+ms.lasthandoff: 09/17/2020
+ms.locfileid: "90719129"
 ---
 # <a name="get-started-with-databases-on-windows-subsystem-for-linux"></a>Einstieg in Datenbanken unter Windows-Subsystem für Linux
 
@@ -20,8 +20,8 @@ Diese Schritt-für-Schritt-Anleitung hilft Ihnen beim Einstieg in die Verbindung
 
 - Ausgeführt unter Windows 10, [aktualisiert auf Version 2004](ms-settings:windowsupdate), **Build 19041** oder höher.
 - [WSL wurde aktiviert und installiert und auf WSL 2 aktualisiert](https://docs.microsoft.com/windows/wsl/install-win10).
-- [Linux-Distribution installiert](https://docs.microsoft.com/windows/wsl/install-win10#install-your-linux-distribution-of-choice) (für unsere Beispiele Ubuntu 18,04).
-- Stellen Sie sicher, dass die Ubuntu 18,04-Distribution [im WSL 2-Modus ausgeführt](https://docs.microsoft.com/windows/wsl/install-win10#set-your-distribution-version-to-wsl-1-or-wsl-2)wird. (WSL kann Verteilungen im v1-oder V2-Modus ausführen.) Sie können dies überprüfen, indem Sie PowerShell öffnen und Folgendes eingeben:`wsl -l -v`
+- [Linux-Distribution installiert](https://docs.microsoft.com/windows/wsl/install-win10#step-6---install-your-linux-distribution-of-choice) (für unsere Beispiele Ubuntu 18,04).
+- Stellen Sie sicher, dass die Ubuntu 18,04-Distribution [im WSL 2-Modus ausgeführt](https://docs.microsoft.com/windows/wsl/install-win10#set-your-distribution-version-to-wsl-1-or-wsl-2)wird. (WSL kann Verteilungen im v1-oder V2-Modus ausführen.) Sie können dies überprüfen, indem Sie PowerShell öffnen und Folgendes eingeben: `wsl -l -v`
 
 ## <a name="differences-between-database-systems"></a>Unterschiede zwischendatenbanksystemen
 
@@ -29,7 +29,7 @@ Zu den [beliebtesten Optionen](https://insights.stackoverflow.com/survey/2019#te
 
 - [MySQL](https://www.mysql.com/why-mysql/) (SQL)
 - [PostgreSQL](https://www.postgresql.org/about/) (SQL)
-- [Microsoft SQL Server](https://docs.microsoft.com/sql/?view=sql-server-ver15) (SQL)
+- [Microsoft SQL Server](https://docs.microsoft.com/sql) (SQL)
 - [SQLite](https://www.sqlite.org/about.html) (SQL)
 - [MongoDB](https://www.mongodb.com/what-is-mongodb) (nosql)
 - [Redis](https://redis.io/topics/introduction) (nosql)
@@ -54,22 +54,22 @@ So installieren Sie MySQL auf WSL (Ubuntu 18,04):
 
 1. Öffnen Sie das WSL-Terminal (d. h. Ubuntu 18.04).
 2. Aktualisieren Sie Ihre Ubuntu-Pakete: `sudo apt update`.
-3. Nachdem die Pakete aktualisiert wurden, installieren Sie MySQL mit:`sudo apt install mysql-server`
+3. Nachdem die Pakete aktualisiert wurden, installieren Sie MySQL mit: `sudo apt install mysql-server`
 4. Bestätigen Sie die Installation, und rufen Sie die Versionsnummer ab: `mysql --version`.
 
 Möglicherweise möchten Sie auch das enthaltene Sicherheits Skript ausführen. Dies ändert einige der weniger sicheren Standardoptionen für Dinge wie Remote-Stamm Anmeldungen und Beispiel Benutzer. So führen Sie das Sicherheits Skript aus:
 
-1. Starten eines MySQL-Servers:`sudo /etc/init.d/mysql start`
-2. Starten Sie die Sicherheits Skript Aufforderungen:`sudo mysql_secure_installation`
+1. Starten eines MySQL-Servers: `sudo /etc/init.d/mysql start`
+2. Starten Sie die Sicherheits Skript Aufforderungen: `sudo mysql_secure_installation`
 3. In der ersten Aufforderung werden Sie gefragt, ob Sie das Kennwort für die Kenn Wort Validierung einrichten möchten, mit dem Sie die Stärke des MySQL-Kennworts testen können. Anschließend legen Sie ein Kennwort für den MySQL-root-Benutzer fest, entscheiden, ob anonyme Benutzer entfernt werden sollen, und entscheiden, ob der root-Benutzer sich sowohl lokal als auch remote anmelden darf, ob die Testdatenbank entfernt werden soll, und schließlich entscheiden Sie, ob die Berechtigungs Tabellen sofort erneut geladen werden sollen.
 
-Geben Sie zum Öffnen der MySQL-Eingabeaufforderung Folgendes ein:`sudo mysql`
+Geben Sie zum Öffnen der MySQL-Eingabeaufforderung Folgendes ein: `sudo mysql`
 
-Geben Sie in der MySQL-Eingabeaufforderung Folgendes ein, um die verfügbaren Datenbanken anzuzeigen:`SHOW DATABASES;`
+Geben Sie in der MySQL-Eingabeaufforderung Folgendes ein, um die verfügbaren Datenbanken anzuzeigen: `SHOW DATABASES;`
 
-Geben Sie Folgendes ein, um eine neue Datenbank zu erstellen:`CREATE DATABASE database_name;`
+Geben Sie Folgendes ein, um eine neue Datenbank zu erstellen: `CREATE DATABASE database_name;`
 
-Geben Sie Folgendes ein, um eine Datenbank zu löschen:` DROP DATABASE database_name;`
+Geben Sie Folgendes ein, um eine Datenbank zu löschen: ` DROP DATABASE database_name;`
 
 Weitere Informationen zum Arbeiten mit MySQL-Datenbanken finden Sie in der [MySQL](https://dev.mysql.com/doc/mysql-getting-started/en/)-Dokumentation.
 
@@ -157,7 +157,7 @@ Weitere Informationen finden Sie in der MongoDB-Dokumentation:
 
 ## <a name="install-microsoft-sql-server"></a>Installieren von Microsoft SQL Server
 
-Um SQL Server auf WSL (Ubuntu 18,04) zu installieren, führen Sie diesen Schnellstart aus: [Installieren Sie SQL Server, und erstellen Sie eine Datenbank unter Ubuntu](https://docs.microsoft.com/sql/linux/quickstart-install-connect-ubuntu?view=sql-server-ver15).
+Um SQL Server auf WSL (Ubuntu 18,04) zu installieren, führen Sie diesen Schnellstart aus: [Installieren Sie SQL Server, und erstellen Sie eine Datenbank unter Ubuntu](https://docs.microsoft.com/sql/linux/quickstart-install-connect-ubuntu).
 
 Wenn Sie mit Microsoft SQL Server Datenbanken in vs Code arbeiten möchten, testen Sie die [MSSQL-Erweiterung](https://marketplace.visualstudio.com/items?itemName=ms-mssql.mssql).
 
@@ -167,16 +167,16 @@ So installieren Sie SQLite auf WSL (Ubuntu 18,04):
 
 1. Öffnen Sie das WSL-Terminal (d. h. Ubuntu 18.04).
 2. Aktualisieren Sie Ihre Ubuntu-Pakete: `sudo apt update`.
-3. Sobald die Pakete aktualisiert wurden, installieren Sie sqlite3 mit:`sudo apt install sqlite3`
+3. Sobald die Pakete aktualisiert wurden, installieren Sie sqlite3 mit: `sudo apt install sqlite3`
 4. Bestätigen Sie die Installation, und rufen Sie die Versionsnummer ab: `sqlite3 --version`.
 
-Geben Sie Folgendes ein, um eine Testdatenbank mit dem Namen "example. DB" zu erstellen:`sqlite3 example.db`
+Geben Sie Folgendes ein, um eine Testdatenbank mit dem Namen "example. DB" zu erstellen: `sqlite3 example.db`
 
-Geben Sie Folgendes ein, um eine Liste Ihrer SQLite-Datenbanken anzuzeigen:`.databases`
+Geben Sie Folgendes ein, um eine Liste Ihrer SQLite-Datenbanken anzuzeigen: `.databases`
 
-Geben Sie Folgendes ein, um den Status der Datenbank anzuzeigen:`.dbinfo ?DB?`
+Geben Sie Folgendes ein, um den Status der Datenbank anzuzeigen: `.dbinfo ?DB?`
 
-Geben Sie zum Beenden der SQLite-Eingabeaufforderung Folgendes ein:`.exit`
+Geben Sie zum Beenden der SQLite-Eingabeaufforderung Folgendes ein: `.exit`
 
 Weitere Informationen zum Arbeiten mit einer SQLite-Datenbank finden Sie in der [SQLite](https://www.sqlite.org/quickstart.html)-Dokumentation.
 
@@ -188,14 +188,14 @@ So installieren Sie redis auf WSL (Ubuntu 18,04):
 
 1. Öffnen Sie das WSL-Terminal (d. h. Ubuntu 18.04).
 2. Aktualisieren Sie Ihre Ubuntu-Pakete: `sudo apt update`.
-3. Nachdem die Pakete aktualisiert wurden, installieren Sie redis wie folgt:`sudo apt install redis-server`
+3. Nachdem die Pakete aktualisiert wurden, installieren Sie redis wie folgt: `sudo apt install redis-server`
 4. Bestätigen Sie die Installation, und rufen Sie die Versionsnummer ab: `redis-server --version`.
 
-So beginnen Sie mit der Ausführung des redis-Servers:`sudo service redis-server start`
+So beginnen Sie mit der Ausführung des redis-Servers: `sudo service redis-server start`
 
 Überprüfen Sie, ob redis funktioniert (redis-cli ist das Befehlszeilenschnittstelle-Hilfsprogramm für die Kommunikation mit redis): Hiermit `redis-cli ping` sollte die Antwort "Pong" zurückgegeben werden.
 
-So können Sie den redis-Server nicht mehr ausführen:`sudo service redis-server stop`
+So können Sie den redis-Server nicht mehr ausführen: `sudo service redis-server stop`
 
 Weitere Informationen zum Arbeiten mit einer redis-Datenbank finden Sie in der [redis](https://redis.io/topics/quickstart)-Dokumentation.
 
@@ -203,7 +203,7 @@ Wenn Sie in vs Code mit redis-Datenbanken arbeiten möchten, verwenden Sie die [
 
 ## <a name="see-services-running-and-set-up-profile-aliases"></a>Anzeigen von Diensten, die ausgeführt werden, und Einrichten von Profil Aliasen
 
-Geben Sie Folgendes ein, um die Dienste anzuzeigen, die Sie zurzeit in der WSL-Distribution ausgeführt haben:`service --status-all`
+Geben Sie Folgendes ein, um die Dienste anzuzeigen, die Sie zurzeit in der WSL-Distribution ausgeführt haben: `service --status-all`
 
 Das Eingeben von `sudo service mongodb start` oder `sudo service postgres start` und `sudo -u postgrest psql` kann mühsam werden.  Sie können jedoch in Betracht ziehen, Aliase in Ihrer Datei `.profile` unter WSL einzurichten, um diese Befehle einfacher verwenden zu können und sie sich besser zu merken.
 
