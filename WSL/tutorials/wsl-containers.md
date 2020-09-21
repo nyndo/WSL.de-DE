@@ -5,12 +5,12 @@ keywords: WSL, Windows, windowssubsystem, Windows 10, Docker, Container
 ms.date: 08/28/2020
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: a972cd6f179059e0841e1aef4bc3929fa46fcc4d
-ms.sourcegitcommit: 1c7f2e9928672ad3941a9327162595cb73ef5a3f
+ms.openlocfilehash: 2ae9da815335f99a9b4a75334a02d2730ddd08c6
+ms.sourcegitcommit: 69fc9d3ca22cf3f07622db4cdf80c8ec751fe620
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/09/2020
-ms.locfileid: "89609670"
+ms.lasthandoff: 09/19/2020
+ms.locfileid: "90818752"
 ---
 # <a name="get-started-with-docker-remote-containers-on-wsl-2"></a>Einstieg in docker-Remote Container auf WSL 2
 
@@ -127,7 +127,7 @@ Verwenden Sie Docker, um einen Entwicklungs Container für ein vorhandenes App-P
 
     ![VS Code ausführen der Debugkonfiguration](../media/vscode-run-config.png)
 
-10. Wählen Sie in vs Code **Ausführen**  >  **Debuggen starten** aus (oder drücken Sie einfach die Taste **F5** ). Dadurch wird in vs Code ein Terminal geöffnet, und es sollte ein Ergebnis wie folgt angezeigt werden: "Starten des Entwicklungs Servers beim http://127.0.0.1:8000/ Beenden des Servers mit Control-C". Halten Sie die STRG-Taste gedrückt, und wählen Sie die angezeigte Adresse aus, um die app in Ihrem Standard Webbrowser zu öffnen, und sehen Sie, dass Ihr Projekt innerhalb des Containers ausgeführt wird.
+10. Wählen Sie in vs Code **Ausführen**  >  **Debuggen starten** aus (oder drücken Sie einfach die Taste **F5** ). Dadurch wird in vs Code ein Terminal geöffnet, und es sollte ein Ergebnis wie folgt angezeigt werden: "Starten des Entwicklungs Servers beim http://127.0.0.1:8000/ Beenden des Servers mit Control-C". Halten Sie die STRG-Taste gedrückt, und wählen Sie die angezeigte Adresse aus, um die app in Ihrem Standard Webbrowser zu öffnen, und sehen Sie, dass Ihr Projekt im Container ausgeführt wird.
 
     ![VS Code ausführen eines docker-Containers](../media/vscode-running-in-container.png)
 

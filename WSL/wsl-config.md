@@ -4,12 +4,12 @@ description: Referenzliste und Konfigurieren mehrerer Linux-Distributionen, die 
 keywords: BashOnWindows, bash, wsl, windows, windows subsystem for linux, windowssubsystem, ubuntu, wsl.conf, wslconfig
 ms.date: 05/12/2020
 ms.topic: article
-ms.openlocfilehash: b8aa740233f3ac9517744212eb7b362a18378822
-ms.sourcegitcommit: 90577817a9321949da2a3971b4c78bb00f6d977f
+ms.openlocfilehash: 0a127d376a8606a1a13ea88c9efed161e18a161d
+ms.sourcegitcommit: 69fc9d3ca22cf3f07622db4cdf80c8ec751fe620
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/10/2020
-ms.locfileid: "88039413"
+ms.lasthandoff: 09/19/2020
+ms.locfileid: "90818732"
 ---
 # <a name="wsl-commands-and-launch-configurations"></a>WSL-Befehle und Start Konfigurationen
 
@@ -125,9 +125,9 @@ Jede Linux-Distribution verwaltet unabhängig ihre eigenen Konfigurationen. Füh
 `wsl -l` , `wsl --list`  
 Listet verfügbare Linux-Distributionen für WSL auf.  Wenn eine Distribution aufgeführt wird, ist sie installiert und einsatzbereit.
 
-`wsl --list --all`Listet alle Verteilungen auf, einschließlich derjenigen, die derzeit nicht verwendbar sind.  Sie werden möglicherweise gerade installiert, deinstalliert oder sind beschädigt.  
+`wsl --list --all` Listet alle Verteilungen auf, einschließlich derjenigen, die derzeit nicht verwendbar sind.  Sie werden möglicherweise gerade installiert, deinstalliert oder sind beschädigt.  
 
-`wsl --list --running`Listet alle Verteilungen auf, die zurzeit ausgeführt werden.
+`wsl --list --running` Listet alle Verteilungen auf, die zurzeit ausgeführt werden.
 
 ## <a name="set-a-default-distribution"></a>Festlegen einer Standarddistribution
 
@@ -208,7 +208,7 @@ Listet alle Distributionen auf, einschließlich derjenigen, die zurzeit nicht ve
 
 So legen Sie eine Standardverteilung fest, die ausgeführt wird, wenn Sie `wsl` in einer Befehlszeile ausführen:
 
-`wslconfig /setdefault <DistributionName>`Legt die Standardverteilung auf fest `<DistributionName>` .
+`wslconfig /setdefault <DistributionName>` Legt die Standardverteilung auf fest `<DistributionName>` .
 
 **Beispiel: (mithilfe von PowerShell)**  
 `wslconfig /setdefault Ubuntu` würde die Standarddistribution auf Ubuntu festlegen.  Wenn jetzt `wsl npm init` ausgeführt wird, wird Ubuntu ausgeführt.  Wenn `wsl` ausgeführt wird, wird eine Ubuntu-Sitzung geöffnet.
@@ -260,7 +260,7 @@ Abschnitt: `[automount]`
 
 | key        | value                          | Standard      | notes                                                                                                                                                                                                                                                                                                                          |
 |:-----------|:-------------------------------|:-------------|:-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| enabled    | boolean                        | wahr         | `true` bewirkt, dass lokale Festplattenlaufwerke (d.h. `C:/` oder `D:/`) mit DrvFs automatisch unter `/mnt` eingebunden werden.  `false`bedeutet, dass Laufwerke nicht automatisch bereitgestellt werden, aber Sie können Sie trotzdem manuell oder über bereitstellen `fstab` .                                                                                                             |
+| enabled    | boolean                        | wahr         | `true` bewirkt, dass lokale Festplattenlaufwerke (d.h. `C:/` oder `D:/`) mit DrvFs automatisch unter `/mnt` eingebunden werden.  `false` bedeutet, dass Laufwerke nicht automatisch bereitgestellt werden, aber Sie können Sie trotzdem manuell oder über bereitstellen `fstab` .                                                                                                             |
 | mountFsTab | boolean                        | wahr         | `true` legt fest, dass `/etc/fstab` beim WSL-Start verarbeitet wird. Bei „/etc/fstab“ handelt es sich um eine Datei, in der Sie andere Dateisysteme wie eine SMB-Freigabe deklarieren können. Daher können Sie diese Dateisysteme beim Start automatisch in WSL einbinden.                                                                                                                |
 | root       | Zeichenfolge                         | `/mnt/`      | Legt das Verzeichnis fest, in dem lokale Festplattenlaufwerke automatisch eingebunden werden. Wenn Sie z.B. ein Verzeichnis unter `/windir/` in WSL verwenden und Sie dieses als Stammverzeichnis angeben, erwarten Sie, dass die lokalen Festplattenlaufwerke unter `/windir/c` eingebunden werden.                                                                                              |
 | Optionen    | Durch Kommas getrennte Liste mit Werten | Leere Zeichenfolge | Dieser Wert wird an die Standardzeichenfolge der DrvFs-Einbindungsoptionen angefügt. **Es können nur DrvFs-spezifische Optionen angegeben werden.** Optionen, die die Einbindungsbinärdatei normalerweise in ein Flag analysieren würde, werden nicht unterstützt. Wenn Sie diese Optionen explizit angeben möchten, müssen Sie jedes Laufwerk, für das dies gelten soll, in „/etc/fstab“ einschließen. |
@@ -339,7 +339,7 @@ Diese Einstellungen wirken sich auf die VM aus, die jede WSL 2-Distribution unte
 | Schlüssel | value | default | notes|
 |:----|:----|:----|:----|
 | kernel | Zeichenfolge | Der von Microsoft bereitgestellte Posteingang | Ein absoluter Windows-Pfad zu einem benutzerdefinierten Linux-Kernel. |
-| Arbeitsspeicher | size | 80% ihres gesamten Arbeitsspeichers unter Windows * | Wie viel Arbeitsspeicher für die WSL 2-VM zugewiesen werden soll. |
+| Arbeitsspeicher | size | 50% des Gesamt Arbeitsspeichers unter Windows oder 8 GB, je nachdem, welcher Wert kleiner ist. bei Builds vor 20175:80% ihres gesamten Arbeitsspeichers unter Windows | Wie viel Arbeitsspeicher für die WSL 2-VM zugewiesen werden soll. |
 | Prozessoren | number | Die gleiche Anzahl von Prozessoren unter Windows | Gibt an, wie viele Prozessoren der WSL 2-VM zugewiesen werden sollen. |
 | localhostforwarding | boolean | `true` | Boolescher Wert, der angibt, ob an den Platzhalter oder localhost in der WSL 2-VM gebundene Ports über localhost: Port vom Host aus verbunden werden sollen. |
 | kernelcommandline | Zeichenfolge | Leer | Zusätzliche Kernel-Befehlszeilenargumente. |
@@ -348,6 +348,6 @@ Diese Einstellungen wirken sich auf die VM aus, die jede WSL 2-Distribution unte
 
 * Hinweis: dieser Wert gilt für Windows Build 19041 und unterscheidet sich möglicherweise in Windows-Builds im Insider-Programm.
 
-Einträge mit dem `path` Wert müssen Windows-Pfade mit Escapezeichen mit Escapezeichen sein, z. b.:`C:\\Temp\\myCustomKernel`
+Einträge mit dem `path` Wert müssen Windows-Pfade mit Escapezeichen mit Escapezeichen sein, z. b.: `C:\\Temp\\myCustomKernel`
 
 Einträge mit dem `size` Wert müssen eine Größe gefolgt von einer Einheit sein, z `8GB` . b `512MB` . oder.
