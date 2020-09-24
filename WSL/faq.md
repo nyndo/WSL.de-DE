@@ -2,16 +2,16 @@
 title: Häufig gestellte Fragen
 description: Finden Sie Antworten auf häufig gestellte Fragen (FAQs) zum Windows-Subsystem für Linux 2, etwa auf die Frage „Für was kann ich WSL verwenden?“
 keywords: BashOnWindows, bash, wsl, windows, windowssubsystem, faq
-ms.date: 9/4/2018
+ms.date: 09/15/2020
 ms.topic: article
 ms.assetid: 129101ed-b88a-43c2-b6a2-cd2c4ff6fee1
 ms.localizationpriority: high
-ms.openlocfilehash: 9a9f287ceb2ae93286999ed32d655198c8a390c8
-ms.sourcegitcommit: fb79750bd71d6ebaed5203b3de71ba85a67227b1
+ms.openlocfilehash: 0f16471968151fa040d41baa90af6aedfb6fee79
+ms.sourcegitcommit: ba3399a5ffeffd23551315acd04ea6848d30693b
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/26/2020
-ms.locfileid: "88866157"
+ms.lasthandoff: 09/17/2020
+ms.locfileid: "90719189"
 ---
 # <a name="frequently-asked-questions-about-windows-subsystem-for-linux"></a>Häufig gestellte Fragen zum Windows-Subsystem für Linux
 
@@ -181,7 +181,7 @@ WSL unterstützt die Ausführung in einer Legacykonsole nicht. So deaktivieren S
 
 ## <a name="why-do-i-get-error-0x80040154-when-i-run-bashexe-after-upgrading-windows"></a>Warum erhalte ich „Error: 0x80040154“ beim Ausführen von „bash.exe“ nach dem Upgrade von Windows?
 
-Das Feature „Windows-Subsystem für Linux“ ist möglicherweise während eines Windows-Updates deaktiviert. Wenn dies der Fall ist, muss das Windows-Feature erneut aktiviert werden. Anweisungen zum Aktivieren des Features „Windows-Subsystem für Linux“ finden Sie im [Installationshandbuch.](https://docs.microsoft.com/windows/wsl/install-win10#install-the-windows-subsystem-for-linux)
+Das Feature „Windows-Subsystem für Linux“ ist möglicherweise während eines Windows-Updates deaktiviert. Wenn dies der Fall ist, muss das Windows-Feature erneut aktiviert werden. Anweisungen zum Aktivieren des Features „Windows-Subsystem für Linux“ finden Sie im [Installationshandbuch.](https://docs.microsoft.com/windows/wsl/install-win10)
 
 ## <a name="how-do-i-change-the-display-language-of-wsl"></a>Wie ändere ich die Anzeigesprache von WSL?
 

@@ -2,15 +2,15 @@
 title: 'Windows-Subsystem für Linux: Befehlsreferenz'
 description: Zeigen Sie eine Liste von Befehlen an, die das Windows-Subsystem für Linux verwalten, z. B. Argumente für die Ausführung von Linux-Befehlen.
 keywords: BashOnWindows, bash, wsl, windows, windows subsystem for linux, windowssubsystem, ubuntu
-ms.date: 07/31/2017
+ms.date: 09/15/2020
 ms.topic: article
 ms.localizationpriority: high
-ms.openlocfilehash: fc5c9e06c597092a3790ba7f9eb06054a33450c1
-ms.sourcegitcommit: fb79750bd71d6ebaed5203b3de71ba85a67227b1
+ms.openlocfilehash: 6f98cb7b238e4b38c1a931a0e77e419efbcc319d
+ms.sourcegitcommit: ba3399a5ffeffd23551315acd04ea6848d30693b
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/26/2020
-ms.locfileid: "88866130"
+ms.lasthandoff: 09/17/2020
+ms.locfileid: "90719168"
 ---
 # <a name="command-reference-for-windows-subsystem-for-linux"></a>Befehlsreferenz für das Windows-Subsystem für Linux
 
@@ -169,7 +169,7 @@ Syntax: `bash [Options...]`
 
 `lxrun.exe` war der erste Befehl, der zum Installieren und Verwalten des Windows-Subsystems für Linux verwendet wurde. Er gilt ab Windows 10 Version 1803 und höher als veraltet.
 
-Der Befehl `lxrun.exe` kann verwendet werden, um direkt mit dem [Windows-Subsystem für Linux (WSL)](https://msdn.microsoft.com/commandline/wsl/faq#what-windows-subsystem-for-linux-wsl-) zu interagieren.  Diese Befehle werden im Verzeichnis `\Windows\System32` installiert und können in einer Windows-Eingabeaufforderung oder in PowerShell ausgeführt werden.
+Der Befehl `lxrun.exe` kann verwendet werden, um direkt mit dem Windows-Subsystem für Linux (WSL) zu interagieren.  Diese Befehle werden im Verzeichnis `\Windows\System32` installiert und können in einer Windows-Eingabeaufforderung oder in PowerShell ausgeführt werden.
 
 | Befehl                     | Beschreibung                     |
 |:----------------------------|:---------------------------|
