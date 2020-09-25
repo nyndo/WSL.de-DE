@@ -1,22 +1,26 @@
 ---
 title: Installieren des Windows-Subsystems für Linux (WSL) unter Windows 10
-description: Erfahren Sie, wie Sie das Windows-Subsystem für Linux unter Windows 10 installieren. Windows 10 muss auf Version 2004, Build 19041 oder höher aktualisiert werden.
+description: Erfahren Sie, wie Sie Linux-Verteilungen auf Ihrem Windows 10-Computer mit einem Bash-Terminal installieren, einschließlich Ubuntu, Debian, SUSE, Kali, Fedora, Pengwin und Alpine.
 keywords: BashOnWindows, Bash, WSL, Windows, Windows-Subsystem für Linux, Windows-Subsystem, Ubuntu, Debian, Suse, Windows 10, Installieren, Aktivieren, WSL2, Version 2
-ms.date: 05/12/2020
+ms.date: 09/15/2020
 ms.topic: article
 ms.localizationpriority: high
-ms.openlocfilehash: 50b434e288ba90173875cf5e7cd5fe9e6c3d8a16
-ms.sourcegitcommit: 498592fa4b09015be3ee9a8913e5e3cf755de24b
+ms.openlocfilehash: f617f006ae8067da8adbe1449bfcfe5bf32e73a3
+ms.sourcegitcommit: 1232d3b3becc4ceaa113f8ffb0b935c5550f99a2
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/08/2020
-ms.locfileid: "89559290"
+ms.lasthandoff: 09/18/2020
+ms.locfileid: "90777651"
 ---
 # <a name="windows-subsystem-for-linux-installation-guide-for-windows-10"></a>Windows-Subsystem für Linux: Installationsleitfaden für Windows 10
 
-## <a name="install-the-windows-subsystem-for-linux"></a>Installieren des Windows-Subsystems für Linux
+## <a name="install-windows-subsystem-for-linux"></a>Installieren des Windows-Subsystems für Linux
 
-Bevor Sie eine Linux-Verteilung unter Windows installieren können, müssen Sie das optionale Feature „Windows-Subsystem für Linux“ aktivieren.
+Das Windows-Subsystem für Linux verfügt über zwei verschiedene Versionen, zwischen denen Sie während des Installationsprozesses auswählen können. WSL 2 bietet eine bessere Gesamtleistung, und wir empfehlen seine Verwendung. Wenn Ihr System WSL 2 nicht unterstützt, oder wenn in einer bestimmten Situation die systemübergreifende Dateispeicherung erforderlich ist, sollten Sie bei WSL 1 bleiben. Erfahren Sie mehr über den [Vergleich zwischen WSL 2 und WSL 1](./compare-versions.md).
+
+## <a name="step-1---enable-the-windows-subsystem-for-linux"></a>Schritt 1: Aktivieren des Windows-Subsystems für Linux
+
+Bevor Sie eine Linux-Verteilung unter Windows installieren, müssen Sie zunächst das optionale Feature „Windows-Subsystem für Linux“ aktivieren.
 
 Öffnen Sie PowerShell als Administrator, und führen Sie Folgendes aus:
 
@@ -24,22 +28,26 @@ Bevor Sie eine Linux-Verteilung unter Windows installieren können, müssen Sie 
 dism.exe /online /enable-feature /featurename:Microsoft-Windows-Subsystem-Linux /all /norestart
 ```
 
-Um nur WSL 1 zu installieren, sollten Sie nun den Computer neu starten und mit dem [Installieren der Linux-Verteilung Ihrer Wahl](./install-win10.md#install-your-linux-distribution-of-choice) fortfahren. Andernfalls warten Sie auf den Neustart, und fahren Sie mit dem Update auf WSL 2 fort. Erfahren Sie mehr über den [Vergleich zwischen WSL 2 und WSL 1](./compare-versions.md).
+Es wird empfohlen, nun mit Schritt 2 fortzufahren und auf WSL 2 zu aktualisieren, aber wenn Sie nur WSL 1 installieren möchten, können Sie Ihren Computer jetzt neu starten und mit [Schritt 6: Installieren der Linux-Verteilung Ihrer Wahl](./install-win10.md#step-6---install-your-linux-distribution-of-choice) fortfahren. Um auf WSL 2 zu aktualisieren, warten Sie mit dem Neustart Ihres Computers, und fahren Sie mit dem nächsten Schritt fort.
 
-## <a name="update-to-wsl-2"></a>Aktualisieren auf WSL 2
+## <a name="step-2---update-to-wsl-2"></a>Schritt 2: Aktualisieren auf WSL 2
 
-Um ein Update auf WSL 2 durchführen zu können, müssen die folgenden Kriterien erfüllt sein:
+Zum Aktualisieren auf WSL 2 müssen Sie Windows 10 ausführen.
 
-- Ausführen von Windows 10, [aktualisiert auf Version 1903 oder höher](ms-settings:windowsupdate), **Build 18362** oder höher, für x64-Systeme.
-   - Wenn Sie Windows 10, Version 1903 oder 1909, verwenden, stellen Sie sicher, dass die Buildnummer Ihrer Nebenversion 1049 oder höher ist. Ausführliche Informationen zur Problembehandlung finden Sie [hier](https://docs.microsoft.com/windows/wsl/troubleshooting#im-on-windows-10-version-1903-and-i-still-do-not-see-options-for-wsl-2).
-- Ausführen von Windows 10, aktualisiert auf Version 2004 oder höher, **Build 19041**, für ARM64-Systeme.
-- Beachten Sie, dass Sie unter Windows 10, Version 1903 oder 1909, sicherstellen müssen, dass Sie über den richtigen Backport verfügen. Anweisungen finden Sie [hier](https://devblogs.microsoft.com/commandline/wsl-2-support-is-coming-to-windows-10-versions-1903-and-1909/#how-do-i-get-it). 
+### <a name="requirements"></a>Anforderungen
 
-- Überprüfen Sie Ihre Windows-Version, indem Sie die **Windows-Logo-Taste+R** auswählen, **winver** eingeben und **OK** auswählen. (Oder geben Sie den Befehl `ver` an der Windows-Eingabeaufforderung ein.) [Aktualisieren Sie auf die neueste Windows-Version](ms-settings:windowsupdate), wenn Ihr Build niedriger als 18361 ist. [Holen Sie sich den Windows Update-Assistenten](https://www.microsoft.com/software-download/windows10).
+- Für x64-Systeme: **Version 1903** oder höher mit **Build 18362** oder höher.
+- Für ARM64-Systeme: **Version 2004** oder höher mit **Build 19041** oder höher.
+- Builds vor 18362 unterstützen WSL 2 nicht. Verwenden Sie den [Windows Update-Assistenten](https://www.microsoft.com/software-download/windows10), um Ihre Windows-Version zu aktualisieren.
 
-### <a name="enable-the-virtual-machine-platform-optional-component"></a>Aktivieren Sie die optionale Komponente „Virtual Machine Platform“.
+Zum Überprüfen von Version und Build drücken Sie **Windows-Logo-Taste+R**, geben Sie **winver** ein, und wählen Sie dann **OK** aus. (Oder geben Sie den Befehl `ver` an der Windows-Eingabeaufforderung ein.) Im Menü „Einstellungen“ [aktualisieren Sie auf die neueste Windows-Version](ms-settings:windowsupdate).
 
-Vor der Installation von WSL 2 müssen Sie das optionale Feature „Virtual Machine Platform“ aktivieren.
+> [!NOTE]
+> Wenn Sie Windows 10, Version 1903 oder 1909, verwenden, öffnen Sie „Einstellungen" im Windows-Menü, navigieren Sie zu „Update und Sicherheit“, und wählen Sie „Nach Updates suchen“ aus. Die Buildnummer muss über 18362.1049 oder 18363.1049 sein, wobei die Buildnummer der Nebenversion über .1049 liegen muss. Weitere Informationen: [WSL 2-bald für die Windows 10-Versionen 1903 und 1909 verfügbar](https://devblogs.microsoft.com/commandline/wsl-2-support-is-coming-to-windows-10-versions-1903-and-1909/). Hier finden Sie [Informationen zur Problembehandlung](https://docs.microsoft.com/windows/wsl/troubleshooting#im-on-windows-10-version-1903-and-i-still-do-not-see-options-for-wsl-2).
+
+## <a name="step-3---enable-virtual-machine-feature"></a>Schritt 3: Aktivieren der Funktion des virtuellen Computers
+
+Vor der Installation von WSL 2 müssen Sie das optionale Feature **Plattform des virtuellen Computers** aktivieren.
 
 Öffnen Sie PowerShell als Administrator, und führen Sie Folgendes aus:
 
@@ -49,7 +57,22 @@ dism.exe /online /enable-feature /featurename:VirtualMachinePlatform /all /nores
 
 **Starten Sie Ihrem Computer neu**, um die WSL-Installation und das Update auf WSL 2 abzuschließen.
 
-### <a name="set-wsl-2-as-your-default-version"></a>Festlegen von WSL 2 als Standardversion
+## <a name="step-4---download-the-linux-kernel-update-package"></a>Schritt 4: Herunterladen des Updatepakets für den Linux-Kernel
+
+1. Laden Sie das aktuelle Paket herunter:
+    - [Updatepaket für den WSL2-Linux-Kernel für x64-Computer](https://wslstorestorage.blob.core.windows.net/wslblob/wsl_update_x64.msi)
+
+    > [!NOTE]
+    > Wenn Sie einen ARM64-Computer verwenden, laden Sie stattdessen [das ARM64-Paket](https://wslstorestorage.blob.core.windows.net/wslblob/wsl_update_arm64.msi) herunter. Wenn Sie sich nicht sicher sind, welchen Computertyp Sie verwenden, öffnen Sie die Eingabeaufforderung oder PowerShell, und geben Sie Folgendes ein: `systeminfo | find "System Type"`.
+
+2. Führen Sie das im vorherigen Schritt heruntergeladene Updatepaket aus. (Doppelklicken Sie zum Ausführen – Sie werden zur Eingabe erhöhter Berechtigungen aufgefordert. Wählen Sie „Ja“, um diese Installation zu genehmigen.)
+
+Sobald die Installation abgeschlossen ist, wechseln Sie zum nächsten Schritt –Festlegen von WSL 2 als Standardversion für die Installation neuer Linux-Verteilungen. (Überspringen Sie diesen Schritt, wenn Sie möchten, dass Ihre neuen Linux-Installationen WSL 1 verwenden.)
+
+> [!NOTE]
+> Weitere Informationen finden Sie im Artikel über die [Änderungen an der Aktualisierung des WSL2 Linux-Kernels](https://devblogs.microsoft.com/commandline/wsl2-will-be-generally-available-in-windows-10-version-2004) im [Blog zur Windows-Befehlszeile](https://aka.ms/cliblog).
+
+## <a name="step-5---set-wsl-2-as-your-default-version"></a>Schritt 5: Festlegen von WSL 2 als Standardversion
 
 Öffnen Sie PowerShell als Administrator und führen Sie den folgenden Befehl aus, um WSL 2 als Standardversion bei der Installation einer neuen Linux-Verteilung festzulegen:
 
@@ -57,14 +80,14 @@ dism.exe /online /enable-feature /featurename:VirtualMachinePlatform /all /nores
 wsl --set-default-version 2
 ```
 
-Diese Meldung wird möglicherweise nach dem Ausführen des folgenden Befehls angezeigt: `WSL 2 requires an update to its kernel component. For information please visit https://aka.ms/wsl2kernel`. Befolgen Sie den Link ([https://aka.ms/wsl2kernel](https://aka.ms/wsl2kernel)), und installieren Sie die MSI von dieser Seite in unserer Dokumentation, um einen Linux-Kernel auf Ihrem Computer zu installieren, der von WSL 2 verwendet werden kann. Sobald Sie den Kernel installiert haben, führen Sie den Befehl erneut aus. Er sollte nun erfolgreich abgeschlossen werden, ohne dass die Meldung angezeigt wird. 
-
 > [!NOTE]
-> Die Aktualisierung von WSL 1 auf WSL 2 kann je nach Umfang Ihrer Zielverteilung mehrere Minuten dauern. Wenn Sie eine ältere (Legacy) Installation der WSL 1 von Windows 10 Anniversary Update oder Creators Update aus ausführen, kann ein Updatefehler auftreten. Befolgen Sie diese Anweisungen, um [alle Legacyverteilungen zu deinstallieren und zu entfernen](https://docs.microsoft.com/windows/wsl/install-legacy#uninstallingremoving-the-legacy-distro). 
+> Die Aktualisierung von WSL 1 auf WSL 2 kann je nach Umfang Ihrer Zielverteilung mehrere Minuten dauern. Wenn Sie eine ältere (Legacy) Installation der WSL 1 von Windows 10 Anniversary Update oder Creators Update aus ausführen, kann ein Updatefehler auftreten. Befolgen Sie diese Anweisungen, um [alle Legacyverteilungen zu deinstallieren und zu entfernen](https://docs.microsoft.com/windows/wsl/install-legacy#uninstallingremoving-the-legacy-distro).
 >
 > Wenn `wsl --set-default-version` als ungültiger Befehl angezeigt wird, geben Sie `wsl --help` ein. Wenn die `--set-default-version` nicht aufgeführt ist, bedeutet dies, dass Ihr Betriebssystem sie nicht unterstützt und Sie auf Version 1903, Build 18362 oder höher, aktualisieren müssen.
+>
+> Wenn diese Meldung nach dem Ausführen des Befehls angezeigt wird: `WSL 2 requires an update to its kernel component. For information please visit https://aka.ms/wsl2kernel`. So müssen das MSI-Updatepaket für den Linux-Kernel trotzdem installieren.
 
-## <a name="install-your-linux-distribution-of-choice"></a>Installieren der Linux-Verteilung Ihrer Wahl
+## <a name="step-6---install-your-linux-distribution-of-choice"></a>Schritt 6: Installieren der Linux-Verteilung Ihrer Wahl
 
 1. Öffnen Sie den [Microsoft Store](https://aka.ms/wslstore), und wählen Sie Ihre bevorzugte Linux-Verteilung aus.
 
@@ -89,13 +112,23 @@ Diese Meldung wird möglicherweise nach dem Ausführen des folgenden Befehls ang
 
     ![Linux-Verteilungen im Microsoft Store](media/UbuntuStore.png)
 
-## <a name="set-up-a-new-distribution"></a>Einrichten einer neuen Verteilung
+## <a name="step-7---set-up-a-new-distribution"></a>Schritt 7: Einrichten einer neuen Verteilung
 
 Wenn Sie eine neu installierte Linux-Verteilung zum ersten Mal starten, wird ein Konsolenfenster geöffnet, und Sie werden aufgefordert, ein oder zwei Minuten zu warten, bis die Dateien dekomprimiert und auf dem PC gespeichert wurden. Alle zukünftigen Starts sollten weniger als eine Sekunde in Anspruch nehmen.
 
 Anschließend müssen Sie [ein Benutzerkonto und Kennwort für Ihre neue Linux-Verteilung erstellen](./user-support.md).
 
 ![Entpacken von Ubuntu in der Windows-Konsole](media/UbuntuInstall.png)
+
+**Herzlichen Glückwunsch! Sie haben erfolgreich eine Linux-Verteilung installiert und eingerichtet, die vollständig in Ihr Windows-Betriebssystem integriert ist.**
+
+## <a name="install-windows-terminal-optional"></a>Installieren von Windows-Terminal (optional)
+
+Windows Terminal aktiviert mehrere Registerkarten (schnelles Umschalten zwischen mehreren Linux-Befehlszeilen, Windows-Eingabeaufforderung, PowerShell, Azure CLI usw.) und ermöglicht, benutzerdefinierte Tastenkombinationen zu erstellen (Tastenkombinationen zum Öffnen oder Schließen von Registerkarten, zum Kopieren und Einfügen usw.) sowie die Suchfunktion und benutzerdefinierte Designs zu verwenden (Farbschemata, Schriftschnitte und Schriftgrade, Hintergrundbild/Weichzeichnen/Transparenz). [Weitere Informationen.](https://docs.microsoft.com/windows/terminal)
+
+[Installieren von Windows-Terminal](https://docs.microsoft.com/windows/terminal/get-started).
+
+  ![Windows-Terminal](media/terminal.png)
 
 ## <a name="set-your-distribution-version-to-wsl-1-or-wsl-2"></a>Festlegen der Verteilungsversion auf WSL 1 oder WSL 2
 
@@ -152,4 +185,17 @@ Nachfolgend werden einige Fehler und vorgeschlagene Korrekturen beschrieben. Wei
 > Prüfen Sie den [GitHub-Thread #4103 in der WSL-Dokumentation](https://github.com/microsoft/WSL/issues/4103), der diesem Thema gewidmet ist, auf aktualisierte Informationen.
 
 - **Der Ausdruck 'wsl' wurde nicht als Name eines Cmdlets, einer Funktion, einer Skriptdatei oder eines ausführbaren Programms erkannt.**
-  - Vergewissern Sie sich, dass die [optionale Komponente Windows-Subsystem für Linux installiert ist](./install-win10.md#enable-the-virtual-machine-platform-optional-component). Außerdem wird dieser Fehler angezeigt, wenn Sie ein ARM64-Gerät verwenden und diesen Befehl aus PowerShell ausführen. Führen Sie stattdessen `wsl.exe` in [PowerShell Core](https://docs.microsoft.com/powershell/scripting/install/installing-powershell-core-on-windows?view=powershell-6) oder einer Eingabeaufforderung aus.
+  - Vergewissern Sie sich, dass die [optionale Komponente Windows-Subsystem für Linux installiert ist](./install-win10.md#step-3---enable-virtual-machine-feature). Außerdem wird dieser Fehler angezeigt, wenn Sie ein ARM64-Gerät verwenden und diesen Befehl aus PowerShell ausführen. Führen Sie stattdessen `wsl.exe` in [PowerShell Core](https://docs.microsoft.com/powershell/scripting/install/installing-powershell-core-on-windows) oder einer Eingabeaufforderung aus.
+
+- **Error: Dieses Update gilt nur für Computer mit dem Windows-Subsystem für Linux.**
+  - Zum Installieren des MSI-Updatepakets für den Linux-Kernel ist WSL erforderlich und sollte zuerst aktiviert werden. Wenn ein Fehler auftritt, wird die folgende Meldung angezeigt: `This update only applies to machines with the Windows Subsystem for Linux`.
+  - Es gibt drei mögliche Gründe, warum diese Meldung angezeigt wird:
+
+  1. Sie befinden sich immer noch in der alten Version von Windows, die WSL 2 nicht unterstützt. In Schritt 2 finden Sie Versionsanforderungen und Links zum Update.
+
+  2. WSL ist nicht aktiviert. Sie müssen zu Schritt 1 zurückkehren und sicherstellen, dass das optionale WSL-Feature auf Ihrem Computer aktiviert ist.
+
+  3. Nachdem Sie WSL aktiviert haben, muss ein Neustart durchgeführt werden, damit es wirksam wird. Starten Sie den Computer neu, und wiederholen Sie den Vorgang.
+
+- **Error: WSL 2 erfordert ein Update der zugehörigen Kernel-Komponente. Weitere Informationen finden Sie unter https://aka.ms/wsl2kernel.**
+  - Wenn das Linux-Kernelpaket im Ordner „%SystemRoot%\system32\lxss\tools“ fehlt, wird tritt dieser Fehler auf. Lösen Sie dieses Problem, indem Sie das MSI-Updatepaket für den Linux-Kernel (siehe Schritt 4 dieser Installationsanleitung) installieren. Sie müssen den MSI möglicherweise über [Software](ms-settings:appsfeatures-app) deinstallieren und dann erneut installieren.

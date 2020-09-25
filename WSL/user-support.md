@@ -5,20 +5,20 @@ keywords: BashOnWindows, bash, wsl, windows, windows subsystem for linux, window
 ms.date: 05/12/2020
 ms.topic: article
 ms.localizationpriority: high
-ms.openlocfilehash: cdb510b8195f18f89ea475889c34850234b7c0e8
-ms.sourcegitcommit: 6ff046993e9f196cdfa04f5f91130e0e4ff1e7fa
+ms.openlocfilehash: 7f1ad56a6f4261ad0455ee93bdeb5e31d0ed10d1
+ms.sourcegitcommit: 69fc9d3ca22cf3f07622db4cdf80c8ec751fe620
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/03/2020
-ms.locfileid: "89427187"
+ms.lasthandoff: 09/19/2020
+ms.locfileid: "90818722"
 ---
 # <a name="create-a-user-account-and-password-for-your-new-linux-distribution"></a>Erstellen eines Benutzerkontos und Kennworts für Ihre neue Linux-Verteilung
 
 Nachdem Sie [WSL aktiviert und eine Linux-Verteilung aus dem Microsoft Store installiert](./install-win10.md) haben, werden Sie beim Öffnen Ihrer neu installierten Linux-Verteilung zunächst aufgefordert, ein Konto zu erstellen, einschließlich **Benutzername** und **Kennwort**.
 
-- Diese Kombination aus **Benutzername** und **Kennwort** ist spezifisch für Ihre Linux-Verteilung und hat keinen Einfluss auf Ihren Windows-Benutzernamen.
+- Diese Kombination aus **Benutzername** und **Kennwort** ist spezifisch für jede einzelne Linux-Verteilung, die Sie installieren, und hat keinen Einfluss auf Ihren Windows-Benutzernamen.
 
-- Nachdem Sie den **Benutzernamen** und das **Kennwort** erstellt haben, ist das Konto Ihr Standardbenutzer für die Verteilung und wird beim Start automatisch angemeldet.
+- Nachdem Sie einen **Benutzernamen** und das **Kennwort** erstellt haben, ist das Konto Ihr Standardbenutzer für die Verteilung und wird beim Start automatisch angemeldet.
 
 - Dieses Konto wird als Linux-Administrator angesehen, mit der Möglichkeit, administrative `sudo` (Super User Do)-Befehle auszuführen.
 

@@ -6,23 +6,33 @@ author: benhillis
 ms.date: 05/15/2020
 ms.topic: article
 ms.localizationpriority: high
-ms.openlocfilehash: 57d06a8666f8003b187f043bd18655a9287d8a63
-ms.sourcegitcommit: fb79750bd71d6ebaed5203b3de71ba85a67227b1
+ms.openlocfilehash: f79acbbc7f6436bae54c5160e769cababa76a341
+ms.sourcegitcommit: 69fc9d3ca22cf3f07622db4cdf80c8ec751fe620
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/26/2020
-ms.locfileid: "88866103"
+ms.lasthandoff: 09/19/2020
+ms.locfileid: "90818692"
 ---
 # <a name="release-notes-for-windows-subsystem-for-linux"></a>Anmerkungen zu dieser Version des Windows-Subsystems für Linux
+
+## <a name="build-20211"></a>Build 20211
+Allgemeine Windows-Informationen zu Build 20211 finden Sie im [Windows-Blog](https://blogs.windows.com/windows-insider/2020/09/10/announcing-windows-10-insider-preview-build-20211/).
+
+* Stellen Sie `wsl.exe --mount` bereit, um physische oder virtuelle Datenträger bereitzustellen. Weitere Informationen finden Sie unter [Zugreifen auf Linux-Dateisysteme in Windows und WSL 2](https://devblogs.microsoft.com/commandline/access-linux-filesystems-in-windows-and-wsl-2/).
+* Fix für den Absturz des LxssManager-Diensts beim Überprüfen, ob die VM im Leerlauf ist. [GH 5768]
+* Unterstützung für komprimierte VHD-Dateien. [GH 4103]
+* Stellen Sie sicher, dass die unter „C:\windows\system32\lxss\lib“ installierte Linux-Benutzermodusbibliotheken bei Betriebssystemupgrades erhalten bleiben. [GH 5848]
+* Die Möglichkeit zum Auflisten verfügbarer Verteilungen, die mit `wsl --install --list-distributions` installiert werden können, wurde hinzugefügt.
+* WSL-Instanzen werden nun beendet, wenn sich der Benutzer abmeldet.
 
 ## <a name="build-20190"></a>Build 20190
 Allgemeine Windows-Informationen zu Build 20190 finden Sie im [Windows-Blog](https://blogs.windows.com/windowsexperience/2020/08/12/announcing-windows-10-insider-preview-build-20190/).
 
-* Fehler behoben, der den Start von WSL1-Instanzen verhinderte [GH 5633]
-* Hängenbleiben beim Umleiten der Windows-Prozessausgabe behoben [GH 5648]
-* Option „%userprofile%\\.wslconfig“ zur Steuerung des VM-Leerlauftimeouts (wsl2.vmIdleTimeout=<Zeit_in_ms>) hinzugefügt
-* Unterstützung für das Starten von App-Ausführungsaliasen von WSL
-* Unterstützung für die Installation des WSL2-Kernels und der Verteilungen zu „wsl.exe --install“ hinzugefügt
+* Fehler behoben, der den Start von WSL1-Instanzen verhinderte. [GH 5633]
+* Hängenbleiben beim Umleiten der Windows-Prozessausgabe behoben. [GH 5648]
+* Option „%userprofile%\\.wslconfig“ zur Steuerung des VM-Leerlauftimeouts (wsl2.vmIdleTimeout=<Zeit_in_ms>) hinzugefügt.
+* Unterstützung für das Starten von App-Ausführungsaliasen von WSL.
+* Unterstützung für die Installation des WSL2-Kernels und der Verteilungen zu „wsl.exe --install“ hinzugefügt.
 
 ## <a name="build-20175"></a>Build 20175
 Allgemeine Windows-Informationen zu Build 20175 finden Sie im [Windows-Blog](https://blogs.windows.com/windowsexperience/2020/07/22/announcing-windows-10-insider-preview-build-20175/).
