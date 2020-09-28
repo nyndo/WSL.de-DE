@@ -5,12 +5,12 @@ keywords: WSL, Windows, windowssubsystem, GNU, Linux, bash, vs Code, Remote Exte
 ms.date: 05/28/2020
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: f5d7bd4f582f504ea3c4bd814454b1dc881ffed2
-ms.sourcegitcommit: 97cc93f8e26391c09a31a4ab42c4b5e9d98d1c32
+ms.openlocfilehash: b39b34644040354df44bf62ec7b878e3f5d667e6
+ms.sourcegitcommit: b15b847b87d29a40de4a1517315949bce9c7a3d5
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86948654"
+ms.lasthandoff: 09/28/2020
+ms.locfileid: "91413341"
 ---
 # <a name="get-started-using-visual-studio-code-with-windows-subsystem-for-linux"></a>Beginnen Sie mit der Verwendung von Visual Studio Code mit dem Windows-Subsystem für Linux
 
@@ -56,7 +56,7 @@ sudo apt-get install wget ca-certificates
 
 ### <a name="from-the-command-line"></a>Über die Befehlszeile
 
-Öffnen Sie die Befehlszeile der Distribution, und geben Sie Folgendes ein, um ein Projekt aus der WSL-Distribution zu öffnen:`code .`
+Öffnen Sie die Befehlszeile der Distribution, und geben Sie Folgendes ein, um ein Projekt aus der WSL-Distribution zu öffnen: `code .`
 
 ![WSL-Projekt mit vs Code Remote Server öffnen](../media/wsl-open-vs-code.gif)
 
@@ -92,7 +92,7 @@ Informationen zur Installation von git finden Sie unter [Einrichten von git für
 
 ## <a name="install-windows-terminal-optional"></a>Installieren von Windows-Terminal (optional)
 
-Das neue Windows-Terminal ermöglicht mehrere Registerkarten (schnelles Umschalten zwischen Eingabeaufforderung, PowerShell oder mehreren Linux-Verteilungen), benutzerdefinierte Tastenbindungen (erstellen Sie eigene Tastenkombinationen zum Öffnen oder Schließen von Registerkarten, kopieren und Einfügen usw.), Emojis-☺ und benutzerdefinierte Designs (Farbschemas, Schriftarten und Größen, Hintergrundbild/weich/Transparenz). Weitere Informationen finden Sie in der [Windows-Terminal](https://docs.microsoft.com/windows/terminal)Dokumentation.
+Das neue Windows-Terminal ermöglicht mehrere Registerkarten (schnelles Umschalten zwischen Eingabeaufforderung, PowerShell oder mehreren Linux-Verteilungen), benutzerdefinierte Tastenbindungen (erstellen Sie eigene Tastenkombinationen zum Öffnen oder Schließen von Registerkarten, kopieren und Einfügen usw.), Emojis-☺ und benutzerdefinierte Designs (Farbschemas, Schriftarten und Größen, Hintergrundbild/weich/Transparenz). Weitere Informationen finden Sie in der [Windows-Terminal](/windows/terminal)Dokumentation.
 
 1. Hole dir [Windows-Terminal im Microsoft Store](https://www.microsoft.com/store/apps/9n0dx20hk701): Durch die Installation über den Store werden Updates automatisch durchgeführt.
 
@@ -105,7 +105,7 @@ Das neue Windows-Terminal ermöglicht mehrere Registerkarten (schnelles Umschalt
 * [Tutorial zur Remote Entwicklung mit WSL](https://code.visualstudio.com/remote-tutorials/wsl/getting-started)
 * [Verwenden von Docker mit WSL 2 und vs Code](https://code.visualstudio.com/blogs/2020/03/02/docker-in-wsl2)
 * [Verwenden von C++ und WSL in vs Code](https://code.visualstudio.com/docs/cpp/config-wsl)
-* [Remote R Service für Linux](https://docs.microsoft.com/visualstudio/rtvs/setting-up-remote-r-service-on-linux?view=vs-2017)
+* [Remote R Service für Linux](/visualstudio/rtvs/setting-up-remote-r-service-on-linux)
 
 Folgende zusätzliche Erweiterungen solltest du ebenfalls in Erwägung ziehen:
 

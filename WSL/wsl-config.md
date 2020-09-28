@@ -4,12 +4,12 @@ description: Referenzliste und Konfigurieren mehrerer Linux-Distributionen, die 
 keywords: BashOnWindows, bash, wsl, windows, windows subsystem for linux, windowssubsystem, ubuntu, wsl.conf, wslconfig
 ms.date: 05/12/2020
 ms.topic: article
-ms.openlocfilehash: 0a127d376a8606a1a13ea88c9efed161e18a161d
-ms.sourcegitcommit: 69fc9d3ca22cf3f07622db4cdf80c8ec751fe620
+ms.openlocfilehash: 73544d4d8c8eda462194f213a0f093b21ab6d90e
+ms.sourcegitcommit: b15b847b87d29a40de4a1517315949bce9c7a3d5
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/19/2020
-ms.locfileid: "90818732"
+ms.lasthandoff: 09/28/2020
+ms.locfileid: "91413321"
 ---
 # <a name="wsl-commands-and-launch-configurations"></a>WSL-Befehle und Start Konfigurationen
 
@@ -170,7 +170,7 @@ Führen Sie WSL als der angegebene Benutzer aus. Beachten Sie, dass der Benutzer
 Beispiel: `ubuntu config --default-user johndoe` würde den Standardbenutzer für die Ubuntu-Distribution in den Benutzer "JohnDoe" ändern.
 
 > [!NOTE]
-> Wenn Sie Probleme haben, den Namen der Verteilung herauszufinden, finden Sie weitere Informationen unter [Auflisten von Verteilungen](https://docs.microsoft.com/windows/wsl/wsl-config#list-distributions) für den Befehl zum Auflisten des offiziellen Namens der installierten Verteilungen. 
+> Wenn Sie Probleme haben, den Namen der Verteilung herauszufinden, finden Sie weitere Informationen unter [Auflisten von Verteilungen](#list-distributions) für den Befehl zum Auflisten des offiziellen Namens der installierten Verteilungen. 
 
 ## <a name="run-a-specific-distribution"></a>Ausführen als eine bestimmte Distribution
 

@@ -5,12 +5,12 @@ keywords: WSL, Windows, windowssubsystem, GNU, Linux, bash, git, GitHub, Version
 ms.date: 06/04/2020
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: c48234be5c3867d771363aaa5e630d8ebe378364
-ms.sourcegitcommit: 6ff046993e9f196cdfa04f5f91130e0e4ff1e7fa
+ms.openlocfilehash: 2d05e83d4c87b1b03028856bcec9d5205205535a
+ms.sourcegitcommit: b15b847b87d29a40de4a1517315949bce9c7a3d5
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/03/2020
-ms.locfileid: "89427217"
+ms.lasthandoff: 09/28/2020
+ms.locfileid: "91413351"
 ---
 # <a name="get-started-using-git-on-windows-subsystem-for-linux"></a>Einstieg in die Verwendung von git unter Windows-Subsystem für Linux
 
@@ -40,7 +40,7 @@ Git ist bereits mit dem größten Teil des Windows-Subsystems für Linux-Distrib
 
 Informationen zur Installation von git finden Sie auf der Website zum [git-Download für Linux](https://git-scm.com/download/linux) . Jede Linux-Distribution verfügt über einen eigenen Paket-Manager und Installations Befehl.
 
-Geben Sie für die neueste stabile GIt-Version in Ubuntu/Debian den folgenden Befehl ein:
+Geben Sie für die neueste stabile git-Version in Ubuntu/Debian den folgenden Befehl ein:
 
 ```bash
 sudo apt-get install git

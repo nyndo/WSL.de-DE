@@ -4,18 +4,18 @@ description: Referenz für frühere Windows-Versionen zum Aktualisieren von Linu
 ms.date: 01/20/2020
 ms.topic: article
 ROBOTS: NOINDEX
-ms.openlocfilehash: 406158d769c4b465b6168d7cca45b48ff1f201fe
-ms.sourcegitcommit: 07eb5f2e1f4517928165dda4510012599b0d0e1e
+ms.openlocfilehash: 33a42c8f3bd518fa45df2874a6c59b76cd8ec80a
+ms.sourcegitcommit: b15b847b87d29a40de4a1517315949bce9c7a3d5
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 01/22/2020
-ms.locfileid: "76520839"
+ms.lasthandoff: 09/28/2020
+ms.locfileid: "91413361"
 ---
 # <a name="wsl-user-account-updates-on-previous-windows-versions"></a>WSL-Benutzerkonto Updates in früheren Windows-Versionen
 
 Dieser Inhalt ist für Benutzer früherer Versionen des Windows-Betriebssystems archiviert, die das-Subsystem für Linux unterstützen und Unterstützung beim Aktualisieren von Linux-Benutzerkonten benötigen.
 
-Die aktuelle Dokumentation finden Sie unter [Benutzerkonten für das Windows-Subsystem für Linux](../user-support.md).
+Die aktuelle Dokumentation finden Sie unter [Benutzerkonten für das Windows-Subsystem für Linux](./user-support.md).
 
 ### <a name="for-creators-update-version-of-windows-and-earlier"></a>Für Creators Update-Version von Windows und früher
 

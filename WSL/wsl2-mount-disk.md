@@ -5,12 +5,12 @@ keywords: WSL, Windows, windowssubsystem, GNU, Linux, bash, Disk, ext4, File Sys
 ms.date: 06/08/2020
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 8053b817dab0639789401e2fcfb116f6f8e722a7
-ms.sourcegitcommit: a949595f3947c733f0bcdc54b30ccda5ae61577c
+ms.openlocfilehash: 5ea7d7adae42a44b040408575e7345c456f3acac
+ms.sourcegitcommit: b15b847b87d29a40de4a1517315949bce9c7a3d5
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/10/2020
-ms.locfileid: "89671203"
+ms.lasthandoff: 09/28/2020
+ms.locfileid: "91413281"
 ---
 # <a name="get-started-mounting-a-linux-disk-in-wsl-2-preview"></a>Einstieg in die Einbindung eines Linux-Datenträgers in WSL 2 (Vorschau)
 
@@ -127,7 +127,7 @@ Standardmäßig versucht WSL 2, den gesamten Datenträger einbinden. Führen Sie
 wsl --mount <Diskpath> -p <PartitionIndex>
 ```
 
-Dies funktioniert nur, wenn es sich bei dem Datenträger um MBR (Master Boot Record) oder GPT (GUID-Partitionstabelle) handelt. [Informieren Sie sich über die Partitions Stile MBR und GPT](https://docs.microsoft.com/windows-server/storage/disk-management/initialize-new-disks#about-partition-styles---gpt-and-mbr).
+Dies funktioniert nur, wenn es sich bei dem Datenträger um MBR (Master Boot Record) oder GPT (GUID-Partitionstabelle) handelt. [Informieren Sie sich über die Partitions Stile MBR und GPT](/windows-server/storage/disk-management/initialize-new-disks#about-partition-styles---gpt-and-mbr).
 
 ### <a name="specifying-mount-options"></a>Angeben von Optionen
 
