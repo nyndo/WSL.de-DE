@@ -4,12 +4,12 @@ description: Beschreibt die Windows-Interoperabilität mit Linux-Distributionen,
 ms.date: 05/12/2020
 ms.topic: article
 ms.localizationpriority: high
-ms.openlocfilehash: d78cc53aa40f896c20e40a5ef00570a97ccac258
-ms.sourcegitcommit: 386d47a1c53a85b91f5a2b0f1f99ce2c46b20a77
+ms.openlocfilehash: 8e3568e4ca94f9b381b7827a237c2b637b97ae57
+ms.sourcegitcommit: b15b847b87d29a40de4a1517315949bce9c7a3d5
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/08/2020
-ms.locfileid: "86093262"
+ms.lasthandoff: 09/28/2020
+ms.locfileid: "91413071"
 ---
 # <a name="windows-interoperability-with-linux"></a>Windows-Interoperabilität mit Linux
 
@@ -41,13 +41,13 @@ Auf diese Weise aufgerufene Binärdateien:
 
 Der auf `wsl` (oder `wsl.exe`) folgende Linux-Befehl wird wie ein beliebiger Befehl verarbeitet, der in WSL ausgeführt wird.  Dinge wie sudo, Piping und Dateiumleitung funktionieren.
 
-Beispiel für die Verwendung von sudo zum Aktualisieren Ihrer Linux-StandardDistribution:
+Beispiel für die Verwendung von sudo zum Aktualisieren Ihrer Linux-Standardverteilung:
 
 ```powershell
 C:\temp> wsl sudo apt-get update
 ```
 
-Nachdem Sie diesen Befehl ausgeführt haben, wird der Benutzername Ihrer Linux-StandardDistribution angezeigt, und Sie werden zur Eingabe Ihres Kennworts aufgefordert. Nachdem Sie Ihr Kennwort ordnungsgemäß eingegeben haben, werden von Ihrer Distribution die Updates heruntergeladen.
+Nachdem Sie diesen Befehl ausgeführt haben, wird der Benutzername Ihrer Linux-Standardverteilung angezeigt, und Sie werden zur Eingabe Ihres Kennworts aufgefordert. Nachdem Sie Ihr Kennwort ordnungsgemäß eingegeben haben, werden von Ihrer Verteilung die Updates heruntergeladen.
 
 ## <a name="mixing-linux-and-windows-commands"></a>Kombinieren von Linux- und Windows-Befehlen
 
@@ -100,13 +100,13 @@ Anwendungen, die auf diese Weise ausgeführt werden, besitzen die folgenden Eige
 
 Ausführbare Windows-Dateien, die in WSL ausgeführt werden, werden ähnlich wie native ausführbare Linux-Dateien verarbeitet. Piping, Umleitungen und sogar Hintergrundverarbeitung funktionieren wie erwartet.
 
-Um das Windows-Tool `ipconfig.exe` auszuführen, das Linux-Tool `grep` zum Filtern der „IPv4“-Ergebnisse und das Linux-Tool `cut` zum Entfernen der Spaltenfelder zu verwenden,geben Sie aus einer Linux-Distribution (z. B. Ubuntu) Folgendes ein:
+Um das Windows-Tool `ipconfig.exe` auszuführen, das Linux-Tool `grep` zum Filtern der „IPv4“-Ergebnisse und das Linux-Tool `cut` zum Entfernen der Spaltenfelder zu verwenden,geben Sie aus einer Linux-Verteilung (z. B. Ubuntu) Folgendes ein:
 
 ```bash
 ipconfig.exe | grep IPv4 | cut -d: -f2
 ```
 
-Sehen wir uns ein Beispiel für das Kombinieren von Windows- und Linux-Befehlen an. Öffnen Sie Ihre Linux-Distribution (d. h. Ubuntu) und erstellen Sie eine Textdatei: `touch foo.txt`. Verwenden Sie nun den Linux-Befehl `ls -la`, um die direkten Dateien und deren Erstellungsdetails aufzulisten, sowie das Windows PowerShell-Tool `findstr.exe`, um die Ergebnisse zu filtern, sodass nur Ihre `foo.txt`-Datei in den Ergebnissen angezeigt wird:
+Sehen wir uns ein Beispiel für das Kombinieren von Windows- und Linux-Befehlen an. Öffnen Sie Ihre Linux-Verteilung (d. h. Ubuntu) und erstellen Sie eine Textdatei: `touch foo.txt`. Verwenden Sie nun den Linux-Befehl `ls -la`, um die direkten Dateien und deren Erstellungsdetails aufzulisten, sowie das Windows PowerShell-Tool `findstr.exe`, um die Ergebnisse zu filtern, sodass nur Ihre `foo.txt`-Datei in den Ergebnissen angezeigt wird:
 
 ```bash
 ls -la | findstr.exe foo.txt
@@ -140,7 +140,7 @@ notepad.exe C:\\temp\\foo.txt
 
 ## <a name="share-environment-variables-between-windows-and-wsl"></a>Freigeben von Umgebungsvariablen zwischen Windows und WSL
 
-WSL und Windows verwenden `WSLENV`, eine spezielle Umgebungsvariable, die entwickelt wurde, um Windows- und Linux-Distributionen, die unter WSL ausgeführt werden, zu verbinden.
+WSL und Windows verwenden `WSLENV`, eine spezielle Umgebungsvariable, die entwickelt wurde, um Windows- und Linux-Verteilungen, die unter WSL ausgeführt werden, zu verbinden.
 
 Eigenschaften einer `WSLENV`-Variablen:
 
@@ -215,7 +215,7 @@ Oder:
 C:\temp> bash -c "ls -la \"/mnt/c/Program Files\""
 ```
 
-Wenn Sie ein Windows-Tool aus einer WSL-Distribution in einer früheren Version von Windows 10 aufrufen, müssen Sie den Verzeichnispfad angeben. Geben Sie z. B. in der WSL-Befehlszeile Folgendes ein:
+Wenn Sie ein Windows-Tool aus einer WSL-Verteilung in einer früheren Version von Windows 10 aufrufen, müssen Sie den Verzeichnispfad angeben. Geben Sie z. B. in der WSL-Befehlszeile Folgendes ein:
 
 ```bash
 /mnt/c/Windows/System32/notepad.exe
@@ -240,4 +240,4 @@ Die Windows-Binärdatei muss die Dateierweiterung enthalten, der Groß-/Kleinsch
 
 ## <a name="additional-resources"></a>Zusätzliche Ressourcen
 
-* [WSL-Blogbeitrag zur Interoperabilität von 2016](https://blogs.msdn.microsoft.com/wsl/2016/10/19/windows-and-ubuntu-interoperability/)
+* [WSL-Blogbeitrag zur Interoperabilität von 2016](/archive/blogs/wsl/windows-and-ubuntu-interoperability)

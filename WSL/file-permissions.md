@@ -6,12 +6,12 @@ ms.date: 01/14/2020
 ms.topic: article
 ms.assetid: 7afaeacf-435a-4e58-bff0-a9f0d75b8a51
 ms.localizationpriority: high
-ms.openlocfilehash: 81d4cfa1ae57cdd077ba8cbd614111881724718a
-ms.sourcegitcommit: f1b049a1276782d4f2754f46a8d2025b598a0784
+ms.openlocfilehash: 3de8553baf616ee8d5d45f0738615f83df952942
+ms.sourcegitcommit: b15b847b87d29a40de4a1517315949bce9c7a3d5
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/24/2020
-ms.locfileid: "85336073"
+ms.lasthandoff: 09/28/2020
+ms.locfileid: "91413221"
 ---
 # <a name="file-permissions-for-wsl"></a>Dateiberechtigungen für WSL
 
@@ -32,7 +32,7 @@ WSL kann vier erweiterte NTFS-Attribute hinzufügen:
 | $LXMOD | Dateimodus (Dateisystem-Berechtigungsoktale und -typ, z. B.: 0777) |
 | $LXDEV | Gerät, falls es sich um eine Gerätedatei handelt |
 
-Zusätzlich besitzen alle Dateien, die keine regulären Dateien oder Verzeichnisse sind (z. B. Symlinks, FIFOs, Blockgeräte, Unix-Sockets und Zeichengeräte) ebenfalls einen NTFS-[Analysepunkt](https://docs.microsoft.com/windows/win32/fileio/reparse-points). Dadurch lässt sich die Art der Datei in einem bestimmten Verzeichnis viel schneller bestimmen, ohne die erweiterten Attribute abfragen zu müssen.
+Zusätzlich besitzen alle Dateien, die keine regulären Dateien oder Verzeichnisse sind (z. B. Symlinks, FIFOs, Blockgeräte, Unix-Sockets und Zeichengeräte) ebenfalls einen NTFS-[Analysepunkt](/windows/win32/fileio/reparse-points). Dadurch lässt sich die Art der Datei in einem bestimmten Verzeichnis viel schneller bestimmen, ohne die erweiterten Attribute abfragen zu müssen.
 
 ## <a name="file-access-scenarios"></a>Dateizugriffsszenarien
 
@@ -94,11 +94,11 @@ Die in den Metadaten angegebenen UID und GID werden als Benutzerbesitzer und Gru
 
 ### <a name="accessing-linux-files-from-windows-using-wsl"></a>Zugreifen auf Linux-Dateien von Windows aus mithilfe von `\\wsl$`
 
-Wenn Sie über `\\wsl$` auf Linux-Dateien zugreifen, wird der Standardbenutzer der WSL-Distribution verwendet. Daher hat jede Windows-App, die auf Linux-Dateien zugreift, dieselben Berechtigungen wie der Standardbenutzer.
+Wenn Sie über `\\wsl$` auf Linux-Dateien zugreifen, wird der Standardbenutzer der WSL-Verteilung verwendet. Daher hat jede Windows-App, die auf Linux-Dateien zugreift, dieselben Berechtigungen wie der Standardbenutzer.
 
 #### <a name="creating-a-new-file"></a>Erstellen einer neuen Datei
 
-Beim Erstellen einer neuen Datei in einer WSL-Distribution von Windows wird die Standard-Umask angewendet. Die Standard-Umask ist `022`, d. h., es werden alle Berechtigungen mit Ausnahme von Schreibberechtigungen für Gruppen und andere zugelassen. 
+Beim Erstellen einer neuen Datei in einer WSL-Verteilung von Windows wird die Standard-Umask angewendet. Die Standard-Umask ist `022`, d. h., es werden alle Berechtigungen mit Ausnahme von Schreibberechtigungen für Gruppen und andere zugelassen. 
 
 ### <a name="accessing-files-in-the-linux-root-file-system-from-linux"></a>Zugreifen auf Dateien im Linux-Stammdateisystem aus Linux
 

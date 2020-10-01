@@ -6,12 +6,12 @@ ms.date: 09/15/2020
 ms.topic: article
 ms.assetid: 129101ed-b88a-43c2-b6a2-cd2c4ff6fee1
 ms.localizationpriority: high
-ms.openlocfilehash: 0f16471968151fa040d41baa90af6aedfb6fee79
-ms.sourcegitcommit: ba3399a5ffeffd23551315acd04ea6848d30693b
+ms.openlocfilehash: f769261bab35619b034e2a84e4f308eeb0a93cb4
+ms.sourcegitcommit: b15b847b87d29a40de4a1517315949bce9c7a3d5
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90719189"
+ms.lasthandoff: 09/28/2020
+ms.locfileid: "91413240"
 ---
 # <a name="frequently-asked-questions-about-windows-subsystem-for-linux"></a>Häufig gestellte Fragen zum Windows-Subsystem für Linux
 
@@ -45,7 +45,7 @@ Die WSL richtet sich an ein Entwicklerpublikum mit der Absicht, als Teil einer i
 
 ## <a name="how-does-this-work"></a>Wie funktioniert das?
 
-Sehen Sie sich unseren [Blog](https://blogs.msdn.microsoft.com/wsl/) an, in dem wir ausführlich über die zugrunde liegende Technologie informieren.
+Sehen Sie sich unseren [Blog](/archive/blogs/wsl/) an, in dem wir ausführlich über die zugrunde liegende Technologie informieren.
 
 ## <a name="why-would-i-use-wsl-rather-than-linux-in-a-vm"></a>Warum sollte ich WSL anstelle von Linux auf einem virtuellen Computer verwenden?
 
@@ -103,7 +103,7 @@ git config --global credential.helper "/mnt/c/Program\ Files/Git/mingw64/libexec
 
 Nun wird für jeden Git-Vorgang, den Sie in der WSL-Distribution ausführen, die Anmeldeinformationsverwaltung verwendet. Wenn Sie bereits Anmeldeinformationen für einen Host zwischengespeichert haben, greifen Sie über die Anmeldeinformationsverwaltung auf diese zu. Andernfalls erhalten Sie eine Dialogfeldantwort, in der Ihre Anmeldeinformationen angefordert werden, auch wenn Sie sich in einer Linux-Konsole befinden.
 
-Diese Unterstützung basiert auf der [Interoperabilität zwischen dem Windows-Subsystem für Linux und Windows selbst](https://docs.microsoft.com/windows/wsl/interop).
+Diese Unterstützung basiert auf der [Interoperabilität zwischen dem Windows-Subsystem für Linux und Windows selbst](./interop.md).
 
 ## <a name="how-do-i-use-a-windows-file-with-a-linux-app"></a>Wie verwende ich eine Windows-Datei mit einer Linux-App?
 
@@ -161,7 +161,7 @@ Führen Sie die folgenden Schritte aus, um Probleme im Zusammenhang mit `udev` z
   lxrun /uninstall /full
   ```
   
-WSL-Distributionen, die aus dem Store installiert werden, können wie jede andere Windows-App deinstalliert werden, indem Sie mit der rechten Maustaste auf die App-Kachel und dann auf „Deinstallieren“ klicken oder indem Sie PowerShell und das [`Remove-AppxPackage`-Cmdlet](https://technet.microsoft.com/library/hh856038.aspx) verwenden.
+WSL-Distributionen, die aus dem Store installiert werden, können wie jede andere Windows-App deinstalliert werden, indem Sie mit der rechten Maustaste auf die App-Kachel und dann auf „Deinstallieren“ klicken oder indem Sie PowerShell und das [`Remove-AppxPackage`-Cmdlet](/previous-versions//hh856038(v=technet.10)) verwenden.
 
 ## <a name="why-does-ping-generate-permission-denied-errors"></a>Warum werden bei Ping Fehler des Typs „Berechtigung verweigert“ generiert?
 
@@ -181,7 +181,7 @@ WSL unterstützt die Ausführung in einer Legacykonsole nicht. So deaktivieren S
 
 ## <a name="why-do-i-get-error-0x80040154-when-i-run-bashexe-after-upgrading-windows"></a>Warum erhalte ich „Error: 0x80040154“ beim Ausführen von „bash.exe“ nach dem Upgrade von Windows?
 
-Das Feature „Windows-Subsystem für Linux“ ist möglicherweise während eines Windows-Updates deaktiviert. Wenn dies der Fall ist, muss das Windows-Feature erneut aktiviert werden. Anweisungen zum Aktivieren des Features „Windows-Subsystem für Linux“ finden Sie im [Installationshandbuch.](https://docs.microsoft.com/windows/wsl/install-win10)
+Das Feature „Windows-Subsystem für Linux“ ist möglicherweise während eines Windows-Updates deaktiviert. Wenn dies der Fall ist, muss das Windows-Feature erneut aktiviert werden. Anweisungen zum Aktivieren des Features „Windows-Subsystem für Linux“ finden Sie im [Installationshandbuch.](./install-win10.md)
 
 ## <a name="how-do-i-change-the-display-language-of-wsl"></a>Wie ändere ich die Anzeigesprache von WSL?
 

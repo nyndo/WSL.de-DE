@@ -5,12 +5,12 @@ keywords: WSL, Windows-Subsystem für Linux, manuelle Installation, manuell inst
 ms.date: 09/15/2020
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 04b991d1019f2187a01189695e4078f4d8a8ba1f
-ms.sourcegitcommit: ba3399a5ffeffd23551315acd04ea6848d30693b
+ms.openlocfilehash: 1894f0bfcb9ede7b05870c99912f30f6d0b7286e
+ms.sourcegitcommit: b15b847b87d29a40de4a1517315949bce9c7a3d5
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90719139"
+ms.lasthandoff: 09/28/2020
+ms.locfileid: "91413250"
 ---
 # <a name="manually-download-windows-subsystem-for-linux-distro-packages"></a>Manuelles Herunterladen von Distributionspaketen des Windows-Subsystems für Linux
 
@@ -40,7 +40,7 @@ Dies bewirkt den Download der `<distro>.appx`-Pakete in einen Ordner Ihrer Wahl.
 Wenn Sie möchten, können Sie Ihre bevorzugten Distributionen auch über die Befehlszeile herunterladen:
 
  ### <a name="download-using-powershell"></a>Herunterladen mithilfe von PowerShell
- Zum Herunterladen von Distributionen mithilfe von PowerShell verwenden Sie das [Invoke-WebRequest](https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/invoke-webrequest)-Cmdlet. Hier sehen Sie eine Beispielanweisung zum Herunterladen von Ubuntu 16.04.
+ Zum Herunterladen von Distributionen mithilfe von PowerShell verwenden Sie das [Invoke-WebRequest](/powershell/module/microsoft.powershell.utility/invoke-webrequest)-Cmdlet. Hier sehen Sie eine Beispielanweisung zum Herunterladen von Ubuntu 16.04.
 
 ```powershell
 Invoke-WebRequest -Uri https://aka.ms/wsl-ubuntu-1604 -OutFile Ubuntu.appx -UseBasicParsing
@@ -56,7 +56,7 @@ Das Windows 10-Update aus Frühjahr 2018 (oder höher) umfasst das beliebte [cu
 curl.exe -L -o ubuntu-1604.appx https://aka.ms/wsl-ubuntu-1604
 ```
 
-Im Beispiel oben wird `curl.exe` ausgeführt (nicht einfach `curl`), um sicherzustellen, dass in PowerShell die echte curl-Programmdatei aufgerufen wird, nicht der curl-Alias von PowerShell für [Invoke-WebRequest](https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/invoke-webrequest)
+Im Beispiel oben wird `curl.exe` ausgeführt (nicht einfach `curl`), um sicherzustellen, dass in PowerShell die echte curl-Programmdatei aufgerufen wird, nicht der curl-Alias von PowerShell für [Invoke-WebRequest](/powershell/module/microsoft.powershell.utility/invoke-webrequest)
 
 > Hinweis: Die Verwendung von `curl` kann Vorteile bieten, wenn Sie mithilfe der Cmd-Shell und/oder `.bat` / `.cmd` Schritte zum Herunterladen aufrufen/skripten müssen.
 
