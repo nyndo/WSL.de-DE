@@ -5,14 +5,14 @@ keywords: WSL, Windows, windowssubsystem, Windows 10, Docker, Container
 ms.date: 08/28/2020
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 5a1187336341d73f662b7e9f27b19df4fd0e1e73
-ms.sourcegitcommit: b15b847b87d29a40de4a1517315949bce9c7a3d5
+ms.openlocfilehash: cca53f2079e026fbe765ad13cc67722457f83c23
+ms.sourcegitcommit: dee2bf22c0c9f5725122a155d2876fcb2b7427d0
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/28/2020
-ms.locfileid: "91413331"
+ms.lasthandoff: 10/20/2020
+ms.locfileid: "92211784"
 ---
-# <a name="get-started-with-docker-remote-containers-on-wsl-2"></a>Einstieg in docker-Remote Container auf WSL 2
+# <a name="get-started-with-docker-remote-containers-on-wsl-2"></a>Erste Schritte mit Docker-Remotecontainern unter WSL 2
 
 Diese Schritt-für-Schritt-Anleitung hilft Ihnen beim Einstieg in die Entwicklung mit Remote Containern, indem Sie **docker Desktop für Windows mit WSL 2** (Windows-Subsystem für Linux, Version 2) einrichten.
 
@@ -32,7 +32,7 @@ Weitere Informationen finden Sie in der [Einführung in docker-Container](/learn
 
 - Stellen Sie sicher, dass auf Ihrem Computer Windows 10 ausgeführt wird, [auf Version 2004](ms-settings:windowsupdate), **Build 18362** oder höher aktualisiert wurde.
 - [Aktivieren Sie WSL, installieren Sie eine Linux-Distribution, und aktualisieren Sie auf WSL 2](../install-win10.md).
-- [Laden Sie das Linux Kernel Update Package herunter, und installieren Sie](/windows/wsl/wsl2-kernel)es.
+- [Laden Sie das Linux Kernel Update Package herunter, und installieren Sie](../install-win10.md#step-4---download-the-linux-kernel-update-package)es.
 - [Installieren Sie Visual Studio Code](https://code.visualstudio.com/download) *(optional)*. Dies bietet eine optimale Benutzerfreundlichkeit, einschließlich der Möglichkeit, in einem docker-Remote Container zu programmieren und zu Debuggen und mit Ihrer Linux-Distribution verbunden zu sein.
 - [Installieren Sie das Windows-Terminal](/windows/terminal/get-started) *(optional)*. Dies bietet die beste Oberfläche, einschließlich der Möglichkeit zum Anpassen und Öffnen mehrerer Terminals auf derselben Oberfläche (einschließlich Ubuntu, Debian, PowerShell, Azure CLI oder der gewünschten Verwendung).
 - [Registrieren Sie sich für eine docker-ID bei docker Hub](https://hub.docker.com/signup) *(optional)*.
@@ -78,13 +78,13 @@ Zum Einstieg in die Entwicklung von apps mit docker und WSL 2 empfehlen wir die 
 
 - [Installieren Sie die vs Code Remote-WSL-Erweiterung](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-wsl). Diese Erweiterung ermöglicht es Ihnen, Ihr Linux-Projekt, das auf WSL ausgeführt wird, in vs Code zu öffnen (es muss sich nicht um Probleme mit der Problembehandlung, binäre Kompatibilität oder andere außer Betrieb greifende Herausforderungen kümmern).
 
-- [Installieren Sie die vs Code-Remote Container Erweiterung](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-containers). Diese Erweiterung ermöglicht es Ihnen, Ihren Projektordner oder das Repository in einem Container zu öffnen, indem Sie die Vorteile der vollständigen Featuregruppe Visual Studio Code nutzen, um Ihre Entwicklung innerhalb des Containers zu erledigen.
+- [Installieren Sie die Visual Studio Code-Remote-Containers Erweiterung](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-containers). Diese Erweiterung ermöglicht es Ihnen, Ihren Projektordner oder das Repository in einem Container zu öffnen, indem Sie die Vorteile der vollständigen Featuregruppe Visual Studio Code nutzen, um Ihre Entwicklung innerhalb des Containers zu erledigen.
 
-- [Installieren Sie die vs Code docker-Erweiterung](https://marketplace.visualstudio.com/items?itemName=ms-azuretools.vscode-docker). Diese Erweiterung bietet die Funktionalität zum Erstellen, verwalten und Bereitstellen von Anwendungen in Containern aus vs Code. (Sie benötigen die Remote Container Erweiterung, um den Container tatsächlich als Entwicklungsumgebung zu verwenden.)
+- [Installieren Sie die vs Code docker-Erweiterung](https://marketplace.visualstudio.com/items?itemName=ms-azuretools.vscode-docker). Diese Erweiterung bietet die Funktionalität zum Erstellen, verwalten und Bereitstellen von Anwendungen in Containern aus vs Code. (Sie benötigen die Remote-Container Erweiterung, um den Container tatsächlich als Entwicklungsumgebung zu verwenden.)
 
 Verwenden Sie Docker, um einen Entwicklungs Container für ein vorhandenes App-Projekt zu erstellen.
 
-1. In diesem Beispiel verwende ich den Quellcode aus meinem [Hallo Welt Tutorial für Django](/windows/python/web-frameworks#hello-world-tutorial-for-django) in der python-Entwicklungsumgebung einrichten der Dokumentation. Sie können diesen Schritt überspringen, wenn Sie Ihren eigenen Projekt Quell Code verwenden möchten. Öffnen Sie zum Herunterladen meiner HelloWorld-Django-Web-App von GitHub ein WSL-Terminal (z. b. Ubuntu), und geben Sie Folgendes ein: `git clone https://github.com/mattwojo/helloworld-django.git`
+1. In diesem Beispiel verwende ich den Quellcode aus meinem [Hallo Welt Tutorial für Django](/windows/python/web-frameworks#hello-world-tutorial-for-django) in der python-Entwicklungsumgebung einrichten der Dokumentation. Sie können diesen Schritt überspringen, wenn Sie Ihren eigenen Projekt Quell Code verwenden möchten. Öffnen Sie zum Herunterladen meiner HelloWorld-Django Web-App von GitHub ein WSL-Terminal (z. b. Ubuntu), und geben Sie Folgendes ein: `git clone https://github.com/mattwojo/helloworld-django.git`
 
     > [!NOTE]
     > Speichern Sie Ihren Code immer im gleichen Dateisystem, in dem Sie auch Tools verwenden. Dies führt zu einer schnelleren Datei Zugriffsleistung. In diesem Beispiel verwenden wir eine Linux-Distribution (Ubuntu) und möchten unsere Projektdateien im WSL-Dateisystem speichern `\\wsl\` . Das Speichern von Projektdateien im Windows-Dateisystem würde die Dinge erheblich verlangsamen, wenn Sie Linux-Tools in WSL verwenden, um auf diese Dateien zuzugreifen.
