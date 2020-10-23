@@ -6,14 +6,19 @@ author: benhillis
 ms.date: 05/15/2020
 ms.topic: article
 ms.localizationpriority: high
-ms.openlocfilehash: d7b868f959c62879524dcbdad20509ef35fecfce
-ms.sourcegitcommit: b15b847b87d29a40de4a1517315949bce9c7a3d5
+ms.openlocfilehash: c772185501b009369d7d47752dc792b8f90b482d
+ms.sourcegitcommit: dee2bf22c0c9f5725122a155d2876fcb2b7427d0
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/28/2020
-ms.locfileid: "91413271"
+ms.lasthandoff: 10/20/2020
+ms.locfileid: "92211744"
 ---
 # <a name="release-notes-for-windows-subsystem-for-linux"></a>Anmerkungen zu dieser Version des Windows-Subsystems für Linux
+
+## <a name="build-20226"></a>Build 20226
+Allgemeine Windows-Informationen zu Build 20226 finden Sie im [Windows-Blog](https://blogs.windows.com/windows-insider/2020/09/10/announcing-windows-10-insider-preview-build-20226/).
+
+* Beheben der Ursache für einen Absturz im LxssManager-Dienst. [GH 5902]
 
 ## <a name="build-20211"></a>Build 20211
 Allgemeine Windows-Informationen zu Build 20211 finden Sie im [Windows-Blog](https://blogs.windows.com/windows-insider/2020/09/10/announcing-windows-10-insider-preview-build-20211/).

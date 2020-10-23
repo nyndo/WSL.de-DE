@@ -5,22 +5,22 @@ keywords: BashOnWindows, bash, wsl, windows, windowssubsystem, ubuntu
 ms.date: 01/20/2020
 ms.topic: article
 ms.localizationpriority: high
-ms.openlocfilehash: 78d122ce22e3ab4d67339cc6f0d6038502e23dbb
-ms.sourcegitcommit: b15b847b87d29a40de4a1517315949bce9c7a3d5
+ms.openlocfilehash: c3becde51cf16b95f96222a08a2fe7249cd936c1
+ms.sourcegitcommit: dee2bf22c0c9f5725122a155d2876fcb2b7427d0
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/28/2020
-ms.locfileid: "91413291"
+ms.lasthandoff: 10/20/2020
+ms.locfileid: "92211754"
 ---
 # <a name="troubleshooting-windows-subsystem-for-linux"></a>Problembehandlung des Windows-Subsystems für Linux
 
-Unterstützung bei Fragen im Zusammenhang mit WSL finden Sie in unserem GitHub-Repository: https://github.com/Microsoft/wsl/issues
+Unterstützung bei Fragen im Zusammenhang mit WSL finden Sie in unserem [WSL-Produkt-Repository in GitHub](https://github.com/Microsoft/wsl/issues).
 
 ## <a name="search-for-any-existing-issues-related-to-your-problem"></a>Suchen nach vorhandenen Themen zu Ihrem Problem
 
-Verwenden Sie für technische Probleme das Produktrepository: https://github.com/Microsoft/wsl/issues
+Verwenden Sie für technische Probleme das [Produktrepository](https://github.com/Microsoft/wsl/issues).
 
-Verwenden Sie für Probleme im Zusammenhang mit dem Inhalt dieser Dokumentation das Dokumentrepository: https://github.com/MicrosoftDocs/wsl/issues
+Verwenden Sie für Probleme im Zusammenhang mit dem Inhalt dieser Dokumentation das [Dokumentrepository](https://github.com/MicrosoftDocs/wsl/issues).
 
 ## <a name="submit-a-bug-report"></a>Senden eines Fehlerberichts
 
@@ -28,7 +28,7 @@ Bei Fehlern im Zusammenhang mit WSL-Funktionen oder -Features melden Sie ein Pro
 
 ## <a name="submit-a-feature-request"></a>Übermitteln einer Featureanforderung
 
-Um ein neues Feature im Zusammenhang mit der WSL-Funktionalität oder -Kompatibilität anzufordern, melden Sie ein Problem im Produktrepository: https://github.com/Microsoft/wsl/issues
+Um ein neues Feature im Zusammenhang mit der WSL-Funktionalität oder -Kompatibilität anzufordern, [melden Sie ein Problem im Produktrepository](https://github.com/Microsoft/wsl/issues).
 
 ## <a name="contribute-to-the-docs"></a>Beiträge zu den Dokumenten leisten
 
@@ -40,34 +40,37 @@ Wenn sich Ihr Problem auf den Windows-Terminal, die Windows-Konsole oder die Bef
 
 ## <a name="common-issues"></a>Allgemeine Probleme
 
-### <a name="im-on-windows-10-version-1903-and-i-still-do-not-see-options-for-wsl-2"></a>Ich verwende Windows 10, Version 1903, und es werden trotzdem keine Optionen für WSL 2 angezeigt. 
+### <a name="im-on-windows-10-version-1903-and-i-still-do-not-see-options-for-wsl-2"></a>Ich verwende Windows 10, Version 1903, und es werden trotzdem keine Optionen für WSL 2 angezeigt
 
-Dies liegt wahrscheinlich daran, dass auf Ihrem Computer der Backport für WSL 2 noch nicht eingerichtet ist. Die einfachste Möglichkeit zur Lösung des Problems besteht darin, zu den Windows-Einstellungen zu wechseln und auf „Nach Updates suchen“ zu klicken, um die neuesten Updates auf Ihrem System zu installieren. Die vollständigen Anweisungen zur Einrichtung des Backports finden Sie [hier](https://devblogs.microsoft.com/commandline/wsl-2-support-is-coming-to-windows-10-versions-1903-and-1909/#how-do-i-get-it). 
+Dies liegt wahrscheinlich daran, dass auf Ihrem Computer der Backport für WSL 2 noch nicht eingerichtet ist. Die einfachste Möglichkeit zur Lösung des Problems besteht darin, zu den Windows-Einstellungen zu wechseln und auf „Nach Updates suchen“ zu klicken, um die neuesten Updates auf Ihrem System zu installieren. Schauen Sie sich [die vollständigen Anweisungen zur Einrichtung des Backports finden](https://devblogs.microsoft.com/commandline/wsl-2-support-is-coming-to-windows-10-versions-1903-and-1909/#how-do-i-get-it) an.
 
-Wenn Sie auf „Nach Updates suchen“ klicken und das Update immer noch nicht erhalten, können Sie KB4566116 manuell installieren, indem Sie [diesem Link folgen](https://www.catalog.update.microsoft.com/Search.aspx?q=KB4566116).  
+Wenn Sie auf „Nach Updates suchen“ klicken und das Update immer noch nicht erhalten, können Sie [KB4566116 manuell installieren](https://www.catalog.update.microsoft.com/Search.aspx?q=KB4566116).  
 
 ### <a name="error-0x1bc-when-wsl---set-default-version-2"></a>„Fehler: 0x1bc wenn `wsl --set-default-version 2`
+
 Dies kann vorkommen, wenn die Einstellung „Anzeigesprache“ oder „Systemgebietsschema“ nicht auf Englisch festgelegt ist.
-```
+
+```powershell
 wsl --set-default-version 2
 Error: 0x1bc
 For information on key differences with WSL 2 please visit https://aka.ms/wsl2
 ```
 
 Der tatsächliche Fehler für `0x1bc` lautet:
-```
+
+```powershell
 WSL 2 requires an update to its kernel component. For information please visit https://aka.ms/wsl2kernel
 ```
 
 Weitere Informationen finden Sie im Problem [5749](https://github.com/microsoft/WSL/issues/5749).
 
-
 ### <a name="cannot-access-wsl-files-from-windows"></a>Kein Zugriff auf WSL-Dateien von Windows aus möglich
+
 Ein 9p-Protokolldateiserver stellt den Dienst auf der Linux-Seite bereit, um Windows den Zugriff auf das Linux-Dateisystem zu ermöglichen. Wenn Sie nicht über `\\wsl$` unter Windows auf WSL zugreifen können, kann dies daran liegen, dass 9P nicht ordnungsgemäß gestartet wurde.
 
-Um dies zu überprüfen, können Sie die Startprotokolle mit `dmesg |grep 9p` überprüfen. Dadurch werden Fehler angezeigt. Eine erfolgreiche Ausgabe sieht wie folgt aus: 
+Um dies zu überprüfen, können Sie die Startprotokolle mit `dmesg |grep 9p` überprüfen. Dadurch werden Fehler angezeigt. Eine erfolgreiche Ausgabe sieht wie folgt aus:
 
-```
+```bash
 [    0.363323] 9p: Installing v9fs 9p2000 file system support
 [    0.363336] FS-Cache: Netfs '9p' registered for caching
 [    0.398989] 9pnet: Installing 9P2000 support
@@ -75,7 +78,8 @@ Um dies zu überprüfen, können Sie die Startprotokolle mit `dmesg |grep 9p` ü
 
 Weitere Informationen zu diesem Problem finden Sie in [diesem GitHub-Thread](https://github.com/microsoft/wsl/issues/5307).
 
-### <a name="cant-start-wsl-2-distro-and-only-see-wsl-2-in-output"></a>WSL 2-Verteilung kann nicht gestartet werden, und in der Ausgabe wird nur "WSL 2" angezeigt.
+### <a name="cant-start-wsl-2-distribution-and-only-see-wsl-2-in-output"></a>WSL 2-Verteilung kann nicht gestartet werden, und in der Ausgabe wird nur "WSL 2" angezeigt
+
 Wenn Ihre Anzeigesprache nicht Englisch ist, sehen Sie möglicherweise eine abgeschnittene Version eines Fehlertexts.
 
 ```powershell
@@ -85,17 +89,49 @@ WSL 2
 
 Um dieses Problem zu beheben, navigieren Sie zu `https://aka.ms/wsl2kernel`, und installieren Sie den Kernel manuell, indem Sie die Anweisungen auf der doc-Seite befolgen. 
 
-### <a name="please-enable-the-virtual-machine-platform-windows-feature-and-ensure-virtualization-is-enabled-in-the-bios"></a>Aktivieren Sie das Windows-Feature "Virtual Machine Platform", und stellen Sie sicher, dass Virtualisierung im BIOS aktiviert ist.
+### <a name="command-not-found-when-executing-windows-exe-in-linux"></a>`command not found` beim Ausführen von „windows.exe“ unter Linux
 
-1. Klicken Sie auf [Systemanforderungen von Hyper-V](/windows-server/virtualization/hyper-v/system-requirements-for-hyper-v-on-windows#:~:text=on%20Windows%20Server.-,General%20requirements,the%20processor%20must%20have%20SLAT.).
-2. Wenn es sich bei dem Computer um einen virtuellen Computer handelt, aktivieren Sie die [geschachtelte Virtualisierung](./wsl2-faq.md#can-i-run-wsl-2-in-a-virtual-machine) manuell. Starten Sie PowerShell als Administrator, und führen Sie folgende Schritte aus: 
+Benutzer können ausführbare Windows-Programmdateien wie „notepad.exe“ direkt aus Linux ausführen. Manchmal kann es vorkommen, dass "Befehl nicht gefunden" angezeigt wird, wie unten dargestellt: 
 
-```powershell
-Set-VMProcessor -VMName <VMName> -ExposeVirtualizationExtensions $true
+```Bash
+$ notepad.exe
+-bash: notepad.exe: command not found
 ```
 
-3. Befolgen Sie die Richtlinien des Herstellers Ihres PCs, um zu erfahren, wie Sie die Virtualisierung aktivieren. Dadurch müssen Sie möglicherweise den System-BIOS verwenden, um sicherzustellen, dass diese Features auf Ihrer CPU aktiviert sind. 
-4. Starten Sie den Computer neu, nachdem Sie die optionale `Virtual Machine Platform`-Komponente aktiviert haben. 
+Wenn es keine win32-Pfade in Ihrem $PATH gibt, findet interop die EXE-Datei nicht.
+Sie können dies überprüfen, indem Sie `echo $PATH` in Linux ausführen. In der Ausgabe sollte ein win32-Pfad (z. B. „/mnt/c/Windows“) angezeigt werden.
+Werden keine Windows-Pfade angezeigt, wird Ihr PATH höchstwahrscheinlich von Ihrer Linux-Shell außer Kraft gesetzt. 
+
+Im folgenden Beispiel hat „/etc/profile“ auf Debian zu diesem Problem beigetragen:
+
+```Bash
+if [ "`id -u`" -eq 0 ]; then
+  PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
+else
+  PATH="/usr/local/bin:/usr/bin:/bin:/usr/local/games:/usr/games"
+fi
+```
+
+Die richtige Vorgehensweise unter Debian besteht darin, die obigen Zeilen zu entfernen.
+Sie können auch $PATH während der Zuweisung anhängen, wie unten beschrieben, aber das führt zu einigen [anderen Problemen](https://salsa.debian.org/debian/WSL/-/commit/7611edba482fd0b3f67143aa0fc1e2cc1d4100a6) mit WSL und VSCode.
+
+Weitere Informationen finden Sie unter den Problemen [5296](https://github.com/microsoft/WSL/issues/5296) und [5779](https://github.com/microsoft/WSL/issues/5779).
+
+### <a name="please-enable-the-virtual-machine-platform-windows-feature-and-ensure-virtualization-is-enabled-in-the-bios"></a>Aktivieren Sie das Windows-Feature "Virtual Machine Platform", und stellen Sie sicher, dass Virtualisierung im BIOS aktiviert ist.
+
+Aktivieren Sie das Windows-Feature "Virtual Machine Platform", und stellen Sie sicher, dass Virtualisierung im BIOS aktiviert ist.
+
+1. Klicken Sie auf [Systemanforderungen von Hyper-V](/windows-server/virtualization/hyper-v/system-requirements-for-hyper-v-on-windows#:~:text=on%20Windows%20Server.-,General%20requirements,the%20processor%20must%20have%20SLAT.).
+
+2. Wenn es sich bei dem Computer um einen virtuellen Computer handelt, aktivieren Sie die [geschachtelte Virtualisierung](./wsl2-faq.md#can-i-run-wsl-2-in-a-virtual-machine) manuell. Starten Sie PowerShell als Administrator, und führen Sie folgende Schritte aus:
+
+    ```powershell
+    Set-VMProcessor -VMName <VMName> -ExposeVirtualizationExtensions $true
+    ```
+
+3. Befolgen Sie die Richtlinien des Herstellers Ihres PCs, um zu erfahren, wie Sie die Virtualisierung aktivieren. Dadurch müssen Sie möglicherweise den System-BIOS verwenden, um sicherzustellen, dass diese Features auf Ihrer CPU aktiviert sind. Die Anweisungen für diesen Prozess können von Computer zu Computer variieren. In [diesem Artikel](https://www.bleepingcomputer.com/tutorials/how-to-enable-cpu-virtualization-in-your-computer-bios/) von Bleeping Computer finden Sie ein Beispiel.
+
+4. Starten Sie den Computer neu, nachdem Sie die optionale `Virtual Machine Platform`-Komponente aktiviert haben.
 
 ### <a name="bash-loses-network-connectivity-once-connected-to-a-vpn"></a>Bash verliert nach dem Herstellen einer Verbindung mit einem VPN die Netzwerkkonnektivität
 
@@ -309,7 +345,7 @@ Dieser Fehler bezieht sich auf einen fehlerhaften Installationsstatus. Führen S
 
 Wenn dieser Fehler angezeigt wird:
 
-```
+```bash
 @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 @         WARNING: UNPROTECTED PRIVATE KEY FILE!          @
 @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
@@ -318,7 +354,7 @@ Permissions 0777 for '/home/artur/.ssh/private-key.pem' are too open.
 
 Um dieses Problem zu beheben, fügen Sie Folgendes an die ```/etc/wsl.conf```-Datei an:
 
-```
+```bash
 [automount]
 enabled = true
 options = metadata,uid=1000,gid=1000,umask=0022

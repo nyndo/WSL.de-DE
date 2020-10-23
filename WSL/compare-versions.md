@@ -1,17 +1,17 @@
 ---
 title: Vergleich zwischen WSL 2 und WSL 1
-description: Vergleichen Sie Version 1 und Version 2 des Windows-Subsystems für Linux. Erfahren Sie mehr über die Neuerungen in WSL 2 – tatsächlicher Linux-Kernel, höhere Geschwindigkeit, volle Kompatibilität mit Systemaufrufen. WSL 1 funktioniert besser, wenn Sie Dateien über verschiedene Betriebssystem-Dateisysteme hinweg speichern. Sie können die Größe Ihrer virtuellen WSL 2-Festplatte (VHD) erweitern.
-keywords: BashOnWindows, Bash, WSL, Windows, Windows-Subsystem, GNU, Linux, Ubuntu, Debian, Suse, Windows 10, UX-Änderungen, WSL 2, Linux-Kernel, Netzwerkanwendungen, localhost, IPv6, Virtual Hardware Disk, VHD, VHD-Beschränkungen, VHD-Fehler
+description: Vergleichen Sie Version 1 und Version 2 des Windows-Subsystems für Linux. Erfahren Sie mehr über die Neuerungen in WSL 2 – tatsächlicher Linux-Kernel, höhere Geschwindigkeit, volle Kompatibilität mit Systemaufrufen. WSL 1 funktioniert besser, wenn Sie Dateien über verschiedene Betriebssystem-Dateisysteme hinweg speichern. Sie können die Größe Ihrer virtuellen WSL 2-Festplatte erweitern.
+keywords: BashOnWindows, Bash, WSL, Windows, Windows-Subsystem, GNU, Linux, Ubuntu, Debian, Suse, Windows 10, UX-Änderungen, WSL 2, Linux-Kernel, Netzwerkanwendungen, localhost, IPv6, virtuelle Festplatte, VHD, VHD-Beschränkungen, VHD-Fehler
 ms.date: 09/15/2020
 ms.topic: conceptual
 ms.localizationpriority: high
 ms.custom: contperfq1
-ms.openlocfilehash: 5aa37c632fe1e02680bdef307a5923d05dfb3f60
-ms.sourcegitcommit: b15b847b87d29a40de4a1517315949bce9c7a3d5
+ms.openlocfilehash: ce68a19da519ddae5dd562c75c9ba2bac3659190
+ms.sourcegitcommit: dee2bf22c0c9f5725122a155d2876fcb2b7427d0
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/28/2020
-ms.locfileid: "91413120"
+ms.lasthandoff: 10/20/2020
+ms.locfileid: "92211764"
 ---
 # <a name="comparing-wsl-1-and-wsl-2"></a>Vergleich zwischen WSL 1 und WSL 2
 
@@ -160,11 +160,11 @@ netsh interface portproxy add v4tov4 listenport=4000 listenaddress=0.0.0.0 conne
 
 WSL 2-Verteilungen können aktuell keine reinen IPv6-Adressen erreichen. Wir arbeiten daran, diese Funktion hinzuzufügen.
 
-## <a name="expanding-the-size-of-your-wsl-2-virtual-hardware-disk"></a>Erweitern der Größe Ihrer virtuellen WSL 2-Festplatte (VHD)
+## <a name="expanding-the-size-of-your-wsl-2-virtual-hard-disk"></a>Erweitern der Größe Ihrer virtuellen WSL 2-Festplatte (VHD)
 
-WSL 2 verwendet eine virtuelle Festplatte (VHD) zum Speichern Ihrer Linux-Dateien. Wenn die maximale Größe erreicht ist, müssen Sie sie möglicherweise erweitern.
+WSL 2 verwendet eine virtuelle Festplatte (VHD) zum Speichern Ihrer Linux-Dateien. In WSL 2 wird eine VHD auf Ihrer Windows-Festplatte als *.vhdx*-Datei dargestellt.
 
-Die WSL 2-VHD verwendet das Ext4-Dateisystem. Diese VHD wird automatisch an Ihre Speicheranforderungen angepasst, und verfügt über eine anfängliche maximale Größe von 256 GB. Wenn Ihre Verteilung über die Größe von 256 GB anwächst, werden Ihnen Fehler angezeigt, die besagen, dass kein Speicherplatz mehr zur Verfügung steht. Sie können diesen Fehler beheben, indem Sie die Größe der VHD heraufsetzen.
+Die WSL 2-VHD verwendet das Ext4-Dateisystem. Diese VHD wird automatisch an Ihre Speicheranforderungen angepasst, und verfügt über eine anfängliche maximale Größe von 256 GB. Wenn der von Ihren Linux-Dateien benötigte Speicherplatz diese Größe überschreitet, müssen Sie ihn eventuell erweitern. Wenn Ihre Verteilung über die Größe von 256 GB anwächst, werden Ihnen Fehler angezeigt, die besagen, dass kein Speicherplatz mehr zur Verfügung steht. Sie können diesen Fehler beheben, indem Sie die Größe der VHD heraufsetzen.
 
 So erweitern Sie die maximale VHD-Größe auf über 256 GB:
 
@@ -179,18 +179,54 @@ So erweitern Sie die maximale VHD-Größe auf über 256 GB:
 
 4. Ändern Sie die Größe Ihrer WSL 2-VHD, indem Sie die folgenden Befehle ausführen:
    - Öffnen Sie die Windows-Eingabeaufforderung mit Administratorrechten, und geben Sie Folgendes ein:
-      - `diskpart`
-      - `Select vdisk file="<pathToVHD>"`
-      - `expand vdisk maximum="<sizeInMegaBytes>"`
+
+      ```powershell
+      diskpart
+      DISKPART> Select vdisk file="<pathToVHD>"
+      DISKPART> detail vdisk
+      ```
+
+   - Prüfen Sie die Ausgabe des Befehls **detail**.  Die Ausgabe enthält einen Wert für **Virtuelle Größe**.  Dies ist der aktuelle Höchstwert.  Konvertieren Sie diesen Wert in Megabytes.  Der neue Wert muss nach dem Ändern der Größe größer als dieser Wert sein.  Wenn die Ausgabe von **detail** beispielsweise **Virtuelle Größe: 256 GB** anzeigt, müssen Sie einen Wert angeben, der größer als **256000** ist.  Sobald Sie die neue Größe in Megabyte festgelegt haben, geben Sie den folgenden Befehl in **diskpart** ein:
+
+      ```powershell
+      DISKPART> expand vdisk maximum=<sizeInMegaBytes>
+      ```
+
+   - Beenden Sie **diskpart**.
+
+      ```powershell
+      DISKPART> exit
+      ```
 
 5. Starten Sie Ihre WSL-Verteilung (z. B. Ubuntu).
 
-6. Machen Sie WSL darauf aufmerksam, dass die Größe des Dateisystems durch Ausführen dieser Befehle über die Befehlszeile der Linux-Verteilung erweitert werden kann:
-    - `sudo mount -t devtmpfs none /dev`
-    - `mount | grep ext4`
-    - Kopieren Sie den Namen dieses Eintrags, der diese Form hat: `/dev/sdXX` (wobei X für ein beliebiges anderes Zeichen steht).
-    - `sudo resize2fs /dev/sdXX`
-    - Verwenden Sie den Wert, den Sie zuvor kopiert haben. Möglicherweise müssen Sie auch „resize2fs“ installieren: `apt install resize2fs`
+6. Machen Sie WSL darauf aufmerksam, dass die Größe des Dateisystems durch Ausführen dieser Befehle über die Befehlszeile der Linux-Verteilung erweitert werden kann.
+
+   > [!NOTE]
+   > Möglicherweise sehen Sie diese Meldung als Antwort auf den ersten **mount**-Befehl: **/dev: none already mounted on /dev**.  Diese Meldung kann ignoriert werden.
+
+   ```powershell
+      sudo mount -t devtmpfs none /dev
+      mount | grep ext4
+   ```
+
+   Kopieren Sie den Namen dieses Eintrags, der diese Form hat: `/dev/sdX` (wobei X für ein beliebiges anderes Zeichen steht).  Im folgenden Beispiel ist der Wert von **X** **b**:
+
+   ```powershell
+      sudo resize2fs /dev/sdb <sizeInMegabytes>M
+   ```
+
+   > [!NOTE]
+   > Möglicherweise müssen Sie auch **resize2fs** installieren.  Wenn ja, können Sie diesen Befehl zur Installation verwenden: `sudo apt install resize2fs`.
+
+   Die Ausgabe ist mit folgender Zeichenfolge vergleichbar:
+
+   ```bash
+      resize2fs 1.44.1 (24-Mar-2018)
+      Filesystem at /dev/sdb is mounted on /; on-line resizing required
+      old_desc_blocks = 32, new_desc_blocks = 38
+      The filesystem on /dev/sdb is now 78643200 (4k) blocks long.
+      ```
 
 > [!NOTE]
 > Im Allgemeinen sollten Sie die WSL-bezogenen Dateien, die sich in Ihrem AppData-Ordner befinden, nicht mithilfe von Windows-Tools oder-Editoren ändern, verschieben oder darauf zugreifen. Dies könnte zu einer Beschädigung Ihrer Linux-Verteilung führen.
