@@ -1,24 +1,24 @@
 ---
 title: Vergleich zwischen WSL 2 und WSL 1
-description: Vergleichen Sie Version 1 und Version 2 des Windows-Subsystems für Linux. Erfahren Sie mehr über die Neuerungen in WSL 2 – tatsächlicher Linux-Kernel, höhere Geschwindigkeit, volle Kompatibilität mit Systemaufrufen. WSL 1 funktioniert besser, wenn Sie Dateien über verschiedene Betriebssystem-Dateisysteme hinweg speichern. Sie können die Größe Ihrer virtuellen WSL 2-Festplatte erweitern.
-keywords: BashOnWindows, Bash, WSL, Windows, Windows-Subsystem, GNU, Linux, Ubuntu, Debian, Suse, Windows 10, UX-Änderungen, WSL 2, Linux-Kernel, Netzwerkanwendungen, localhost, IPv6, virtuelle Festplatte, VHD, VHD-Beschränkungen, VHD-Fehler
-ms.date: 09/15/2020
+description: Vergleichen Sie Version 1 und Version 2 des Windows-Subsystems für Linux. Erfahren Sie mehr über die Neuerungen in WSL 2 – tatsächlicher Linux-Kernel, höhere Geschwindigkeit, volle Kompatibilität mit Systemaufrufen. WSL 1 funktioniert besser, wenn Sie Dateien über verschiedene Betriebssystem-Dateisysteme hinweg speichern. Sie können die Größe Ihrer virtuellen WSL 2-Festplatte (VHD) erweitern.
+keywords: BashOnWindows, Bash, WSL, Windows, Windows-Subsystem, GNU, Linux, Ubuntu, Debian, Suse, Windows 10, UX-Änderungen, WSL 2, Linux-Kernel, Netzwerkanwendungen, localhost, IPv6, Virtual Hardware Disk, VHD, VHD-Beschränkungen, VHD-Fehler
+ms.date: 09/28/2020
 ms.topic: conceptual
 ms.localizationpriority: high
 ms.custom: contperfq1
-ms.openlocfilehash: ce68a19da519ddae5dd562c75c9ba2bac3659190
-ms.sourcegitcommit: dee2bf22c0c9f5725122a155d2876fcb2b7427d0
+ms.openlocfilehash: 93fdbf87bf588a8b23aa917ea0cab05020e0ea3e
+ms.sourcegitcommit: 609850fadd20687636b8486264e87af47c538111
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/20/2020
-ms.locfileid: "92211764"
+ms.lasthandoff: 10/23/2020
+ms.locfileid: "92444869"
 ---
 # <a name="comparing-wsl-1-and-wsl-2"></a>Vergleich zwischen WSL 1 und WSL 2
 
 Der Hauptunterschied und die Gründe für die Aktualisierung des Windows-Subsystems für Linux von WSL 1 auf WSL 2 sind:
 
-- **Steigern der Leistung des Dateisystems**,
-- **Unterstützen der vollständigen Kompatibilität von Systemaufrufen**.
+- **Steigern der Leistung des Dateisystems** ,
+- **Unterstützen der vollständigen Kompatibilität von Systemaufrufen** .
 
 WSL 2 verwendet das Neueste und Beste an Virtualisierungstechnologie, um einen Linux-Kernel innerhalb einer schlanken Hilfsprogramms-VM auszuführen. WSL 2 ist jedoch keine herkömmliche VM-Benutzererfahrung.
 
@@ -49,7 +49,12 @@ Wenn Sie z. B. die WSL-Projektdateien speichern:
 - Verwenden Sie das Stammverzeichnis des Linux-Dateisystems: `\\wsl$\Ubuntu-18.04\home\<user name>\Project`
 - Verwenden Sie nicht das Stammverzeichnis des Windows-Dateisystems: `C:\Users\<user name>\Project`
 
-Sie können mit Windows-Apps und -Tools wie dem Datei-Explorer auf Ihr Linux-Stammdateisystem zugreifen. Öffnen Sie eine Linux-Verteilung (z. B. Ubuntu), und stellen Sie sicher, dass Sie sich im Basisverzeichnis von Linux befinden, indem Sie den Befehl `cd ~` eingeben. Öffnen Sie dann das Linux-Dateisystem im Datei-Explorer, indem Sie Folgendes eingeben *(den Punkt am Ende nicht vergessen)* : `explorer.exe .`
+Auf alle derzeit ausgeführten Verteilungen (`wsl -l`) kann über eine Netzwerkverbindung zugegriffen werden. Um dorthin zu gelangen, führen Sie einen Befehl \[WIN+R\] (Tastaturkürzel) aus, oder geben Sie `\\wsl$` in die Adressleiste des Datei-Explorers ein, um die Namen der jeweiligen Verteilungen zu finden und auf deren Stammdateisysteme zuzugreifen.
+
+Sie können auch Windows-Befehle innerhalb des Linux-[Terminal](https://en.wikipedia.org/wiki/Linux_console) von WSL verwenden. Öffnen Sie eine Linux-Verteilung (z. B. Ubuntu), und stellen Sie sicher, dass Sie sich im Basisverzeichnis von Linux befinden, indem Sie den Befehl `cd ~` eingeben. Öffnen Sie dann das Linux-Dateisystem im Datei-Explorer, indem Sie Folgendes eingeben *(den Punkt am Ende nicht vergessen)* : `powershell.exe /c start .`
+
+> [!IMPORTANT]
+> Wenn der Fehler **-bash: powershell.exe: Befehl nicht gefunden** auftritt, lesen Sie die Seite zur [WSL-Problembehandlung](troubleshooting.md#running-windows-commands-fails-inside-a-distribution), um den Fehler zu beheben.
 
 WSL 2 ist nur in Windows 10, Version 1903, Build 18362 oder höher verfügbar. Überprüfen Sie Ihre Windows-Version, indem Sie die **Windows-Logo-Taste+R** auswählen, **winver** eingeben und **OK** auswählen. (Oder geben Sie den Befehl `ver` an der Windows-Eingabeaufforderung ein.) Möglicherweise müssen Sie [auf die neueste Windows-Version aktualisieren](ms-settings:windowsupdate). Für Builds vor 18362 wird WSL überhaupt nicht unterstützt.
 
@@ -162,7 +167,7 @@ WSL 2-Verteilungen können aktuell keine reinen IPv6-Adressen erreichen. Wir ar
 
 ## <a name="expanding-the-size-of-your-wsl-2-virtual-hard-disk"></a>Erweitern der Größe Ihrer virtuellen WSL 2-Festplatte (VHD)
 
-WSL 2 verwendet eine virtuelle Festplatte (VHD) zum Speichern Ihrer Linux-Dateien. In WSL 2 wird eine VHD auf Ihrer Windows-Festplatte als *.vhdx*-Datei dargestellt.
+WSL 2 verwendet eine virtuelle Festplatte (VHD) zum Speichern Ihrer Linux-Dateien. In WSL 2 wird eine VHD auf Ihrer Windows-Festplatte als *.vhdx* -Datei dargestellt.
 
 Die WSL 2-VHD verwendet das Ext4-Dateisystem. Diese VHD wird automatisch an Ihre Speicheranforderungen angepasst, und verfügt über eine anfängliche maximale Größe von 256 GB. Wenn der von Ihren Linux-Dateien benötigte Speicherplatz diese Größe überschreitet, müssen Sie ihn eventuell erweitern. Wenn Ihre Verteilung über die Größe von 256 GB anwächst, werden Ihnen Fehler angezeigt, die besagen, dass kein Speicherplatz mehr zur Verfügung steht. Sie können diesen Fehler beheben, indem Sie die Größe der VHD heraufsetzen.
 
@@ -186,13 +191,13 @@ So erweitern Sie die maximale VHD-Größe auf über 256 GB:
       DISKPART> detail vdisk
       ```
 
-   - Prüfen Sie die Ausgabe des Befehls **detail**.  Die Ausgabe enthält einen Wert für **Virtuelle Größe**.  Dies ist der aktuelle Höchstwert.  Konvertieren Sie diesen Wert in Megabytes.  Der neue Wert muss nach dem Ändern der Größe größer als dieser Wert sein.  Wenn die Ausgabe von **detail** beispielsweise **Virtuelle Größe: 256 GB** anzeigt, müssen Sie einen Wert angeben, der größer als **256000** ist.  Sobald Sie die neue Größe in Megabyte festgelegt haben, geben Sie den folgenden Befehl in **diskpart** ein:
+   - Prüfen Sie die Ausgabe des Befehls **detail** .  Die Ausgabe enthält einen Wert für **Virtuelle Größe** .  Dies ist der aktuelle Höchstwert.  Konvertieren Sie diesen Wert in Megabytes.  Der neue Wert muss nach dem Ändern der Größe größer als dieser Wert sein.  Wenn die Ausgabe von **detail** beispielsweise **Virtuelle Größe: 256 GB** anzeigt, müssen Sie einen Wert angeben, der größer als **256000** ist.  Sobald Sie die neue Größe in Megabyte festgelegt haben, geben Sie den folgenden Befehl in **diskpart** ein:
 
       ```powershell
       DISKPART> expand vdisk maximum=<sizeInMegaBytes>
       ```
 
-   - Beenden Sie **diskpart**.
+   - Beenden Sie **diskpart** .
 
       ```powershell
       DISKPART> exit
@@ -203,14 +208,14 @@ So erweitern Sie die maximale VHD-Größe auf über 256 GB:
 6. Machen Sie WSL darauf aufmerksam, dass die Größe des Dateisystems durch Ausführen dieser Befehle über die Befehlszeile der Linux-Verteilung erweitert werden kann.
 
    > [!NOTE]
-   > Möglicherweise sehen Sie diese Meldung als Antwort auf den ersten **mount**-Befehl: **/dev: none already mounted on /dev**.  Diese Meldung kann ignoriert werden.
+   > Möglicherweise sehen Sie diese Meldung als Antwort auf den ersten **mount** -Befehl: **/dev: none already mounted on /dev** .  Diese Meldung kann ignoriert werden.
 
    ```powershell
       sudo mount -t devtmpfs none /dev
       mount | grep ext4
    ```
 
-   Kopieren Sie den Namen dieses Eintrags, der diese Form hat: `/dev/sdX` (wobei X für ein beliebiges anderes Zeichen steht).  Im folgenden Beispiel ist der Wert von **X** **b**:
+   Kopieren Sie den Namen dieses Eintrags, der diese Form hat: `/dev/sdX` (wobei X für ein beliebiges anderes Zeichen steht).  Im folgenden Beispiel ist der Wert von **X** **b** :
 
    ```powershell
       sudo resize2fs /dev/sdb <sizeInMegabytes>M

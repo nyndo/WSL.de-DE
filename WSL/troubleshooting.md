@@ -2,15 +2,15 @@
 title: Problembehandlung des Windows-Subsystems für Linux
 description: Bietet ausführliche Informationen zu häufigen Fehlern und Problemen, die bei der Ausführung von Linux im Windows-Subsystem für Linux auftreten.
 keywords: BashOnWindows, bash, wsl, windows, windowssubsystem, ubuntu
-ms.date: 01/20/2020
+ms.date: 09/28/2020
 ms.topic: article
 ms.localizationpriority: high
-ms.openlocfilehash: c3becde51cf16b95f96222a08a2fe7249cd936c1
-ms.sourcegitcommit: dee2bf22c0c9f5725122a155d2876fcb2b7427d0
+ms.openlocfilehash: f7fdc6243e6cd5156bfae23fd7a1d61514449cf5
+ms.sourcegitcommit: 609850fadd20687636b8486264e87af47c538111
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/20/2020
-ms.locfileid: "92211754"
+ms.lasthandoff: 10/23/2020
+ms.locfileid: "92444793"
 ---
 # <a name="troubleshooting-windows-subsystem-for-linux"></a>Problembehandlung des Windows-Subsystems für Linux
 
@@ -117,7 +117,7 @@ Sie können auch $PATH während der Zuweisung anhängen, wie unten beschrieben, 
 
 Weitere Informationen finden Sie unter den Problemen [5296](https://github.com/microsoft/WSL/issues/5296) und [5779](https://github.com/microsoft/WSL/issues/5779).
 
-### <a name="please-enable-the-virtual-machine-platform-windows-feature-and-ensure-virtualization-is-enabled-in-the-bios"></a>Aktivieren Sie das Windows-Feature "Virtual Machine Platform", und stellen Sie sicher, dass Virtualisierung im BIOS aktiviert ist.
+### <a name="error-0x80370102-the-virtual-machine-could-not-be-started-because-a-required-feature-is-not-installed"></a>„Error: 0x80370102 Der virtuelle Computer konnte nicht gestartet werden, weil ein erforderliches Feature nicht installiert ist.“
 
 Aktivieren Sie das Windows-Feature "Virtual Machine Platform", und stellen Sie sicher, dass Virtualisierung im BIOS aktiviert ist.
 
@@ -270,7 +270,7 @@ So erfassen Sie ein Speicherabbild
 Um die Architektur des PCs und die Windows-Buildnummer zu ermitteln, öffnen Sie  
 **Einstellungen** > **System** > **Info**
 
-Suchen Sie nach den Feldern **Betriebssystembuild** und **Systemtyp**.  
+Suchen Sie nach den Feldern **Betriebssystembuild** und **Systemtyp** .  
     ![Screenshot der Felder „Betriebssystembuild“ und „Systemtyp“](media/system.png)
 
 Führen Sie Folgendes in PowerShell aus, um die Windows Server-Buildnummer zu ermitteln:  
@@ -361,3 +361,14 @@ options = metadata,uid=1000,gid=1000,umask=0022
 ```
 
 Beachten Sie, dass durch Hinzufügen dieses Befehls Metadaten hinzugefügt und die in WSL angezeigten Dateiberechtigungen für die Windows-Dateien geändert werden. Weitere Informationen finden Sie in den [Dateisystemberechtigungen](./file-permissions.md).
+
+### <a name="running-windows-commands-fails-inside-a-distribution"></a>Fehler beim Ausführen von Windows-Befehlen innerhalb einer Verteilung
+
+Einige [im Microsoft Store verfügbare](install-win10.md#step-6---install-your-linux-distribution-of-choice) Verteilungen sind noch nicht vollständig kompatibel, um Windows-Befehle sofort in [Terminal](https://en.wikipedia.org/wiki/Linux_console) auszuführen. Wenn Sie beim Ausführen von `powershell.exe /c start .` oder eines anderen Windows-Befehls der Fehler `-bash: powershell.exe: command not found` angezeigt wird, können Sie ihn mit den folgenden Schritten beheben:
+
+1. Führen Sie `echo $PATH` in Ihrer WSL-Verteilung aus.  
+   Wenn `/mnt/c/Windows/system32` nicht enthalten ist, wird die PATH-Standardvariable von irgendeiner Komponente neu definiert.
+2. Prüfen Sie die Profileinstellungen mit `cat /etc/profile`.  
+   Ist die Zuweisung der PATH-Variablen enthalten, bearbeiten Sie die Datei, um den PATH-Zuweisungsblock mit einem **#** -Zeichen auszukommentieren.
+3. Prüfen Sie, ob „wsl.conf“ vorhanden ist (`cat /etc/wsl.conf`), und stellen Sie sicher, dass `appendWindowsPath=false` nicht enthalten ist. Andernfalls kommentieren Sie es aus.
+4. Starten Sie die Verteilung neu, indem Sie `wsl -t ` eingeben, gefolgt vom Namen der Verteilung, oder indem Sie `wsl --shutdown` entweder in cmd oder PowerShell ausführen.
