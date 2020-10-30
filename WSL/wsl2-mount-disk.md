@@ -5,12 +5,12 @@ keywords: WSL, Windows, windowssubsystem, GNU, Linux, bash, Disk, ext4, File Sys
 ms.date: 06/08/2020
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 8c67b0f34dcde925bb91979e9153049fdd474db3
-ms.sourcegitcommit: dee2bf22c0c9f5725122a155d2876fcb2b7427d0
+ms.openlocfilehash: 9ee71d7f76a9fd0e6b20293ef30b0808d56c43a1
+ms.sourcegitcommit: cfb6c254322b8eb9c2c26e19ce970d4c046bc352
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/20/2020
-ms.locfileid: "92211734"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93035726"
 ---
 # <a name="get-started-mounting-a-linux-disk-in-wsl-2-preview"></a>Einstieg in die Einbindung eines Linux-Datenträgers in WSL 2 (Vorschau)
 
@@ -19,6 +19,7 @@ Wenn Sie auf ein Linux-Datenträgerformat zugreifen möchten, das von Windows ni
 In diesem Tutorial werden die Schritte beschrieben, mit denen der Datenträger und die Partition identifiziert werden, die an WSL2 angefügt werden sollen, und wie Sie darauf zugreifen können.
 
 > [!NOTE]
+> Für den Zugriff auf dieses Feature müssen Sie unter Windows 10 Build 20211 oder höher sein. Sie können das [Windows Insider-Programm](https://insider.windows.com/) beitreten, um die neuesten Vorschau Versionen zu erhalten.
 > Der Administrator Zugriff ist erforderlich, um einen Datenträger an WSL 2 anzufügen.
 
 ## <a name="identify-the-disk"></a>Identifizieren des Datenträgers
@@ -88,7 +89,7 @@ wsl --mount <DiskPath> --partition <PartitionNumber> --type <Filesystem>
 
 ## <a name="access-the-disk-content"></a>Zugreifen auf den Datenträger Inhalt
 
-Nach der Bereitstellung kann auf den Datenträger unter dem Pfad zugegriffen werden, auf den durch den Konfigurations Wert verwiesen wird: `automount.root` . Der Standardwert ist `/mnt/wsl`.
+Nach der Bereitstellung kann auf den Datenträger unter dem Pfad zugegriffen werden, auf den durch den Konfigurations Wert verwiesen wird: `automount.root` . Standardwert: `/mnt/wsl`.
 
 Aus Windows kann auf den Datenträger über den Datei-Explorer zugegriffen werden, indem Sie zu navigieren: `\\wsl$\\<Distro>\\<Mountpoint>` (beliebige Linux-Distribution auswählen).
 
