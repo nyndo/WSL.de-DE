@@ -4,12 +4,12 @@ description: Referenzliste und Konfigurieren mehrerer Linux-Distributionen, die 
 keywords: BashOnWindows, bash, wsl, windows, windows subsystem for linux, windowssubsystem, ubuntu, wsl.conf, wslconfig
 ms.date: 05/12/2020
 ms.topic: article
-ms.openlocfilehash: 73544d4d8c8eda462194f213a0f093b21ab6d90e
-ms.sourcegitcommit: b15b847b87d29a40de4a1517315949bce9c7a3d5
+ms.openlocfilehash: 2a26795821162e91cb87825483426cd58aab8ac6
+ms.sourcegitcommit: cc81ebc749cf84dd58e9f57ee4cc72b5c72be1fd
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/28/2020
-ms.locfileid: "91413321"
+ms.lasthandoff: 11/04/2020
+ms.locfileid: "93352663"
 ---
 # <a name="wsl-commands-and-launch-configurations"></a>WSL-Befehle und Start Konfigurationen
 
@@ -280,14 +280,15 @@ Durch Festlegen verschiedener Einbindungsoptionen für Windows-Laufwerke (DrvFs)
 |umask | Eine oktale Maske mit Berechtigungen, die für alle Dateien und Verzeichnisse ausgeschlossen werden sollen | 000
 |fmask | Eine oktale Maske mit Berechtigungen, die für alle Dateien ausgeschlossen werden sollen | 000
 |dmask | Eine oktale Maske mit Berechtigungen, die für alle Verzeichnisse ausgeschlossen werden sollen | 000
+|metadata | Ob Metadaten zu Windows-Dateien hinzugefügt werden, um Linux-System Berechtigungen zu unterstützen | enabled
 
-**Hinweis:** Die Berechtigungsmasken werden durch eine logische ODER-Operation festgelegt, bevor sie auf Dateien oder Verzeichnisse angewendet werden. 
+**Hinweis:** Die Berechtigungs Masken werden durch eine logische OR-Operation eingefügt, bevor Sie auf Dateien oder Verzeichnisse angewendet werden. 
 
 #### <a name="network"></a>Netzwerk
 
 Abschnittsbezeichnung: `[network]`
 
-| key | value | Standard | notes|
+| Schlüssel | value | default | notes|
 |:----|:----|:----|:----|
 | generateHosts | boolean | `true` | `true` legt fest, dass WSL `/etc/hosts` generiert. Die Datei `hosts` enthält eine statische Zuordnung der entsprechenden IP-Adresse von Hostnamen. |
 | generateResolvConf | boolean | `true` | `true` legt fest, dass WSL `/etc/resolv.conf` generiert. `resolv.conf` enthält eine DNS-Liste, mit der ein angegebener Hostnamen in seine IP-Adresse aufgelöst werden kann. | 
@@ -298,7 +299,7 @@ Abschnittsbezeichnung: `[interop]`
 
 Diese Optionen sind in Insider Build 17713 und höher verfügbar.
 
-| key | value | Standard | notes|
+| Schlüssel | value | default | notes|
 |:----|:----|:----|:----|
 | enabled | boolean | `true` | Durch Festlegen dieses Schlüssels wird festgelegt, ob WSL das Starten von Windows-Prozessen unterstützt. |
 | appendWindowsPath | boolean | `true` | Durch Festlegen dieses Schlüssels wird festgelegt, ob WSL der $PATH-Umgebungsvariablen Windows-Pfadelemente hinzufügt. |
