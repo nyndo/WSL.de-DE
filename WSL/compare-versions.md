@@ -6,19 +6,19 @@ ms.date: 09/28/2020
 ms.topic: conceptual
 ms.localizationpriority: high
 ms.custom: contperfq1
-ms.openlocfilehash: 93fdbf87bf588a8b23aa917ea0cab05020e0ea3e
-ms.sourcegitcommit: 609850fadd20687636b8486264e87af47c538111
+ms.openlocfilehash: be0cd21b65705e455f29bfd1666ce74078a21baa
+ms.sourcegitcommit: cfb6c254322b8eb9c2c26e19ce970d4c046bc352
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/23/2020
-ms.locfileid: "92444869"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93035736"
 ---
 # <a name="comparing-wsl-1-and-wsl-2"></a>Vergleich zwischen WSL 1 und WSL 2
 
 Der Hauptunterschied und die Gründe für die Aktualisierung des Windows-Subsystems für Linux von WSL 1 auf WSL 2 sind:
 
 - **Steigern der Leistung des Dateisystems** ,
-- **Unterstützen der vollständigen Kompatibilität von Systemaufrufen** .
+- **Unterstützen der vollständigen Kompatibilität von Systemaufrufen**.
 
 WSL 2 verwendet das Neueste und Beste an Virtualisierungstechnologie, um einen Linux-Kernel innerhalb einer schlanken Hilfsprogramms-VM auszuführen. WSL 2 ist jedoch keine herkömmliche VM-Benutzererfahrung.
 
@@ -133,9 +133,10 @@ Die Abbildung zeigt ein Beispiel dafür – hier wird mithilfe des Microsoft Edg
 ### <a name="accessing-windows-networking-apps-from-linux-host-ip"></a>Zugreifen auf Windows-Netzwerk-Apps aus Linux (Host-IP)
 
 Wenn Sie von Ihrer Linux-Verteilung (d. h. Ubuntu) aus, auf eine Netzwerk-App zugreifen möchten, die unter Windows ausgeführt wird (z. B. eine App, die auf einer NodeJS- oder SQL Server-Instanz ausgeführt wird), müssen Sie die IP-Adresse des Hostcomputers verwenden. Obwohl dies kein gängiges Szenario ist, können Sie die folgenden Schritte ausführen, damit es funktioniert.
-    - Rufen Sie die IP-Adresse Ihres Hostcomputers ab, indem Sie den folgenden Befehl aus Ihrer Linux-Verteilung heraus ausführen: `cat /etc/resolv.conf`
-    - Kopieren Sie die IP-Adresse nach dem Begriff: `nameserver`.
-    - Stellen Sie mithilfe der kopierten IP-Adresse eine Verbindung zu jedem beliebigen Windows-Server her.
+
+1. Rufen Sie die IP-Adresse Ihres Hostcomputers ab, indem Sie den folgenden Befehl aus Ihrer Linux-Verteilung heraus ausführen: `cat /etc/resolv.conf`
+2. Kopieren Sie die IP-Adresse nach dem Begriff: `nameserver`.
+3. Stellen Sie mithilfe der kopierten IP-Adresse eine Verbindung zu jedem beliebigen Windows-Server her.
 
 Die Abbildung zeigt ein Beispiel dafür – hier wird über curl eine Verbindung mit einem Node.js-Server hergestellt, der unter Windows ausgeführt wird.
 
@@ -191,13 +192,13 @@ So erweitern Sie die maximale VHD-Größe auf über 256 GB:
       DISKPART> detail vdisk
       ```
 
-   - Prüfen Sie die Ausgabe des Befehls **detail** .  Die Ausgabe enthält einen Wert für **Virtuelle Größe** .  Dies ist der aktuelle Höchstwert.  Konvertieren Sie diesen Wert in Megabytes.  Der neue Wert muss nach dem Ändern der Größe größer als dieser Wert sein.  Wenn die Ausgabe von **detail** beispielsweise **Virtuelle Größe: 256 GB** anzeigt, müssen Sie einen Wert angeben, der größer als **256000** ist.  Sobald Sie die neue Größe in Megabyte festgelegt haben, geben Sie den folgenden Befehl in **diskpart** ein:
+   - Prüfen Sie die Ausgabe des Befehls **detail**.  Die Ausgabe enthält einen Wert für **Virtuelle Größe**.  Dies ist der aktuelle Höchstwert.  Konvertieren Sie diesen Wert in Megabytes.  Der neue Wert muss nach dem Ändern der Größe größer als dieser Wert sein.  Wenn die Ausgabe von **detail** beispielsweise **Virtuelle Größe: 256 GB** anzeigt, müssen Sie einen Wert angeben, der größer als **256000** ist.  Sobald Sie die neue Größe in Megabyte festgelegt haben, geben Sie den folgenden Befehl in **diskpart** ein:
 
       ```powershell
       DISKPART> expand vdisk maximum=<sizeInMegaBytes>
       ```
 
-   - Beenden Sie **diskpart** .
+   - Beenden Sie **diskpart**.
 
       ```powershell
       DISKPART> exit
@@ -208,7 +209,7 @@ So erweitern Sie die maximale VHD-Größe auf über 256 GB:
 6. Machen Sie WSL darauf aufmerksam, dass die Größe des Dateisystems durch Ausführen dieser Befehle über die Befehlszeile der Linux-Verteilung erweitert werden kann.
 
    > [!NOTE]
-   > Möglicherweise sehen Sie diese Meldung als Antwort auf den ersten **mount** -Befehl: **/dev: none already mounted on /dev** .  Diese Meldung kann ignoriert werden.
+   > Möglicherweise sehen Sie diese Meldung als Antwort auf den ersten **mount** -Befehl: **/dev: none already mounted on /dev**.  Diese Meldung kann ignoriert werden.
 
    ```powershell
       sudo mount -t devtmpfs none /dev
