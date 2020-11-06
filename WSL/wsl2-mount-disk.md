@@ -2,15 +2,15 @@
 title: Einstieg in die Einbindung eines Linux-Datenträgers in WSL 2 (Vorschau)
 description: Erfahren Sie, wie Sie eine Datenträger Bereitlegung in WSL 2 einrichten und wie Sie darauf zugreifen können.
 keywords: WSL, Windows, windowssubsystem, GNU, Linux, bash, Disk, ext4, File System, Mount
-ms.date: 06/08/2020
+ms.date: 11/04/2020
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 5d996586baf5e22cc557c27c6f54b2cb1a91dc4b
-ms.sourcegitcommit: cc81ebc749cf84dd58e9f57ee4cc72b5c72be1fd
+ms.openlocfilehash: 828f796839ff272261e98e88ca54a1af76471958
+ms.sourcegitcommit: 70ce8f7472167b6d8d760d0c54dbaab67904f2a4
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/04/2020
-ms.locfileid: "93352653"
+ms.lasthandoff: 11/06/2020
+ms.locfileid: "93413685"
 ---
 # <a name="get-started-mounting-a-linux-disk-in-wsl-2-preview"></a>Einstieg in die Einbindung eines Linux-Datenträgers in WSL 2 (Vorschau)
 
@@ -103,7 +103,7 @@ wsl --unmount <DiskPath>
 
 ## <a name="command-line-reference"></a>Befehlszeilenreferenz
 
-### <a name="mouting-a-specific-filesystem"></a>Mouting eines bestimmten Dateisystems
+### <a name="mounting-a-specific-filesystem"></a>Einbinden eines bestimmten Dateisystems
 
 Standardmäßig wird von WSL 2 versucht, das Gerät als ext4 zu einbinden. Führen Sie zum Angeben eines anderen Dateisystems Folgendes aus:
 
@@ -120,7 +120,7 @@ wsl --mount <Diskpath> -t vfat
 > [!NOTE]
 > Führen Sie Folgendes aus, um die verfügbaren Dateisysteme in WSL2 aufzulisten: `cat /proc/filesystems`
 
-### <a name="mouting-a-specific-partition"></a>Mouting für eine bestimmte Partition
+### <a name="mounting-a-specific-partition"></a>Einbinden einer bestimmten Partition
 
 Standardmäßig versucht WSL 2, den gesamten Datenträger einbinden. Führen Sie zum Einbinden einer bestimmten Partition Folgendes aus:
 
