@@ -5,12 +5,12 @@ keywords: WSL, Windows, windowssubsystem, GNU, Linux, bash, Disk, ext4, File Sys
 ms.date: 11/04/2020
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: eed435c70cc429f7b787af187da9181b6f03eb8b
-ms.sourcegitcommit: 05e20f93e07518a9fbc8a66bad9b566618637cac
+ms.openlocfilehash: 165ae828b7fe83cae70a477d6143999da4265e3f
+ms.sourcegitcommit: 8b22f057a2f39c86bbede43fd65e8001c99548da
 ms.translationtype: MT
 ms.contentlocale: de-DE
 ms.lasthandoff: 11/18/2020
-ms.locfileid: "94846248"
+ms.locfileid: "94870541"
 ---
 # <a name="get-started-mounting-a-linux-disk-in-wsl-2-preview"></a>Einstieg in die Einbindung eines Linux-Datenträgers in WSL 2 (Vorschau)
 
@@ -89,7 +89,7 @@ wsl --mount <DiskPath> --partition <PartitionNumber> --type <Filesystem>
 
 ## <a name="access-the-disk-content"></a>Zugreifen auf den Datenträger Inhalt
 
-Nach der Bereitstellung kann auf den Datenträger unter dem Pfad zugegriffen werden, auf den durch den Konfigurations Wert verwiesen wird: `automount.root` . Der Standardwert ist `/mnt/wsl`.
+Nach der Bereitstellung kann auf den Datenträger unter dem Pfad zugegriffen werden, auf den durch den Konfigurations Wert verwiesen wird: `automount.root` . Standardwert: `/mnt/wsl`.
 
 Aus Windows kann auf den Datenträger über den Datei-Explorer zugegriffen werden, indem Sie zu navigieren: `\\wsl$\\<Distro>\\<Mountpoint>` (beliebige Linux-Distribution auswählen).
 
@@ -172,10 +172,10 @@ Wenn `Diskpath` weggelassen wird, werden alle angefügten Datenträger nicht ber
 
 ## <a name="mount-a-vhd-in-wsl"></a>Einbinden einer VHD in WSL
 
-Mithilfe von können Sie auch virtuelle Festplatten Dateien (VHD) in WSL einbinden `wsl --mount` . Zu diesem Zweck müssen Sie die VHD zuerst mit dem [`Mount-VHD`](https://docs.microsoft.com/powershell/module/hyper-v/mount-vhd) Befehl in Windows in Windows einbinden. Stellen Sie sicher, dass Sie diesen Befehl in einem Fenster mit Administratorrechten ausführen. Im folgenden finden Sie ein Beispiel, in dem dieser Befehl verwendet und der Datenträger Pfad ausgegeben wird. 
+Mithilfe von können Sie auch virtuelle Festplatten Dateien (VHD) in WSL einbinden `wsl --mount` . Zu diesem Zweck müssen Sie die VHD zuerst mit dem [`Mount-VHD`](https://docs.microsoft.com/powershell/module/hyper-v/mount-vhd) Befehl in Windows in Windows einbinden. Stellen Sie sicher, dass Sie diesen Befehl in einem Fenster mit Administratorrechten ausführen. Im folgenden finden Sie ein Beispiel, in dem dieser Befehl verwendet und der Datenträger Pfad ausgegeben wird. Stellen Sie sicher, dass Sie `<pathToVHD>` durch den tatsächlichen VHD-Pfad ersetzen. 
 
 ```powershell
-Write-Output "\\.\PhysicalDrive$((Mount-VHD -Path .\ext4.vhdx -PassThru | Get-Disk).Number)"
+Write-Output "\\.\PhysicalDrive$((Mount-VHD -Path <pathToVHD> -PassThru | Get-Disk).Number)"
 ```
 
 Mit der obigen Ausgabe können Sie den Datenträger Pfad für diese VHD abrufen und in WSL einbinden, indem Sie die Anweisungen im vorherigen Abschnitt befolgen.
