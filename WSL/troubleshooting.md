@@ -5,12 +5,12 @@ keywords: BashOnWindows, bash, wsl, windows, windowssubsystem, ubuntu
 ms.date: 09/28/2020
 ms.topic: article
 ms.localizationpriority: high
-ms.openlocfilehash: f7fdc6243e6cd5156bfae23fd7a1d61514449cf5
-ms.sourcegitcommit: 609850fadd20687636b8486264e87af47c538111
+ms.openlocfilehash: bb9beb75d09c4ca51ae4764d2e4cc6125a9de923
+ms.sourcegitcommit: 59aff996af4bbac5698573d58bbed6537cfb47ef
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/23/2020
-ms.locfileid: "92444793"
+ms.lasthandoff: 11/19/2020
+ms.locfileid: "94933285"
 ---
 # <a name="troubleshooting-windows-subsystem-for-linux"></a>Problembehandlung des Windows-Subsystems für Linux
 
@@ -270,7 +270,7 @@ So erfassen Sie ein Speicherabbild
 Um die Architektur des PCs und die Windows-Buildnummer zu ermitteln, öffnen Sie  
 **Einstellungen** > **System** > **Info**
 
-Suchen Sie nach den Feldern **Betriebssystembuild** und **Systemtyp** .  
+Suchen Sie nach den Feldern **Betriebssystembuild** und **Systemtyp**.  
     ![Screenshot der Felder „Betriebssystembuild“ und „Systemtyp“](media/system.png)
 
 Führen Sie Folgendes in PowerShell aus, um die Windows Server-Buildnummer zu ermitteln:  
@@ -372,3 +372,7 @@ Einige [im Microsoft Store verfügbare](install-win10.md#step-6---install-your-l
    Ist die Zuweisung der PATH-Variablen enthalten, bearbeiten Sie die Datei, um den PATH-Zuweisungsblock mit einem **#** -Zeichen auszukommentieren.
 3. Prüfen Sie, ob „wsl.conf“ vorhanden ist (`cat /etc/wsl.conf`), und stellen Sie sicher, dass `appendWindowsPath=false` nicht enthalten ist. Andernfalls kommentieren Sie es aus.
 4. Starten Sie die Verteilung neu, indem Sie `wsl -t ` eingeben, gefolgt vom Namen der Verteilung, oder indem Sie `wsl --shutdown` entweder in cmd oder PowerShell ausführen.
+
+### <a name="unable-to-boot-after-installing-wsl-2"></a>Starten nach der Installation von WSL 2 nicht möglich
+
+Es ist ein Problem bekannt, das Benutzer betrifft, wenn Sie nach der Installation von WSL 2 nicht starten können. Während unserer umfassenden Diagnose dieser Probleme haben Benutzer berichtet, dass [das Ändern der Puffergröße](https://github.com/microsoft/WSL/issues/4784#issuecomment-639219363) oder [das Installieren der richtigen Treiber](https://github.com/microsoft/WSL/issues/4784#issuecomment-675702244) helfen kann, dieses Problem zu beheben. Im folgenden [GitHub-Artikel](https://github.com/microsoft/WSL/issues/4784) finden Sie die neuesten Updates zu diesem Problem. 
