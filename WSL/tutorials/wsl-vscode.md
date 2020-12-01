@@ -5,12 +5,12 @@ keywords: WSL, Windows, windowssubsystem, GNU, Linux, bash, vs Code, Remote Exte
 ms.date: 05/28/2020
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: b39b34644040354df44bf62ec7b878e3f5d667e6
-ms.sourcegitcommit: b15b847b87d29a40de4a1517315949bce9c7a3d5
+ms.openlocfilehash: 528c2b040136518f9c7d04d8572cd0f08bb68385
+ms.sourcegitcommit: d5d3dd8b91e93d46653f9512bceafd8b5340255f
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/28/2020
-ms.locfileid: "91413341"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96443758"
 ---
 # <a name="get-started-using-visual-studio-code-with-windows-subsystem-for-linux"></a>Beginnen Sie mit der Verwendung von Visual Studio Code mit dem Windows-Subsystem für Linux
 
@@ -62,7 +62,7 @@ sudo apt-get install wget ca-certificates
 
 ### <a name="from-vs-code"></a>Von vs Code
 
-Sie können auch auf weitere vs Code Remote Optionen zugreifen, indem Sie die Verknüpfung verwenden: `CTRL+SHIFT+P` in vs Code, um die Befehls Palette anzuzeigen. Wenn Sie dann eingeben, `VSCODE-REMOTE` werden alle verfügbaren vs Code Remote Optionen angezeigt. Dadurch können Sie den Ordner in einer Remote Sitzung erneut öffnen, angeben, welche Distribution Sie öffnen möchten, und vieles mehr.
+Sie können auch auf weitere vs Code Remote Optionen zugreifen, indem Sie die Verknüpfung verwenden: `CTRL+SHIFT+P` in vs Code, um die Befehls Palette anzuzeigen. Wenn Sie dann eingeben, `Remote-WSL` wird eine Liste der verfügbaren vs Code Remote Optionen angezeigt, die es Ihnen ermöglicht, den Ordner in einer Remote Sitzung erneut zu öffnen, die Distribution anzugeben, die Sie öffnen möchten, und vieles mehr.
 
 ![Befehls Palette vs Code](../media/vscode-remote-command-palette.png)
 
