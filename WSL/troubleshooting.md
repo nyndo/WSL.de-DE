@@ -5,12 +5,12 @@ keywords: BashOnWindows, bash, wsl, windows, windowssubsystem, ubuntu
 ms.date: 09/28/2020
 ms.topic: article
 ms.localizationpriority: high
-ms.openlocfilehash: bb9beb75d09c4ca51ae4764d2e4cc6125a9de923
-ms.sourcegitcommit: 59aff996af4bbac5698573d58bbed6537cfb47ef
+ms.openlocfilehash: f4040cbe9faf5d55324b56974dd5677052224dd1
+ms.sourcegitcommit: d5d3dd8b91e93d46653f9512bceafd8b5340255f
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/19/2020
-ms.locfileid: "94933285"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96443745"
 ---
 # <a name="troubleshooting-windows-subsystem-for-linux"></a>Problembehandlung des Windows-Subsystems für Linux
 
@@ -297,7 +297,7 @@ Beim Versuch, den SSH-Server zu verbinden, tritt ein Fehler auf: „Connection c
    sudo service ssh status
    ```
 
-   und Sie dieses Tutorial befolgt haben: https://help.ubuntu.com/lts/serverguide/openssh-server.html.en
+   und Sie dieses Tutorial befolgt haben: https://ubuntu.com/server/docs/service-openssh
 
 2. Beenden Sie den sshd-Dienst, und starten Sie sshd im Debugmodus:
 

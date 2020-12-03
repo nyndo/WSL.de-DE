@@ -5,12 +5,12 @@ keywords: BashOnWindows, Bash, WSL, Windows, Windows-Subsystem für Linux, Windo
 ms.date: 09/15/2020
 ms.topic: article
 ms.localizationpriority: high
-ms.openlocfilehash: 4e2ec7fdac4f4a0c9106edeedbaea80e4dc09165
-ms.sourcegitcommit: fef5def707ccec57d6f0c5e9c89680754ea06411
+ms.openlocfilehash: 248afa4695cdfdf34dd44dd0692d2cba42c32a0b
+ms.sourcegitcommit: 291c6767954e3d5034ea0099e5c1e1f1ea5b577d
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/23/2020
-ms.locfileid: "95416657"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96470492"
 ---
 # <a name="windows-subsystem-for-linux-installation-guide-for-windows-10"></a>Windows-Subsystem für Linux: Installationsleitfaden für Windows 10
 
@@ -74,10 +74,10 @@ dism.exe /online /enable-feature /featurename:VirtualMachinePlatform /all /nores
 ## <a name="step-4---download-the-linux-kernel-update-package"></a>Schritt 4: Herunterladen des Updatepakets für den Linux-Kernel
 
 1. Laden Sie das aktuelle Paket herunter:
-    - [Updatepaket für den WSL2-Linux-Kernel für x64-Computer](https://wslstorestorage.blob.core.windows.net/wslblob/wsl_update_x64.msi)
+    - [Updatepaket für den WSL2-Linux-Kernel für x64-Computer](http://aka.ms/wsl2kernelmsix64)
 
     > [!NOTE]
-    > Wenn Sie einen ARM64-Computer verwenden, laden Sie stattdessen [das ARM64-Paket](https://wslstorestorage.blob.core.windows.net/wslblob/wsl_update_arm64.msi) herunter. Wenn Sie sich nicht sicher sind, welchen Computertyp Sie verwenden, öffnen Sie die Eingabeaufforderung oder PowerShell, und geben Sie Folgendes ein: `systeminfo | find "System Type"`.
+    > Wenn Sie einen ARM64-Computer verwenden, laden Sie stattdessen [das ARM64-Paket](http://aka.ms/wsl2kernelmsiarm64) herunter. Wenn Sie sich nicht sicher sind, welchen Computertyp Sie verwenden, öffnen Sie die Eingabeaufforderung oder PowerShell, und geben Sie Folgendes ein: `systeminfo | find "System Type"`.
 
 2. Führen Sie das im vorherigen Schritt heruntergeladene Updatepaket aus. (Doppelklicken Sie zum Ausführen – Sie werden zur Eingabe erhöhter Berechtigungen aufgefordert. Wählen Sie „Ja“, um diese Installation zu genehmigen.)
 
