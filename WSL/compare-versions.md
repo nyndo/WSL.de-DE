@@ -5,19 +5,19 @@ keywords: BashOnWindows, Bash, WSL, Windows, Windows-Subsystem, GNU, Linux, Ubun
 ms.date: 09/28/2020
 ms.topic: conceptual
 ms.localizationpriority: high
-ms.custom: contperfq1
-ms.openlocfilehash: be0cd21b65705e455f29bfd1666ce74078a21baa
-ms.sourcegitcommit: cfb6c254322b8eb9c2c26e19ce970d4c046bc352
+ms.custom: contperf-fy21q1
+ms.openlocfilehash: ff2c9bc08b4fdfe8862f7d65fc5861fa242efef7
+ms.sourcegitcommit: c92245ab2b763d6a357210a9b4470a0cafd786a6
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93035736"
+ms.lasthandoff: 12/08/2020
+ms.locfileid: "96857597"
 ---
 # <a name="comparing-wsl-1-and-wsl-2"></a>Vergleich zwischen WSL 1 und WSL 2
 
 Der Hauptunterschied und die Gründe für die Aktualisierung des Windows-Subsystems für Linux von WSL 1 auf WSL 2 sind:
 
-- **Steigern der Leistung des Dateisystems** ,
+- **Steigern der Leistung des Dateisystems**,
 - **Unterstützen der vollständigen Kompatibilität von Systemaufrufen**.
 
 WSL 2 verwendet das Neueste und Beste an Virtualisierungstechnologie, um einen Linux-Kernel innerhalb einer schlanken Hilfsprogramms-VM auszuführen. WSL 2 ist jedoch keine herkömmliche VM-Benutzererfahrung.
@@ -168,7 +168,7 @@ WSL 2-Verteilungen können aktuell keine reinen IPv6-Adressen erreichen. Wir ar
 
 ## <a name="expanding-the-size-of-your-wsl-2-virtual-hard-disk"></a>Erweitern der Größe Ihrer virtuellen WSL 2-Festplatte (VHD)
 
-WSL 2 verwendet eine virtuelle Festplatte (VHD) zum Speichern Ihrer Linux-Dateien. In WSL 2 wird eine VHD auf Ihrer Windows-Festplatte als *.vhdx* -Datei dargestellt.
+WSL 2 verwendet eine virtuelle Festplatte (VHD) zum Speichern Ihrer Linux-Dateien. In WSL 2 wird eine VHD auf Ihrer Windows-Festplatte als *.vhdx*-Datei dargestellt.
 
 Die WSL 2-VHD verwendet das Ext4-Dateisystem. Diese VHD wird automatisch an Ihre Speicheranforderungen angepasst, und verfügt über eine anfängliche maximale Größe von 256 GB. Wenn der von Ihren Linux-Dateien benötigte Speicherplatz diese Größe überschreitet, müssen Sie ihn eventuell erweitern. Wenn Ihre Verteilung über die Größe von 256 GB anwächst, werden Ihnen Fehler angezeigt, die besagen, dass kein Speicherplatz mehr zur Verfügung steht. Sie können diesen Fehler beheben, indem Sie die Größe der VHD heraufsetzen.
 
@@ -209,14 +209,14 @@ So erweitern Sie die maximale VHD-Größe auf über 256 GB:
 6. Machen Sie WSL darauf aufmerksam, dass die Größe des Dateisystems durch Ausführen dieser Befehle über die Befehlszeile der Linux-Verteilung erweitert werden kann.
 
    > [!NOTE]
-   > Möglicherweise sehen Sie diese Meldung als Antwort auf den ersten **mount** -Befehl: **/dev: none already mounted on /dev**.  Diese Meldung kann ignoriert werden.
+   > Möglicherweise sehen Sie diese Meldung als Antwort auf den ersten **mount**-Befehl: **/dev: none already mounted on /dev**.  Diese Meldung kann ignoriert werden.
 
    ```powershell
       sudo mount -t devtmpfs none /dev
       mount | grep ext4
    ```
 
-   Kopieren Sie den Namen dieses Eintrags, der diese Form hat: `/dev/sdX` (wobei X für ein beliebiges anderes Zeichen steht).  Im folgenden Beispiel ist der Wert von **X** **b** :
+   Kopieren Sie den Namen dieses Eintrags, der diese Form hat: `/dev/sdX` (wobei X für ein beliebiges anderes Zeichen steht).  Im folgenden Beispiel ist der Wert von **X** **b**:
 
    ```powershell
       sudo resize2fs /dev/sdb <sizeInMegabytes>M
