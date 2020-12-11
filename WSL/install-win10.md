@@ -5,32 +5,60 @@ keywords: BashOnWindows, Bash, WSL, Windows, Windows-Subsystem für Linux, Windo
 ms.date: 09/15/2020
 ms.topic: article
 ms.localizationpriority: high
-ms.openlocfilehash: 248afa4695cdfdf34dd44dd0692d2cba42c32a0b
-ms.sourcegitcommit: 291c6767954e3d5034ea0099e5c1e1f1ea5b577d
+ms.openlocfilehash: f5cf426ee50bde3c21929add0682e17b707288f9
+ms.sourcegitcommit: 52eb0d4f669954a61e199f9222062d2a519378f5
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/01/2020
-ms.locfileid: "96470492"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96760868"
 ---
 # <a name="windows-subsystem-for-linux-installation-guide-for-windows-10"></a>Windows-Subsystem für Linux: Installationsleitfaden für Windows 10
 
-## <a name="install-windows-subsystem-for-linux"></a>Installieren des Windows-Subsystems für Linux
+Zum Installieren von Windows-Subsystem für Linux (WSL) gibt es zwei Optionen:
 
-Das Windows-Subsystem für Linux verfügt über zwei verschiedene Versionen, zwischen denen Sie während des Installationsprozesses auswählen können. WSL 2 bietet eine bessere Gesamtleistung, und wir empfehlen seine Verwendung. Wenn Ihr System WSL 2 nicht unterstützt, oder wenn in einer bestimmten Situation die systemübergreifende Dateispeicherung erforderlich ist, sollten Sie bei WSL 1 bleiben. Erfahren Sie mehr über den [Vergleich zwischen WSL 2 und WSL 1](./compare-versions.md).
+- **[Vereinfachte Installation](#simplified-installation-for-windows-insiders)** *(Vorabversion)* : `wsl --install`
 
-> [!NOTE]
-> Um den neuen Befehl `wsl --install` zu verwenden und die Schritte 1-–6 unten zu überspringen, müssen Sie dem [Windows Insiders-Programm](https://insider.windows.com/getting-started) beitreten und einen Vorschaubuild von Windows 10 (Betriebssystembuild 20262 oder höher) installieren. 
->
-> Sobald der Vorschaubuild installiert ist, können Sie ein Eingabeaufforderungsfenster mit Administratorrechten öffnen und `wsl --install` ausführen. Dadurch werden automatisch die optionalen WSL- und Virtual Machine Platform-Komponenten aktiviert, der neueste Linux-Kernel wird heruntergeladen und installiert, WSL 2 wird als Standard festgelegt und Ubuntu wird heruntergeladen (dies kann am Beispiel von `wsl --install -d Debian` geändert werden; um eine Liste der verfügbaren Linux-Verteilungen anzuzeigen, geben Sie `wsl --list --online` ein). Sobald der Befehl abgeschlossen ist, werden Sie zum Neustarten aufgefordert. Nach dem Neustart schließt die Linux-Verteilung (standardmäßig Ubuntu) die Installation ab und öffnet eine Linux-Befehlszeile, die Sie nun verwenden können. Sie könnten dann mit [Schritt 7: Einrichten einer neuen Verteilung](./install-win10.md#step-7---set-up-a-new-distribution) fortfahren.
+    Der Befehl `wsl --install` für die vereinfachte Installation setzt voraus, dass Sie dem [Windows-Insider-Programm](https://insider.windows.com/getting-started) beitreten und einen Vorschaubild von Windows 10 (Betriebssystembuild 20262 oder höher) installieren, macht aber die manuellen Installationsschritte überflüssig. Sie müssen nur ein Befehlsfenster mit Administratorrechten öffnen und `wsl --install` ausführen. Nach einem Neustart können Sie WSL dann verwenden.
 
-### <a name="install-steps"></a>Installationsschritte
+- **[Manuelle Installation](#manual-installation-steps)** : Führen Sie die nachfolgenden sechs Schritte aus:
 
-- Öffnen Sie ein Befehlsfenster mit Administratorrechten.
-- Ausführen von `wsl.exe --install`
-- Starten Sie Ihren Computer bei Bedarf neu, und folgen Sie der Befehlsausführung.
-- Nach dem Neustart wird die Installation abgeschlossen, und Sie können mit der Verwendung von WSL beginnen.
+    Die manuellen Installationsschritte für WSL sind unten aufgeführt und können zur Installation von Linux unter jeder Version von Windows 10 verwendet werden.
 
-Dadurch wird die Ubuntu-Verteilung installiert. Sie können auch andere Verteilungen installieren, indem Sie Argumente, mit `wsl --install -d Debian` wird beispielsweise Debian installiert. Wenn Sie `wsl --list --online` ausführen, wird eine Liste der verfügbaren Verteilungen angezeigt. 
+## <a name="simplified-installation-for-windows-insiders"></a>Vereinfachte Installation für Windows-Insider
+
+Der Installationsprozess für das Windows-Subsystem für Linux wurde in den neuesten Windows-Insider-Vorabversionen von Windows 10 erheblich verbessert, indem die manuellen Schritte durch einen einzigen Befehl ersetzt wurden.
+
+Um den Befehl `wsl --install` zur vereinfachten Installation verwenden zu können, müssen Sie folgende Schritte ausführen:
+
+- Treten Sie dem [Windows-Insider-Programm](https://insider.windows.com/getting-started) bei.
+- Installieren Sie einen Vorabversion von Windows 10 (Betriebssystembuild 20262 oder höher).
+- Öffnen Sie ein Befehlszeilenfenster mit Administratorrechten.
+
+Wenn diese Anforderungen erfüllt sind, führen Sie folgende Schritte aus, um WSL zu installieren:
+
+- Geben Sie den folgenden Befehl in der Befehlszeile ein, die Sie im Administratormodus geöffnet haben: `wsl.exe --install`
+- Starten Sie Ihren Computer neu
+
+Wenn Sie eine neu installierte Linux-Verteilung zum ersten Mal starten, wird ein Konsolenfenster geöffnet, und Sie werden aufgefordert, zu warten, bis die Dateien dekomprimiert und auf dem PC gespeichert wurden. Alle zukünftigen Starts sollten weniger als eine Sekunde in Anspruch nehmen.
+
+Anschließend müssen Sie [ein Benutzerkonto und Kennwort für Ihre neue Linux-Verteilung erstellen](./user-support.md).
+
+**Herzlichen Glückwunsch! Sie haben erfolgreich eine Linux-Verteilung installiert und eingerichtet, die vollständig in Ihr Windows-Betriebssystem integriert ist.**
+
+Mit dem Befehl „--install“ werden die folgenden Aktionen ausgeführt:
+
+- Die optionalen Komponenten von WSL und Plattform für virtuelle Computer werden aktiviert.
+- Der aktuelle Linux-Kernel wird heruntergeladen und installiert.
+- WSL 2 wird als Standard festgelegt.
+- Eine Linux-Verteilung wird heruntergeladen und installiert *(möglicherweise ist ein Neustart erforderlich)* .
+
+Standardmäßig ist die installierte Linux-Verteilung Ubuntu. Dies kann mit `wsl --install -d <Distribution Name>` geändert werden. *(Ersetzen Sie dazu `<Distribution Name>` durch den Namen der gewünschten Verteilung.)* Dem Computer können nach der Erstinstallation weitere Linux-Verteilungen mit dem Befehl `wsl --install -d <Distribution Name>` hinzugefügt werden.
+
+Geben Sie `wsl --list --online` ein, um eine Liste der verfügbaren Linux-Verteilungen anzuzeigen.
+
+## <a name="manual-installation-steps"></a>Manuelle Installationsschritte
+
+Wenn Sie kein Windows-Insider-Build verwenden, müssen die für WSL erforderlichen Features manuell aktiviert werden, indem Sie die folgenden Schritte ausführen.
 
 ## <a name="step-1---enable-the-windows-subsystem-for-linux"></a>Schritt 1: Aktivieren des Windows-Subsystems für Linux
 
@@ -74,10 +102,10 @@ dism.exe /online /enable-feature /featurename:VirtualMachinePlatform /all /nores
 ## <a name="step-4---download-the-linux-kernel-update-package"></a>Schritt 4: Herunterladen des Updatepakets für den Linux-Kernel
 
 1. Laden Sie das aktuelle Paket herunter:
-    - [Updatepaket für den WSL2-Linux-Kernel für x64-Computer](http://aka.ms/wsl2kernelmsix64)
+    - [Updatepaket für den WSL2-Linux-Kernel für x64-Computer](https://wslstorestorage.blob.core.windows.net/wslblob/wsl_update_x64.msi)
 
     > [!NOTE]
-    > Wenn Sie einen ARM64-Computer verwenden, laden Sie stattdessen [das ARM64-Paket](http://aka.ms/wsl2kernelmsiarm64) herunter. Wenn Sie sich nicht sicher sind, welchen Computertyp Sie verwenden, öffnen Sie die Eingabeaufforderung oder PowerShell, und geben Sie Folgendes ein: `systeminfo | find "System Type"`.
+    > Wenn Sie einen ARM64-Computer verwenden, laden Sie stattdessen [das ARM64-Paket](https://wslstorestorage.blob.core.windows.net/wslblob/wsl_update_arm64.msi) herunter. Wenn Sie sich nicht sicher sind, welchen Computertyp Sie verwenden, öffnen Sie die Eingabeaufforderung oder PowerShell, und geben Sie Folgendes ein: `systeminfo | find "System Type"`.
 
 2. Führen Sie das im vorherigen Schritt heruntergeladene Updatepaket aus. (Doppelklicken Sie zum Ausführen – Sie werden zur Eingabe erhöhter Berechtigungen aufgefordert. Wählen Sie „Ja“, um diese Installation zu genehmigen.)
 
@@ -125,8 +153,6 @@ wsl --set-default-version 2
 2. Wählen Sie auf der Seite der Verteilung die Option „Get“ (Abrufen) aus.
 
     ![Linux-Verteilungen im Microsoft Store](media/UbuntuStore.png)
-
-## <a name="step-7---set-up-a-new-distribution"></a>Schritt 7: Einrichten einer neuen Verteilung
 
 Wenn Sie eine neu installierte Linux-Verteilung zum ersten Mal starten, wird ein Konsolenfenster geöffnet, und Sie werden aufgefordert, ein oder zwei Minuten zu warten, bis die Dateien dekomprimiert und auf dem PC gespeichert wurden. Alle zukünftigen Starts sollten weniger als eine Sekunde in Anspruch nehmen.
 
