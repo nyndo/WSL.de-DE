@@ -5,12 +5,12 @@ keywords: BashOnWindows, Bash, WSL, Windows, Windows-Subsystem für Linux, Windo
 ms.date: 09/15/2020
 ms.topic: article
 ms.localizationpriority: high
-ms.openlocfilehash: f5cf426ee50bde3c21929add0682e17b707288f9
-ms.sourcegitcommit: 52eb0d4f669954a61e199f9222062d2a519378f5
+ms.openlocfilehash: cbfd1f1aab99bc1965e569c4e818bd1663aa2878
+ms.sourcegitcommit: f5b14630947ee9cf3438e9ba502bfbe85ed72cd1
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/07/2020
-ms.locfileid: "96760868"
+ms.lasthandoff: 01/07/2021
+ms.locfileid: "97957691"
 ---
 # <a name="windows-subsystem-for-linux-installation-guide-for-windows-10"></a>Windows-Subsystem für Linux: Installationsleitfaden für Windows 10
 
@@ -72,11 +72,9 @@ dism.exe /online /enable-feature /featurename:Microsoft-Windows-Subsystem-Linux 
 
 Es wird empfohlen, nun mit Schritt 2 fortzufahren und auf WSL 2 zu aktualisieren, aber wenn Sie nur WSL 1 installieren möchten, können Sie Ihren Computer jetzt **neu starten** und mit [Schritt 6: Installieren der Linux-Verteilung Ihrer Wahl](./install-win10.md#step-6---install-your-linux-distribution-of-choice) fortfahren. Um auf WSL 2 zu aktualisieren, **warten Sie mit dem Neustart** Ihres Computers, und fahren Sie mit dem nächsten Schritt fort.
 
-## <a name="step-2---update-to-wsl-2"></a>Schritt 2: Aktualisieren auf WSL 2
+## <a name="step-2---check-requirements-for-running-wsl-2"></a>Schritt 2: Überprüfen der Anforderungen für die Ausführung von WSL 2
 
 Zum Aktualisieren auf WSL 2 müssen Sie Windows 10 ausführen.
-
-### <a name="requirements"></a>Anforderungen
 
 - Für x64-Systeme: **Version 1903** oder höher mit **Build 18362** oder höher.
 - Für ARM64-Systeme: **Version 2004** oder höher mit **Build 19041** oder höher.
@@ -121,13 +119,6 @@ Sobald die Installation abgeschlossen ist, wechseln Sie zum nächsten Schritt �
 ```powershell
 wsl --set-default-version 2
 ```
-
-> [!NOTE]
-> Die Aktualisierung von WSL 1 auf WSL 2 kann je nach Umfang Ihrer Zielverteilung mehrere Minuten dauern. Wenn Sie eine ältere (Legacy) Installation der WSL 1 von Windows 10 Anniversary Update oder Creators Update aus ausführen, kann ein Updatefehler auftreten. Befolgen Sie diese Anweisungen, um [alle Legacyverteilungen zu deinstallieren und zu entfernen](./install-legacy.md#uninstallingremoving-the-legacy-distro).
->
-> Wenn `wsl --set-default-version` als ungültiger Befehl angezeigt wird, geben Sie `wsl --help` ein. Wenn die `--set-default-version` nicht aufgeführt ist, bedeutet dies, dass Ihr Betriebssystem sie nicht unterstützt und Sie auf Version 1903, Build 18362 oder höher, aktualisieren müssen.
->
-> Wenn diese Meldung nach dem Ausführen des Befehls angezeigt wird: `WSL 2 requires an update to its kernel component. For information please visit https://aka.ms/wsl2kernel`. So müssen das MSI-Updatepaket für den Linux-Kernel trotzdem installieren.
 
 ## <a name="step-6---install-your-linux-distribution-of-choice"></a>Schritt 6: Installieren der Linux-Verteilung Ihrer Wahl
 
@@ -185,6 +176,13 @@ wsl --set-version <distribution name> <versionNumber>
 ```
 
 Ersetzen Sie hierbei `<distribution name>` durch den tatsächlichen Namen Ihrer Verteilung und `<versionNumber>` durch die Ziffer „1“ oder „2“. Sie können jederzeit zu WSL 1 zurückwechseln, indem sie denselben Befehl wie oben ausführen, aber die 2 durch eine 1 ersetzen.
+
+> [!NOTE]
+> Die Aktualisierung von WSL 1 auf WSL 2 kann je nach Umfang Ihrer Zielverteilung mehrere Minuten dauern. Wenn Sie eine ältere (Legacy) Installation der WSL 1 von Windows 10 Anniversary Update oder Creators Update aus ausführen, kann ein Updatefehler auftreten. Befolgen Sie diese Anweisungen, um [alle Legacyverteilungen zu deinstallieren und zu entfernen](./install-legacy.md#uninstallingremoving-the-legacy-distro).
+>
+> Wenn `wsl --set-default-version` als ungültiger Befehl angezeigt wird, geben Sie `wsl --help` ein. Wenn die `--set-default-version` nicht aufgeführt ist, bedeutet dies, dass Ihr Betriebssystem sie nicht unterstützt und Sie auf Version 1903, Build 18362 oder höher, aktualisieren müssen.
+>
+> Wenn diese Meldung nach dem Ausführen des Befehls angezeigt wird: `WSL 2 requires an update to its kernel component. For information please visit https://aka.ms/wsl2kernel`. So müssen das MSI-Updatepaket für den Linux-Kernel trotzdem installieren.
 
 Wenn Sie WSL 2 als Ihre Standardarchitektur festlegen möchten, ist dies über diesen Befehl möglich:
 

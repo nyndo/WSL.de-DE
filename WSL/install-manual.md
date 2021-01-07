@@ -5,12 +5,12 @@ keywords: WSL, Windows-Subsystem für Linux, manuelle Installation, manuell inst
 ms.date: 09/15/2020
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 1894f0bfcb9ede7b05870c99912f30f6d0b7286e
-ms.sourcegitcommit: b15b847b87d29a40de4a1517315949bce9c7a3d5
+ms.openlocfilehash: b94c7eb2f9e70a79f47853dac44badde58667315
+ms.sourcegitcommit: f5b14630947ee9cf3438e9ba502bfbe85ed72cd1
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/28/2020
-ms.locfileid: "91413250"
+ms.lasthandoff: 01/07/2021
+ms.locfileid: "97957661"
 ---
 # <a name="manually-download-windows-subsystem-for-linux-distro-packages"></a>Manuelles Herunterladen von Distributionspaketen des Windows-Subsystems für Linux
 
@@ -20,7 +20,7 @@ Wie können Sie in diesen Fällen, wenn das eigentliche WSL verfügbar ist, Linu
 
 > Hinweis: **Befehlszeilenshellumgebungen, einschließlich Cmd, PowerShell und Linux/WSL-Distributionen, dürfen im Windows 10 S-Modus nicht ausgeführt werden**. Diese Einschränkung wurde implementiert, um die Integritäts- und Sicherheitsziele des S-Modus sicherzustellen: Weitere Informationen finden Sie in [diesem Beitrag](https://blogs.msdn.microsoft.com/commandline/2017/05/18/will-linux-distros-run-on-windows-10-s/).
 
-## <a name="downloading-distros"></a>Herunterladen von Distributionen
+## <a name="downloading-distributions"></a>Herunterladen von Verteilungen
 
 Wenn die Microsoft Store-App nicht verfügbar ist, können Sie Linux-Distributionen manuell herunterladen und installieren, indem Sie auf die folgenden Links klicken:
 * [Ubuntu 20.04](https://aka.ms/wslubuntu2004)
@@ -37,9 +37,11 @@ Wenn die Microsoft Store-App nicht verfügbar ist, können Sie Linux-Distributio
 Dies bewirkt den Download der `<distro>.appx`-Pakete in einen Ordner Ihrer Wahl. Befolgen Sie die [Installationsanweisungen](#installing-your-distro), um die heruntergeladenen Distributionen zu installieren.
 
 ## <a name="downloading-distros-via-the-command-line"></a>Herunterladen von Distributionen über die Befehlszeile
+
 Wenn Sie möchten, können Sie Ihre bevorzugten Distributionen auch über die Befehlszeile herunterladen:
 
  ### <a name="download-using-powershell"></a>Herunterladen mithilfe von PowerShell
+
  Zum Herunterladen von Distributionen mithilfe von PowerShell verwenden Sie das [Invoke-WebRequest](/powershell/module/microsoft.powershell.utility/invoke-webrequest)-Cmdlet. Hier sehen Sie eine Beispielanweisung zum Herunterladen von Ubuntu 16.04.
 
 ```powershell
@@ -61,6 +63,7 @@ Im Beispiel oben wird `curl.exe` ausgeführt (nicht einfach `curl`), um sicherzu
 > Hinweis: Die Verwendung von `curl` kann Vorteile bieten, wenn Sie mithilfe der Cmd-Shell und/oder `.bat` / `.cmd` Schritte zum Herunterladen aufrufen/skripten müssen.
 
 ## <a name="installing-your-distro"></a>Installieren der Distribution
+
 Wenn Sie Windows 10 verwenden, können Sie Ihre Distribution mit PowerShell installieren. Navigieren Sie einfach zu dem Ordner, der die oben heruntergeladene Distribution enthält, und führen Sie in diesem Verzeichnis den folgenden Befehl aus, wobei `app_name` für den Namen der APPX-Datei Ihrer Distribution steht.  
 ```Powershell
 Add-AppxPackage .\app_name.appx
@@ -68,4 +71,4 @@ Add-AppxPackage .\app_name.appx
 
 Wenn Sie Windows Server verwenden, finden Sie die Installationsanweisungen auf der [Windows Server](install-on-server.md)-Dokumentationsseite.
 
-Sobald Ihre Verteilung installiert wurde, folgen Sie den normalen Anweisungen, um [auf WSL 2 zu aktualisieren](./install-win10.md#step-2---update-to-wsl-2) oder [ein neues Benutzerkonto und Kennwort zu erstellen](./user-support.md).
+Sobald Ihre Verteilung installiert wurde, folgen Sie den normalen Anweisungen, um * [von WSL 1 auf WSL 2 zu aktualisieren](./install-win10.md#set-your-distribution-version-to-wsl-1-or-wsl-2) oder [ein neues Benutzerkonto und Kennwort zu erstellen](./user-support.md).
