@@ -1,66 +1,64 @@
 ---
-title: Windows-Subsystem für Linux für Unternehmen
-description: Ressourcen und Anweisungen zur optimalen Verwendung des Windows-Subsystems für Linux in einer Unternehmensumgebung.
+title: WSL für Unternehmen
+description: Ressourcen und Anweisungen zur optimalen Verwendung des WSL für Linux in einer Unternehmensumgebung.
 keywords: BashOnWindows, Bash, WSL, Windows, Windows-Subsystem für Linux, Windows-Subsystem, Ubuntu, Debian, Suse, Windows 10, Unternehmen, Bereitstellung, offline, Paket, Store, Verteilung, Installation, installieren
-ms.date: 05/15/2020
+ms.date: 12/14/2020
 ms.topic: article
-ms.localizationpriority: high
-ms.openlocfilehash: ac0025257ae70547c5b20d89535510a8b8bb006c
-ms.sourcegitcommit: b15b847b87d29a40de4a1517315949bce9c7a3d5
+ms.assetid: 7afaeacf-435a-4e58-bff0-a9f0d75b8a51
+ms.custom: seodec18
+ms.openlocfilehash: a210268fb460a793fec2047c6d6678f92869ea16
+ms.sourcegitcommit: 0523e6a2ca99f5f3b188d526afed3ce6ad7e3abb
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/28/2020
-ms.locfileid: "91413101"
+ms.lasthandoff: 01/25/2021
+ms.locfileid: "98766856"
 ---
-# <a name="set-up-windows-subsystem-for-linux-for-your-enterprise-company"></a>Einrichten des Windows-Subsystems für Linux für Ihr Unternehmen
+# <a name="windows-subsystem-for-linux-for-enterprise"></a>Windows-Subsystem für Linux für Unternehmen
 
-Der Microsoft Store für Unternehmen bietet verschiedene Unternehmenslösungen, die WSL in Ihrem Unternehmen bereitstellen möchten. Die [Dokumentation im Microsoft Store für Unternehmen und Bildungseinrichtungen](/microsoft-store/) stellt eine gute Ressource für allgemeine Informationen über die Store-Benutzeroberfläche dar.
+Als Administrator oder Manager können Sie verlangen, dass alle Entwickler die gleiche genehmigte Software verwenden. Diese Konsistenz hilft beim Erstellen einer gut definierten Arbeitsumgebung. Das Windows-Subsystem für Linux trägt zu dieser Konsistenz bei, indem es Ihnen ermöglicht, benutzerdefinierte WSL-Images von einem Computer zum nächsten zu importieren und zu exportieren. Lesen Sie den folgenden Leitfaden, um mehr darüber zu erfahren:
 
-Als Unternehmen, das nur sein System für die Bereitstellung von WSL einrichten möchte, führen Sie die folgenden Schritte aus:
+* [Erstellen eines benutzerdefinierten WSL-Images](#creating-a-custom-wsl-image)
+* [Verteilen eines WSL-Images](#distributing-your-wsl-image)
+* [Aktualisieren und Patchen von Linux-Verteilungen und -Paketen](#update-and-patch-linux-distributions-and-packages)
+* [Optionen für Sicherheit und Kontrolle im Unternehmen](#enterprise-security-and-control-options)
 
-* [Registrieren für Microsoft Store für Unternehmen und erste Schritte](/microsoft-store/sign-up-microsoft-store-for-business-overview).
-* [Verwalten Sie Ihre Produkte und Dienste (einschließlich der Benutzer, die auf die Apps in Ihrem privaten Store zugreifen können)](/microsoft-store/manage-apps-microsoft-store-for-business-overview). Hier können Sie Ihrem Store WSL-Verteilungen hinzufügen und steuern, wer diese installieren kann.
-* [Verwenden einer Verteilungsmethode Ihrer Wahl, um die Software in Ihrem Unternehmen bereitzustellen](/microsoft-store/distribute-apps-to-your-employees-microsoft-store-for-business)
-* Informieren Sie die Mitarbeiter Ihres Unternehmens, dass sie diesen Dokumentationslink zum Installieren von WSL verwenden können: [Installieren des Windows-Subsystems für Linux](./install-win10.md)
+## <a name="creating-a-custom-wsl-image"></a>Erstellen eines benutzerdefinierten WSL-Images
 
-## <a name="how-to-distribute-a-linux-distribution-on-windows-offline"></a>Offlineverteilen einer Linux-Verteilung unter Windows
+Was gemeinhin als „Image“ bezeichnet wird, ist einfach eine in einer Datei gespeicherte Momentaufnahme Ihrer Software und deren Komponenten. Im Fall des Windows-Subsystems für Linux würde Ihr Image aus dem Subsystem, seinen Verteilungen sowie der in den Verteilungen installierten Software und den Paketen bestehen.
 
-Wenn die Computer in Ihrem Unternehmen keinen Zugriff auf den Microsoft Store oder den Microsoft Store für Unternehmen haben, können Sie das Installationsprogramm einer Linux-Verteilung mit einer Offline Lizenz herunterladen, indem Sie die folgenden Schritte ausführen.
+Um mit der Erstellung Ihres WSL-Images zu beginnen, müssen Sie zunächst [das Windows-Subsystem für Linux installieren](./install-win10.md).
 
-### <a name="set-up-an-azure-active-directory-account"></a>Einrichten eines Azure Active Directory-Kontos
+Nach der Installation können Sie über den Microsoft Store für Unternehmen die für Sie passende Linux-Verteilung herunterladen und installieren. Erstellen eines Kontos über den [Microsoft Store für Unternehmen](https://docs.microsoft.com/microsoft-store/sign-up-microsoft-store-for-business.)
 
-Sie müssen sich [für ein Azure AD-Konto registrieren](/azure/active-directory/fundamentals/sign-up-organization?WT.mc_id=windows-c9-niner) und der globale Administrator für Ihre Organisation sein, um das Installationsprogramm für Microsoft Store-Apps zu erhalten. Wenn Sie bereits ein Konto haben, können Sie diesen Schritt überspringen.
+### <a name="exporting-your-wsl-image"></a>Exportieren Ihres WSL-Images
 
-### <a name="set-up-wsl-using-your-microsoft-store-for-business-account"></a>Einrichten von WSL mithilfe Ihres Microsoft Store für Unternehmen-Kontos
+Exportieren Sie Ihr benutzerdefiniertes WSL-Image, indem Sie „wsl --export `<Distro> <FileName>`“ ausführen, wodurch das Image in eine TAR-Datei gepackt und für die Verteilung auf anderen Computern vorbereitet wird.
 
-Die Anweisungen zum Registrieren eines Kontos finden Sie hier: https://docs.microsoft.com/microsoft-store/sign-up-microsoft-store-for-business
+## <a name="distributing-your-wsl-image"></a>Verteilen Ihres WSL-Images
 
-1. Melden Sie sich beim Store für Unternehmen an, und wechseln Sie zur Startseite: https://www.microsoft.com/business-store
+Verteilen Sie das WSL-Image von einer Freigabe oder einem Speichergerät aus, indem Sie „wsl --import `<Distro> <InstallLocation> <FileName>`“ ausführen, wodurch die angegebene TAR-Datei als neue Verteilung importiert wird.
 
-    ![Microsoft Store für Unternehmen – Startseite](media/offlineinstallscreens/1-screen.png)
+## <a name="update-and-patch-linux-distributions-and-packages"></a>Aktualisieren und Patchen von Linux-Verteilungen und -Paketen
 
-2. Wechseln Sie zu „Verwalten“ > „Einstellungen“, und aktivieren Sie „Offline-Apps anzeigen“.
+Die Verwendung von Linux-Konfigurations-Manager-Tools wird dringend empfohlen, um Linux-Benutzerspeicher zu überwachen und zu verwalten. Es gibt eine Vielzahl von Linux-Konfigurations-Managern, aus denen Sie auswählen können. Schauen Sie sich diesen [Blogbeitrag](http://www.craigloewen.com/blog/2019/12/04/running-puppet-quickly-in-wsl2/) über das Installieren von Puppet in WSL 2 an.
 
-    ![Seite mit den Einstellungen für den Microsoft Store für Unternehmen](media/offlineinstallscreens/2-screen.png)
+## <a name="enterprise-security-and-control-options"></a>Optionen für Sicherheit und Kontrolle im Unternehmen
 
-3. Wechseln Sie zurück zur Hauptseite, indem Sie „Für meine Gruppe einkaufen“ auswählen.
+Derzeit bietet lässt die Benutzererfahrung in einem Unternehmensszenario nur eingeschränkt durch WSL ändern. Die Unternehmensfeatures werden jedoch ständig weiterentwickelt. Nachfolgend sind die Bereiche der unterstützten und nicht unterstützten Features aufgeführt. Wenn Sie ein neues Feature anfordern möchten, das nicht in dieser Liste enthalten ist, melden Sie ein Problem in unserem [GitHub-Repository](https://github.com/microsoft/WSL/issues?q=is%3Aissue+is%3Aopen+enterprise).
 
-    ![Microsoft Store für Unternehmen – Startseite](media/offlineinstallscreens/1-screen.png)
+### <a name="supported"></a>Unterstützt
 
-4. Suchen Sie nach der gewünschten Verteilung, und wählen Sie sie aus.
+* Internes Freigeben eines genehmigten Images mithilfe von `wsl --import` und `wsl --export`
+* Erstellen einer eigenen WSL-Verteilung für Ihr Unternehmen mit dem [WSL Distro Launcher-Repository](https://github.com/microsoft/WSL-DistroLauncher)
 
-    ![Microsoft Store für Unternehmen – Startseite mit aktiver Suche](media/offlineinstallscreens/3-screen.png)
+Hier ist eine Liste von Features, für die noch keine Unterstützung besteht, die aber untersucht werden.
 
-5. Wählen Sie im Dropdownmenü „Lizenztyp“ eine Offlinelizenz und dann „App abrufen“ aus. (Einige Linux-Verteilungen bieten möglicherweise keine Offlinelizenzen.)
+### <a name="unsupported"></a>Nicht unterstützt
 
-    ![Microsoft Store für Unternehmen – „Offline“ auswählen](media/offlineinstallscreens/4-screen.png)
-
-6. Wählen Sie die Schaltfläche „Verwalten“ aus, um zur Produktseite der App zu gelangen.
-
-    ![Microsoft Store für Unternehmen – „Verwalten“ auswählen](media/offlineinstallscreens/5-screen.png)
-
-7. Wählen Sie Ihre Architektur aus, und laden Sie das Paket zur Offlineverwendung herunter.
-
-    ![Microsoft Store für Unternehmen – Architektur auswählen](media/offlineinstallscreens/6-screen.png)
-
-Dieses Installationsprogramm kann dann an jeden Computer verteilt werden, auf dem Sie WSL installieren möchten.
+* Synchronisieren des Benutzers innerhalb von WSL mit dem Windows-Benutzer auf dem Hostcomputer
+* Verwalten von Updates und Patchen der Linux-Verteilungen und -Pakete mit Windows-Tools
+* Verwenden von Windows Update auch für Inhalte von WSL-Verteilungen
+* Steuern, auf welche Verteilungen Benutzer in Ihrem Unternehmen zugreifen können
+* Ausführen obligatorischer Dienste (Protokollierung oder Überwachung) in WSL
+* Überwachen von Linux-Instanzen mit Windows-Konfigurations-Manager-Tools wie SCCM oder Intune
+* McAfee-Unterstützung
