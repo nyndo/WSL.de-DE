@@ -5,12 +5,12 @@ keywords: WSL, Windows-Subsystem für Linux, manuelle Installation, manuell inst
 ms.date: 09/15/2020
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: b94c7eb2f9e70a79f47853dac44badde58667315
-ms.sourcegitcommit: f5b14630947ee9cf3438e9ba502bfbe85ed72cd1
+ms.openlocfilehash: 8f6cb0714d5a688f40690ba68b58b642bab765c2
+ms.sourcegitcommit: fe75d8d799434fb4ff05532baa7906cd6b625bda
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 01/07/2021
-ms.locfileid: "97957661"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98811328"
 ---
 # <a name="manually-download-windows-subsystem-for-linux-distro-packages"></a>Manuelles Herunterladen von Distributionspaketen des Windows-Subsystems für Linux
 
@@ -69,6 +69,6 @@ Wenn Sie Windows 10 verwenden, können Sie Ihre Distribution mit PowerShell ins
 Add-AppxPackage .\app_name.appx
 ```
 
-Wenn Sie Windows Server verwenden, finden Sie die Installationsanweisungen auf der [Windows Server](install-on-server.md)-Dokumentationsseite.
+Wenn Sie einen Windows-Server verwenden oder Probleme bei der Ausführung des obigen Befehls haben, finden Sie auf der Seite [Windows Server](install-on-server.md) der Dokumentation eine alternative Anleitung dazu, wie Sie die Datei `.appx` installieren, indem Sie sie in eine ZIP-Datei umwandeln.
 
 Sobald Ihre Verteilung installiert wurde, folgen Sie den normalen Anweisungen, um * [von WSL 1 auf WSL 2 zu aktualisieren](./install-win10.md#set-your-distribution-version-to-wsl-1-or-wsl-2) oder [ein neues Benutzerkonto und Kennwort zu erstellen](./user-support.md).

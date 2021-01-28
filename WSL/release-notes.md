@@ -6,22 +6,26 @@ author: benhillis
 ms.date: 05/15/2020
 ms.topic: article
 ms.localizationpriority: high
-ms.openlocfilehash: c158cffde1c6f680f833b9f7e84f2d494ba64b78
-ms.sourcegitcommit: e2d586925b314ce4517773b9c78736450a9f75d9
+ms.openlocfilehash: ab6f26a4f9393c78cfa98367016efcf94afb1084
+ms.sourcegitcommit: c0478193f16efd4f8221016301ef7a1fd67713e0
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 01/07/2021
-ms.locfileid: "97977125"
+ms.lasthandoff: 01/22/2021
+ms.locfileid: "98671970"
 ---
 # <a name="release-notes-for-windows-subsystem-for-linux"></a>Anmerkungen zu dieser Version des Windows-Subsystems für Linux
 
 ## <a name="build-21286"></a>Build 21286
 Allgemeine Windows-Informationen zu Build 21286 finden Sie im [Windows-Blog](https://blogs.windows.com/windows-insider/2021/01/06/announcing-windows-10-insider-preview-build-21286/).
 
-* Eine Option „boot.command“ wurde in „/etc/wsl.conf“ hinzugefügt, um Startbefehle zu aktivieren.
 * Der Befehl „wsl.exe --cd“ wurde eingeführt, um das aktuelle Arbeitsverzeichnis eines Befehls festzulegen.
 * Die Zuordnung von NTSTATUS zu Linux-Fehlercodes wurde verbessert. [GH 6063]
 * Die „wsl.exe --mount“-Fehlerberichterstattung wurde verbessert.
+* Eine Option wurde in „/etc/wsl.conf“ hinzugefügt, um Startbefehle zu aktivieren:
+```
+[boot]
+command=<string>
+```
 
 ## <a name="build-20226"></a>Build 20226
 Allgemeine Windows-Informationen zu Build 20226 finden Sie im [Windows-Blog](https://blogs.windows.com/windows-insider/2020/09/10/announcing-windows-10-insider-preview-build-20226/).
