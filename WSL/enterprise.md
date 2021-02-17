@@ -6,12 +6,12 @@ ms.date: 12/14/2020
 ms.topic: article
 ms.assetid: 7afaeacf-435a-4e58-bff0-a9f0d75b8a51
 ms.custom: seodec18
-ms.openlocfilehash: a210268fb460a793fec2047c6d6678f92869ea16
-ms.sourcegitcommit: 0523e6a2ca99f5f3b188d526afed3ce6ad7e3abb
+ms.openlocfilehash: 8c5e1c84767423a2d415709d184c9e96a5a3de47
+ms.sourcegitcommit: 17d5ea1fe571274c224202544f61035971d6e0e1
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 01/25/2021
-ms.locfileid: "98766856"
+ms.lasthandoff: 02/16/2021
+ms.locfileid: "100551017"
 ---
 # <a name="windows-subsystem-for-linux-for-enterprise"></a>Windows-Subsystem für Linux für Unternehmen
 
@@ -53,7 +53,9 @@ Derzeit bietet lässt die Benutzererfahrung in einem Unternehmensszenario nur ei
 
 Hier ist eine Liste von Features, für die noch keine Unterstützung besteht, die aber untersucht werden.
 
-### <a name="unsupported"></a>Nicht unterstützt
+### <a name="currently-unsupported"></a>Derzeit keine Unterstützung
+
+Im Folgenden finden Sie eine Liste häufig nachgefragter Features, die derzeit von WSL nicht unterstützt werden. Diese Anforderungen sind auf unserer Liste, und wir untersuchen, wie wir sie hinzufügen können. 
 
 * Synchronisieren des Benutzers innerhalb von WSL mit dem Windows-Benutzer auf dem Hostcomputer
 * Verwalten von Updates und Patchen der Linux-Verteilungen und -Pakete mit Windows-Tools
