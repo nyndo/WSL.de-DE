@@ -1,16 +1,16 @@
 ---
 title: Installieren des Windows-Subsystems für Linux (WSL) unter Windows 10
-description: Erfahren Sie, wie Sie Linux-Verteilungen auf Ihrem Windows 10-Computer mit einem Bash-Terminal installieren, einschließlich Ubuntu, Debian, SUSE, Kali, Fedora, Pengwin und Alpine.
+description: Installationsanweisungen für WSL auf Ihrem Windows 10-Computer mit einem Bash-Terminal installieren, einschließlich Ubuntu, Debian, SUSE, Kali, Fedora, Pengwin und Alpine.
 keywords: BashOnWindows, Bash, WSL, Windows, Windows-Subsystem für Linux, Windows-Subsystem, Ubuntu, Debian, Suse, Windows 10, Installieren, Aktivieren, WSL2, Version 2
 ms.date: 09/15/2020
 ms.topic: article
 ms.localizationpriority: high
-ms.openlocfilehash: 3c7506f8f0144b11d4e91be3bf0667e6a28d7205
-ms.sourcegitcommit: e413f079790509b9c5e73efc189de186df350322
+ms.openlocfilehash: 58375484d57e7cb65a807e7156a5dcdf166dac2e
+ms.sourcegitcommit: 17d5ea1fe571274c224202544f61035971d6e0e1
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 01/22/2021
-ms.locfileid: "98692111"
+ms.lasthandoff: 02/16/2021
+ms.locfileid: "100551034"
 ---
 # <a name="windows-subsystem-for-linux-installation-guide-for-windows-10"></a>Windows-Subsystem für Linux: Installationsleitfaden für Windows 10
 
@@ -23,6 +23,9 @@ Zum Installieren von Windows-Subsystem für Linux (WSL) gibt es zwei Optionen:
 - **[Manuelle Installation](#manual-installation-steps)** : Führen Sie die nachfolgenden sechs Schritte aus:
 
     Die manuellen Installationsschritte für WSL sind unten aufgeführt und können zur Installation von Linux unter jeder Version von Windows 10 verwendet werden.
+
+> [!NOTE]
+> Wenn während des Installationsvorgangs ein Problem auftritt, überprüfen Sie unten auf dieser Seite den Abschnitt [Problembehandlung bei der Installation](#troubleshooting-installation).
 
 ## <a name="simplified-installation-for-windows-insiders"></a>Vereinfachte Installation für Windows-Insider
 
