@@ -1,17 +1,17 @@
 ---
 title: Vergleich zwischen WSL 2 und WSL 1
-description: Vergleichen Sie Version 1 und Version 2 des Windows-Subsystems für Linux. Erfahren Sie mehr über die Neuerungen in WSL 2 – tatsächlicher Linux-Kernel, höhere Geschwindigkeit, volle Kompatibilität mit Systemaufrufen. WSL 1 funktioniert besser, wenn Sie Dateien über verschiedene Betriebssystem-Dateisysteme hinweg speichern. Sie können die Größe Ihrer virtuellen WSL 2-Festplatte (VHD) erweitern.
+description: Vergleichen Sie Version 1 und Version 2 des Windows-Subsystems für Linux. Erfahren Sie, was es Neues in WSL 2 gibt.
 keywords: BashOnWindows, Bash, WSL, Windows, Windows-Subsystem, GNU, Linux, Ubuntu, Debian, Suse, Windows 10, UX-Änderungen, WSL 2, Linux-Kernel, Netzwerkanwendungen, localhost, IPv6, Virtual Hardware Disk, VHD, VHD-Beschränkungen, VHD-Fehler
 ms.date: 09/28/2020
 ms.topic: conceptual
 ms.localizationpriority: high
 ms.custom: contperf-fy21q1
-ms.openlocfilehash: 2de208a42d557aa3eca86aae2a86200611ce48bc
-ms.sourcegitcommit: f5b14630947ee9cf3438e9ba502bfbe85ed72cd1
+ms.openlocfilehash: 7b5b292ddd5ac148b0db479bdf95cb175e322927
+ms.sourcegitcommit: 17d5ea1fe571274c224202544f61035971d6e0e1
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 01/07/2021
-ms.locfileid: "97957681"
+ms.lasthandoff: 02/16/2021
+ms.locfileid: "100551026"
 ---
 # <a name="comparing-wsl-1-and-wsl-2"></a>Vergleich zwischen WSL 1 und WSL 2
 
