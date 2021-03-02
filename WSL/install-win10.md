@@ -42,22 +42,22 @@ Wenn diese Anforderungen erfüllt sind, führen Sie folgende Schritte aus, um WS
 - Geben Sie den folgenden Befehl in der Befehlszeile ein, die Sie im Administratormodus geöffnet haben: `wsl.exe --install`
 - Starten Sie Ihren Computer neu
 
-Wenn Sie eine neu installierte Linux-Verteilung zum ersten Mal starten, wird ein Konsolenfenster geöffnet, und Sie werden aufgefordert, zu warten, bis die Dateien dekomprimiert und auf dem PC gespeichert wurden. Alle zukünftigen Starts sollten weniger als eine Sekunde in Anspruch nehmen.
+Wenn Sie eine neu installierte Linux-Distribution zum ersten Mal starten, wird ein Konsolenfenster geöffnet, und Sie werden aufgefordert, zu warten, bis die Dateien dekomprimiert und auf dem PC gespeichert wurden. Alle zukünftigen Starts sollten weniger als eine Sekunde in Anspruch nehmen.
 
-Anschließend müssen Sie [ein Benutzerkonto und Kennwort für Ihre neue Linux-Verteilung erstellen](./user-support.md).
+Anschließend müssen Sie [ein Benutzerkonto und Kennwort für Ihre neue Linux-Distribution erstellen](./user-support.md).
 
-**Herzlichen Glückwunsch! Sie haben erfolgreich eine Linux-Verteilung installiert und eingerichtet, die vollständig in Ihr Windows-Betriebssystem integriert ist.**
+**Herzlichen Glückwunsch! Sie haben erfolgreich eine Linux-Distribution installiert und eingerichtet, die vollständig in Ihr Windows-Betriebssystem integriert ist.**
 
 Mit dem Befehl „--install“ werden die folgenden Aktionen ausgeführt:
 
 - Die optionalen Komponenten von WSL und Plattform für virtuelle Computer werden aktiviert.
 - Der aktuelle Linux-Kernel wird heruntergeladen und installiert.
 - WSL 2 wird als Standard festgelegt.
-- Eine Linux-Verteilung wird heruntergeladen und installiert *(möglicherweise ist ein Neustart erforderlich)* .
+- Eine Linux-Distribution wird heruntergeladen und installiert *(möglicherweise ist ein Neustart erforderlich)* .
 
-Standardmäßig ist die installierte Linux-Verteilung Ubuntu. Dies kann mit `wsl --install -d <Distribution Name>` geändert werden. *(Ersetzen Sie dazu `<Distribution Name>` durch den Namen der gewünschten Verteilung.)* Dem Computer können nach der Erstinstallation weitere Linux-Verteilungen mit dem Befehl `wsl --install -d <Distribution Name>` hinzugefügt werden.
+Standardmäßig ist die installierte Linux-Distribution Ubuntu. Dies kann mit `wsl --install -d <Distribution Name>` geändert werden. *(Ersetzen Sie dazu `<Distribution Name>` durch den Namen der gewünschten Verteilung.)* Dem Computer können nach der Erstinstallation weitere Linux-Distributionen mit dem Befehl `wsl --install -d <Distribution Name>` hinzugefügt werden.
 
-Geben Sie `wsl --list --online` ein, um eine Liste der verfügbaren Linux-Verteilungen anzuzeigen.
+Geben Sie `wsl --list --online` ein, um eine Liste der verfügbaren Linux-Distributionen anzuzeigen.
 
 ## <a name="manual-installation-steps"></a>Manuelle Installationsschritte
 
@@ -65,7 +65,7 @@ Wenn Sie kein Windows-Insider-Build verwenden, müssen die für WSL erforderlich
 
 ## <a name="step-1---enable-the-windows-subsystem-for-linux"></a>Schritt 1: Aktivieren des Windows-Subsystems für Linux
 
-Bevor Sie eine Linux-Verteilung unter Windows installieren, müssen Sie zunächst das optionale Feature „Windows-Subsystem für Linux“ aktivieren.
+Bevor Sie eine Linux-Distribution unter Windows installieren, müssen Sie zunächst das optionale Feature „Windows-Subsystem für Linux“ aktivieren.
 
 Öffnen Sie PowerShell als Administrator, und führen Sie Folgendes aus:
 
@@ -73,7 +73,7 @@ Bevor Sie eine Linux-Verteilung unter Windows installieren, müssen Sie zunächs
 dism.exe /online /enable-feature /featurename:Microsoft-Windows-Subsystem-Linux /all /norestart
 ```
 
-Es wird empfohlen, nun mit Schritt 2 fortzufahren und auf WSL 2 zu aktualisieren, aber wenn Sie nur WSL 1 installieren möchten, können Sie Ihren Computer jetzt **neu starten** und mit [Schritt 6: Installieren der Linux-Verteilung Ihrer Wahl](./install-win10.md#step-6---install-your-linux-distribution-of-choice) fortfahren. Um auf WSL 2 zu aktualisieren, **warten Sie mit dem Neustart** Ihres Computers, und fahren Sie mit dem nächsten Schritt fort.
+Es wird empfohlen, nun mit Schritt 2 fortzufahren und auf WSL 2 zu aktualisieren, aber wenn Sie nur WSL 1 installieren möchten, können Sie Ihren Computer jetzt **neu starten** und mit [Schritt 6: Installieren der Linux-Distribution Ihrer Wahl](./install-win10.md#step-6---install-your-linux-distribution-of-choice) fortfahren. Um auf WSL 2 zu aktualisieren, **warten Sie mit dem Neustart** Ihres Computers, und fahren Sie mit dem nächsten Schritt fort.
 
 ## <a name="step-2---check-requirements-for-running-wsl-2"></a>Schritt 2: Überprüfen der Anforderungen für die Ausführung von WSL 2
 
@@ -110,24 +110,24 @@ dism.exe /online /enable-feature /featurename:VirtualMachinePlatform /all /nores
 
 2. Führen Sie das im vorherigen Schritt heruntergeladene Updatepaket aus. (Doppelklicken Sie zum Ausführen – Sie werden zur Eingabe erhöhter Berechtigungen aufgefordert. Wählen Sie „Ja“, um diese Installation zu genehmigen.)
 
-Sobald die Installation abgeschlossen ist, wechseln Sie zum nächsten Schritt –Festlegen von WSL 2 als Standardversion für die Installation neuer Linux-Verteilungen. (Überspringen Sie diesen Schritt, wenn Sie möchten, dass Ihre neuen Linux-Installationen WSL 1 verwenden.)
+Sobald die Installation abgeschlossen ist, wechseln Sie zum nächsten Schritt –Festlegen von WSL 2 als Standardversion für die Installation neuer Linux-Distributionen. (Überspringen Sie diesen Schritt, wenn Sie möchten, dass Ihre neuen Linux-Installationen WSL 1 verwenden.)
 
 > [!NOTE]
 > Weitere Informationen finden Sie im Artikel über die [Änderungen an der Aktualisierung des WSL2 Linux-Kernels](https://devblogs.microsoft.com/commandline/wsl2-will-be-generally-available-in-windows-10-version-2004) im [Blog zur Windows-Befehlszeile](https://aka.ms/cliblog).
 
 ## <a name="step-5---set-wsl-2-as-your-default-version"></a>Schritt 5: Festlegen von WSL 2 als Standardversion
 
-Öffnen Sie PowerShell, und führen Sie den folgenden Befehl aus, um WSL 2 als Standardversion bei der Installation einer neuen Linux-Verteilung festzulegen:
+Öffnen Sie PowerShell, und führen Sie den folgenden Befehl aus, um WSL 2 als Standardversion bei der Installation einer neuen Linux-Distribution festzulegen:
 
 ```powershell
 wsl --set-default-version 2
 ```
 
-## <a name="step-6---install-your-linux-distribution-of-choice"></a>Schritt 6: Installieren der Linux-Verteilung Ihrer Wahl
+## <a name="step-6---install-your-linux-distribution-of-choice"></a>Schritt 6: Installieren der Linux-Distribution Ihrer Wahl
 
-1. Öffnen Sie den [Microsoft Store](https://aka.ms/wslstore), und wählen Sie Ihre bevorzugte Linux-Verteilung aus.
+1. Öffnen Sie den [Microsoft Store](https://aka.ms/wslstore), und wählen Sie Ihre bevorzugte Linux-Distribution aus.
 
-    ![Ansicht der Linux-Verteilungen im Microsoft Store](media/store.png)
+    ![Ansicht der Linux-Distributionen im Microsoft Store](media/store.png)
 
     Über die folgenden Links wird die Seite des Microsoft Store für jede Distribution geöffnet:
 
@@ -146,15 +146,15 @@ wsl --set-default-version 2
 
 2. Wählen Sie auf der Seite der Verteilung die Option „Get“ (Abrufen) aus.
 
-    ![Linux-Verteilungen im Microsoft Store](media/UbuntuStore.png)
+    ![Linux-Distributionen im Microsoft Store](media/UbuntuStore.png)
 
-Wenn Sie eine neu installierte Linux-Verteilung zum ersten Mal starten, wird ein Konsolenfenster geöffnet, und Sie werden aufgefordert, ein oder zwei Minuten zu warten, bis die Dateien dekomprimiert und auf dem PC gespeichert wurden. Alle zukünftigen Starts sollten weniger als eine Sekunde in Anspruch nehmen.
+Wenn Sie eine neu installierte Linux-Distribution zum ersten Mal starten, wird ein Konsolenfenster geöffnet, und Sie werden aufgefordert, ein oder zwei Minuten zu warten, bis die Dateien dekomprimiert und auf dem PC gespeichert wurden. Alle zukünftigen Starts sollten weniger als eine Sekunde in Anspruch nehmen.
 
-Anschließend müssen Sie [ein Benutzerkonto und Kennwort für Ihre neue Linux-Verteilung erstellen](./user-support.md).
+Anschließend müssen Sie [ein Benutzerkonto und Kennwort für Ihre neue Linux-Distribution erstellen](./user-support.md).
 
 ![Entpacken von Ubuntu in der Windows-Konsole](media/UbuntuInstall.png)
 
-**Herzlichen Glückwunsch! Sie haben erfolgreich eine Linux-Verteilung installiert und eingerichtet, die vollständig in Ihr Windows-Betriebssystem integriert ist.**
+**Herzlichen Glückwunsch! Sie haben erfolgreich eine Linux-Distribution installiert und eingerichtet, die vollständig in Ihr Windows-Betriebssystem integriert ist.**
 
 ## <a name="install-windows-terminal-optional"></a>Installieren von Windows-Terminal (optional)
 
@@ -215,8 +215,8 @@ Nachfolgend werden einige Fehler und vorgeschlagene Korrekturen beschrieben. Wei
   - Stellen Sie sicher, dass das Windows-Subsystem für Linux aktiviert wurde und Sie die Windows-Buildversion 18362 oder höher verwenden. Führen Sie zum Aktivieren von WSL in einer PowerShell-Eingabeaufforderung mit Administratorberechtigungen diesen Befehl aus: `Enable-WindowsOptionalFeature -Online -FeatureName Microsoft-Windows-Subsystem-Linux`.
 
 - **Der angeforderte Vorgang konnte aufgrund einer Einschränkung des virtuellen Dateisystems nicht abgeschlossen werden. Dateien für virtuelle Festplatten müssen unkomprimiert und unverschlüsselt sein und dürfen keine geringe Dichte aufweisen.**
-  - Zum Deaktivieren von „Inhalte komprimieren“ (sowie „Inhalte verschlüsseln“, falls aktiviert), öffnen Sie den Profilordner Ihrer Linux-Verteilung. Er sollte sich in einem Ordner auf Ihrem Windows-Dateisystem befinden, der etwa folgendermaßen heißt: `USERPROFILE%\AppData\Local\Packages\CanonicalGroupLimited...`.
-  - In diesem Linux-Verteilungsprofil sollte ein Ordner "LocalState" vorhanden sein. Klicken Sie mit der rechten Maustaste auf diesen Ordner, um ein Menü mit Optionen anzuzeigen. Wählen Sie „Eigenschaften“ > „Erweitert“ aus, und stellen Sie dann sicher, dass die Kontrollkästchen „Inhalt komprimieren, um Speicherplatz zu sparen“ und „Inhalt verschlüsseln, um Daten zu schützen“ nicht aktiviert (nicht ausgewählt) sind. Wenn Sie gefragt werden, ob Sie diese Einstellung nur auf den aktuellen Ordner oder auf alle Unterordner und Dateien anwenden möchten, wählen Sie „Nur dieser Ordner“ aus, da Sie nur das Komprimierungsflag löschen. Danach sollte der Befehl `wsl --set-version` funktionieren.
+  - Zum Deaktivieren von „Inhalte komprimieren“ (sowie „Inhalte verschlüsseln“, falls aktiviert), öffnen Sie den Profilordner Ihrer Linux-Distribution. Er sollte sich in einem Ordner auf Ihrem Windows-Dateisystem befinden, der etwa folgendermaßen heißt: `USERPROFILE%\AppData\Local\Packages\CanonicalGroupLimited...`.
+  - In diesem Linux-Distributionsprofil sollte ein Ordner "LocalState" vorhanden sein. Klicken Sie mit der rechten Maustaste auf diesen Ordner, um ein Menü mit Optionen anzuzeigen. Wählen Sie „Eigenschaften“ > „Erweitert“ aus, und stellen Sie dann sicher, dass die Kontrollkästchen „Inhalt komprimieren, um Speicherplatz zu sparen“ und „Inhalt verschlüsseln, um Daten zu schützen“ nicht aktiviert (nicht ausgewählt) sind. Wenn Sie gefragt werden, ob Sie diese Einstellung nur auf den aktuellen Ordner oder auf alle Unterordner und Dateien anwenden möchten, wählen Sie „Nur dieser Ordner“ aus, da Sie nur das Komprimierungsflag löschen. Danach sollte der Befehl `wsl --set-version` funktionieren.
 
 ![Screenshot der Eigenschafteneinstellungen der WSL-Verteilung](media/troubleshooting-virtualdisk-compress.png)
 
